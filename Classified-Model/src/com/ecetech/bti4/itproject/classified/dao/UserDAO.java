@@ -19,13 +19,13 @@ public class UserDAO {
         }
 
         while (DBAction.getRes().next()) {
-        	Resultat.setIdSocialUser((DBAction.getRes().getIdSocialUser(2)))
-        	Resultat.setMailUser((DBAction.getRes().getMailDate(3)));
-        	Resultat.setMdpUser(DBAction.getRes().getMdpUser(4));
-        	Resultat.setEtatUser(DBAction.getRes().getEtatUser(5));
-        	Resultat.setDateInUser(DBAction.getRes().getDateInUser(6));
-        	Resultat.setTypeUser(DBAction.getRes().getTypeUser(7));
-        	Resultat.setPermission_idPermission(DBAction.getRes().getPermission_idPermission(8));
+        	Resultat.setIdSocialUser((DBAction.getRes().getString(2)));
+        	Resultat.setMailUser((DBAction.getRes().getString(3)));
+        	Resultat.setMdpUser(DBAction.getRes().getString(4));
+        	Resultat.setEtatUser(DBAction.getRes().getString(5));
+        	Resultat.setDateInUser(DBAction.getRes().getDate(6));
+        	Resultat.setTypeUser(DBAction.getRes().getString(7));
+        	Resultat.setPermission_idPermission(DBAction.getRes().getString(8));
         	
         }
 
@@ -46,13 +46,12 @@ public class UserDAO {
 
         while (DBAction.getRes().next()) {
         	User Resultat = new User();
-        	
-        	alluser.add(Resultat)
+        	alluser.add(Resultat);
         }
 
         DBAction.DBClose();
 
-        return Resultat;
+        return alluser;
     }   
 	
 	public static int setUser(String id, String newName, String newMail, String newPSW) throws SQLException {
