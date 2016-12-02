@@ -37,7 +37,22 @@ public class UserDAO {
 	public static ArrayList getAllUser() throws SQLException {
 		DBAction.DBConnexion();
 		ArrayList<User> alluser = new ArrayList<User>();
-		return null;
+		String req = ("SELECT * FROM User");
+        try {
+            DBAction.setRes(DBAction.getStm().executeQuery(req));
+        } catch (SQLException ex) {
+        	System.out.println(ex.getErrorCode());
+        }
+
+        while (DBAction.getRes().next()) {
+        	User Resultat = new User();
+        	
+        	alluser.add(Resultat)
+        }
+
+        DBAction.DBClose();
+
+        return Resultat;
     }   
 	
 	public static int setUser(String id, String newName, String newMail, String newPSW) throws SQLException {
