@@ -22,6 +22,7 @@ public class AnnonceDAO {
         while (DBAction.getRes().next()) {
         	Annonce annonce = (Annonce) DBAction.getRes();
         	annonces.add(annonce);
+        	annonces.clear();
         
         }
 
