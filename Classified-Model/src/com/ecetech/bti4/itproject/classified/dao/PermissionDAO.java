@@ -4,6 +4,7 @@ public class PermissionDAO {
 
 	public PermissionDAO() {
 		// TODO Auto-generated constructor stub
+		System.out.println("test adrien");
 	}
 
 }
