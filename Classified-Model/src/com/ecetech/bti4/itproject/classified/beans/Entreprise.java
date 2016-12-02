@@ -1,4 +1,4 @@
-package com.ecetech.bti4.itproject.classifield.beans;
+package com.ecetech.bti4.itproject.classified.beans;
 
 public class Entreprise {
 	
