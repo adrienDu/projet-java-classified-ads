@@ -9,8 +9,8 @@ import com.ecetech.bti4.itproject.classified.common.DBAction;
 public class UserDAO {
 	public static User getUer(String id) throws SQLException {
         DBAction.DBConnexion();
-        User Resultat  = new User();
-        String                 req       = ("SELECT * FROM User WHERE idUser='" + id + "'");
+        User Resultat = new User();
+        String req = ("SELECT * FROM User WHERE idUser='" + id + "'");
 
         try {
             DBAction.setRes(DBAction.getStm().executeQuery(req));
@@ -19,11 +19,14 @@ public class UserDAO {
         }
 
         while (DBAction.getRes().next()) {
-        	Resultat.setDate((DBAction.getRes().getDate(6)));
-        	Resultat.setEmail(DBAction.getRes().getString(3));
-        	Resultat.setMdp(DBAction.getRes().getString(4));
-        	Resultat.setType(DBAction.getRes().getString(7));
-        	///////.....
+        	Resultat.setIdSocialUser((DBAction.getRes().getIdSocialUser(2)))
+        	Resultat.setMailUser((DBAction.getRes().getMailDate(3)));
+        	Resultat.setMdpUser(DBAction.getRes().getMdpUser(4));
+        	Resultat.setEtatUser(DBAction.getRes().getEtatUser(5));
+        	Resultat.setDateInUser(DBAction.getRes().getDateInUser(6));
+        	Resultat.setTypeUser(DBAction.getRes().getTypeUser(7));
+        	Resultat.setPermission_idPermission(DBAction.getRes().getPermission_idPermission(8));
+        	
         }
 
         DBAction.DBClose();
@@ -32,6 +35,8 @@ public class UserDAO {
     }   
 	
 	public static ArrayList getAllUser() throws SQLException {
+		DBAction.DBConnexion();
+		ArrayList<User> alluser = new ArrayList<User>();
 		return null;
     }   
 	
