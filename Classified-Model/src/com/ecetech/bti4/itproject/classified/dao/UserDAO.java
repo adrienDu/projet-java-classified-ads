@@ -7,7 +7,7 @@ import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 
 public class UserDAO {
-	public static User getUer(String id) throws SQLException {
+	public static User getUser(String id) throws SQLException {
         DBAction.DBConnexion();
         User Resultat = new User();
         String req = ("SELECT * FROM User WHERE idUser='" + id + "'");
