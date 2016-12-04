@@ -136,4 +136,13 @@ public String getPermission_idPermission() {
 public void setPermission_idPermission(String permission_idPermission) {
 	Permission_idPermission = permission_idPermission;
 }
+
+@Override
+public String toString() {
+	return "User [idUser=" + idUser + ", idSocialUser=" + idSocialUser + ", mailUser=" + mailUser + ", mdpUser="
+			+ mdpUser + ", etatUser=" + etatUser + ", dateInUser=" + dateInUser + ", typeUser=" + typeUser
+			+ ", Permission_idPermission=" + Permission_idPermission + "]";
+}
+
+
 }

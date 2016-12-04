@@ -1,7 +1,5 @@
 package com.ecetech.bti4.itproject.classified.test;
 
-import static org.junit.Assert.*;
-
 import java.sql.SQLException;
 
 import org.junit.Test;
@@ -21,7 +19,6 @@ public class TestUserDAO {
 	} 
 	catch (SQLException e) {
 	e.printStackTrace();
-	System.out.println("marche pas");
 	}
 
 	}

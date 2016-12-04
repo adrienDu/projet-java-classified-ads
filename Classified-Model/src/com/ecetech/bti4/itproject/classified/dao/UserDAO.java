@@ -10,12 +10,12 @@ public class UserDAO {
 	public static User getUser(String id) throws SQLException {
         DBAction.DBConnexion();
         User Resultat = new User();
-        String req = ("SELECT * FROM User WHERE idUser='" + id + "'");
+        String req = ("SELECT * FROM user WHERE idUser='" + id + "'");
 
         try {
             DBAction.setRes(DBAction.getStm().executeQuery(req));
         } catch (SQLException ex) {
-        	System.out.println(ex.getErrorCode());
+        	System.out.println("toto "+ex.getErrorCode());
         }
 
         while (DBAction.getRes().next()) {

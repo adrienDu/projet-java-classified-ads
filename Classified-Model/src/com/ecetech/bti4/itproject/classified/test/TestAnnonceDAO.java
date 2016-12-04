@@ -15,14 +15,6 @@ import com.ecetech.bti4.itproject.classified.dao.AnnonceDAO;
 
 public class TestAnnonceDAO {
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	@Test
 	public void testGetAllAnnonce() {
 		ArrayList<Annonce> annonces = new ArrayList<>();
