@@ -8,10 +8,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DBAction {
-    private static final String dbPath   = "jdbc:mysql://localhost:3306/classified";
+    private static final String dbPath   = "jdbc:mysql://localhost:3306/classifieds";
     private static final String user     = "root";
     //Docker linux
-    private static final String password = "password";
+    private static final String password = "";
 //    private static final String password = "";
 
     private static Connection   con      = null;

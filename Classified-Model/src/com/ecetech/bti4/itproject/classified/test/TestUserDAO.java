@@ -35,7 +35,7 @@ public class TestUserDAO {
 
 	@Test
 	public void testSetUserStringUser() {
-		//fail("Not yet implemented");
+		// bvf fail("Not yet implemented");
 	}
 
 }
