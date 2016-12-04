@@ -1,7 +1,5 @@
 package com.ecetech.bti4.itproject.classified.test;
 
-import static org.junit.Assert.*;
-
 import java.sql.SQLException;
 
 import org.junit.Test;
@@ -20,7 +18,10 @@ public class TestUserDAO {
 	} 
 	catch (SQLException e) {
 	e.printStackTrace();
+<<<<<<< HEAD
 	System.out.println("erreur de connexion");
+=======
+>>>>>>> 8d95fae7b6dbad647d7ce32513f245b29af0ae9b
 	}
 	}
 
