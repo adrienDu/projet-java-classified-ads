@@ -14,16 +14,14 @@ public class TestUserDAO {
 	@Test
 	public void testGetUser() {
 	UserDAO userDAO = new UserDAO();
-
 	try {
-	User user =	userDAO.getUser("E1");
+	User user =	userDAO.getUser("A1");
 	System.out.println(user.toString());	
 	} 
 	catch (SQLException e) {
 	e.printStackTrace();
-	System.out.println("marche pas");
+	System.out.println("erreur de connexion");
 	}
-
 	}
 
 	@Test

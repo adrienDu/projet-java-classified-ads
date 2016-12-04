@@ -7,10 +7,10 @@ import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 
 public class UserDAO {
-	public static User getUser(String id) throws SQLException {
+	public static User getUser(String idUser) throws SQLException {
         DBAction.DBConnexion();
         User Resultat = new User();
-        String req = ("SELECT * FROM User WHERE idUser='" + id + "'");
+        String req = ("SELECT * FROM user WHERE idUser='" + idUser + "'");
 
         try {
             DBAction.setRes(DBAction.getStm().executeQuery(req));
@@ -19,8 +19,8 @@ public class UserDAO {
         }
 
         while (DBAction.getRes().next()) {
-        	Resultat.setIdSocialUser((DBAction.getRes().getString(2)));
-        	Resultat.setMailUser((DBAction.getRes().getString(3)));
+        	Resultat.setIdSocialUser(DBAction.getRes().getString(2));
+        	Resultat.setMailUser(DBAction.getRes().getString(3));
         	Resultat.setMdpUser(DBAction.getRes().getString(4));
         	Resultat.setEtatUser(DBAction.getRes().getString(5));
         	Resultat.setDateInUser(DBAction.getRes().getDate(6));
@@ -37,7 +37,7 @@ public class UserDAO {
 	public static ArrayList getAllUser() throws SQLException {
 		DBAction.DBConnexion();
 		ArrayList<User> alluser = new ArrayList<User>();
-		String req = ("SELECT * FROM User");
+		String req = ("SELECT * FROM user");
         try {
             DBAction.setRes(DBAction.getStm().executeQuery(req));
         } catch (SQLException ex) {
