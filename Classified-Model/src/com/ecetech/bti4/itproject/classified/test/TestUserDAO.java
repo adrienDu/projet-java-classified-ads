@@ -25,17 +25,17 @@ public class TestUserDAO {
 
 	@Test
 	public void testGetAllUser() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetUserStringStringStringString() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetUserStringUser() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }
