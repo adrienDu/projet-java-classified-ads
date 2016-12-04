@@ -11,24 +11,22 @@ public class AnnonceDAO {
 
 	public static ArrayList<Annonce> getAllAnnonce() throws SQLException {
 		DBAction.DBConnexion();
-		ArrayList<Annonce> annonces = new ArrayList<>();
-		String req = ("SELECT * FROM annonce;");
+        ArrayList<Annonce> annonces = new ArrayList<>();
+        String req = ("SELECT * FROM annonce");
+        try {
+            DBAction.setRes(DBAction.getStm().executeQuery(req));
+        } catch (SQLException ex) {
+        	System.out.println("toto "+ex.getErrorCode());
+        }
 
-		try {
-			DBAction.setRes(DBAction.getStm().executeQuery(req));
-		} catch (SQLException ex) {
-			System.out.println("prout " + ex.getErrorCode());
-		}
-		int i = 0;
-		while (DBAction.getRes().next()) {
-			
-			Annonce annonce = (Annonce) DBAction.getRes();
-			annonces.add(annonce);
+        while (DBAction.getRes().next()) {
+        	Annonce annonce = new Annonce(DBAction.getRes().getString(1),DBAction.getRes().getString(2),DBAction.getRes().getString(3),DBAction.getRes().getString(4),DBAction.getRes().getInt(5),DBAction.getRes().getDate(6),DBAction.getRes().getDate(7),DBAction.getRes().getInt(8),DBAction.getRes().getString(9),DBAction.getRes().getInt(10));
+        	annonces.add(annonce);
+        	
+        }
 
-		}
+        DBAction.DBClose();
 
-		DBAction.DBClose();
-
-		return annonces;
+        return annonces;
 	}
-}
+} 

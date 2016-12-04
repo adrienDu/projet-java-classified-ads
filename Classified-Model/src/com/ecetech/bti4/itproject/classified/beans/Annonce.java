@@ -1,115 +1,151 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
+import java.util.Date;
+
 public class Annonce {
 	/**
 	 * Attributs 
 	 */
-	private String idUser;
-	private String nomAss;
-	private String siretAss;
-	private int numAdAss;
-	private String rueAdAss;
-	private int cpAdAss;
-	private String villeAdAss;
-	private int telAss;
+	private String idAnnonce;
+	private String titreAnnonce;
+	private String descAnnonce;
+	private String photoAnnonce;
+	private int zoneAnnonce;
+	private Date dateAnnonce;
+	private Date finAnnonce;
+	private int importanceAnnonce;
+	private String user_idUser;
+	private int type_idType;
 	
 	/**
 	 * Constructor
-	 * @param idUser
-	 * @param nomAss
-	 * @param siretAss
-	 * @param numAdAss
-	 * @param rueAdAss
-	 * @param cpAdAss
-	 * @param villeAdAss
-	 * @param telAss
+	 * @param idAnnonce
+	 * @param titreAnnonce
+	 * @param descAnnonce
+	 * @param photoAnnonce
+	 * @param zoneAnnonce
+	 * @param dateAnnonce
+	 * @param finAnnonce
+	 * @param importanceAnnonce
+	 * @param user_idUser
+	 * @param type_idType
 	 */
-	public Annonce(String idUser, String nomAss, String siretAss, int numAdAss, String rueAdAss, int cpAdAss,
-			String villeAdAss, int telAss) {
+	
+	public Annonce(String idAnnonce, String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
+			Date dateAnnonce, Date finAnnonce, int importanceAnnonce, String user_idUser, int type_idType) {
 		super();
-		this.idUser = idUser;
-		this.nomAss = nomAss;
-		this.siretAss = siretAss;
-		this.numAdAss = numAdAss;
-		this.rueAdAss = rueAdAss;
-		this.cpAdAss = cpAdAss;
-		this.villeAdAss = villeAdAss;
-		this.telAss = telAss;
+		this.idAnnonce = idAnnonce;
+		this.titreAnnonce = titreAnnonce;
+		this.descAnnonce = descAnnonce;
+		this.photoAnnonce = photoAnnonce;
+		this.zoneAnnonce = zoneAnnonce;
+		this.dateAnnonce = dateAnnonce;
+		this.finAnnonce = finAnnonce;
+		this.importanceAnnonce = importanceAnnonce;
+		this.user_idUser = user_idUser;
+		this.type_idType = type_idType;
 	}
 	
-
 	public Annonce() {
-		this("","","",0,"",0,"",0);
+		this("","","","",0,null,null,0,"",0);
 	}
 
+	
 	/**
-	 * Getters and setters
+	 * getters and setters
 	 * @return
 	 */
-
-	public String getIdUser() {
-		return idUser;
+	public String getIdAnnonce() {
+		return idAnnonce;
 	}
 
-	public void setIdUser(String idUser) {
-		this.idUser = idUser;
+	public void setIdAnnonce(String idAnnonce) {
+		this.idAnnonce = idAnnonce;
 	}
 
-	public String getNomAss() {
-		return nomAss;
+	public String getTitreAnnonce() {
+		return titreAnnonce;
 	}
 
-	public void setNomAss(String nomAss) {
-		this.nomAss = nomAss;
+	public void setTitreAnnonce(String titreAnnonce) {
+		this.titreAnnonce = titreAnnonce;
 	}
 
-	public String getSiretAss() {
-		return siretAss;
+	public String getDescAnnonce() {
+		return descAnnonce;
 	}
 
-	public void setSiretAss(String siretAss) {
-		this.siretAss = siretAss;
+	public void setDescAnnonce(String descAnnonce) {
+		this.descAnnonce = descAnnonce;
 	}
 
-	public int getNumAdAss() {
-		return numAdAss;
+	public String getPhotoAnnonce() {
+		return photoAnnonce;
 	}
 
-	public void setNumAdAss(int numAdAss) {
-		this.numAdAss = numAdAss;
+	public void setPhotoAnnonce(String photoAnnonce) {
+		this.photoAnnonce = photoAnnonce;
 	}
 
-	public String getRueAdAss() {
-		return rueAdAss;
+	public int getZoneAnnonce() {
+		return zoneAnnonce;
 	}
 
-	public void setRueAdAss(String rueAdAss) {
-		this.rueAdAss = rueAdAss;
+	public void setZoneAnnonce(int zoneAnnonce) {
+		this.zoneAnnonce = zoneAnnonce;
 	}
 
-	public int getCpAdAss() {
-		return cpAdAss;
+	public Date getDateAnnonce() {
+		return dateAnnonce;
 	}
 
-	public void setCpAdAss(int cpAdAss) {
-		this.cpAdAss = cpAdAss;
+	public void setDateAnnonce(Date dateAnnonce) {
+		this.dateAnnonce = dateAnnonce;
 	}
 
-	public String getVilleAdAss() {
-		return villeAdAss;
+	public Date getFinAnnonce() {
+		return finAnnonce;
 	}
 
-	public void setVilleAdAss(String villeAdAss) {
-		this.villeAdAss = villeAdAss;
+	public void setFinAnnonce(Date finAnnonce) {
+		this.finAnnonce = finAnnonce;
 	}
 
-	public int getTelAss() {
-		return telAss;
+	public int getImportanceAnnonce() {
+		return importanceAnnonce;
 	}
 
-	public void setTelAss(int telAss) {
-		this.telAss = telAss;
+	public void setImportanceAnnonce(int importanceAnnonce) {
+		this.importanceAnnonce = importanceAnnonce;
 	}
+
+	public String getUser_idUser() {
+		return user_idUser;
+	}
+
+	public void setUser_idUser(String user_idUser) {
+		this.user_idUser = user_idUser;
+	}
+
+	public int getType_idType() {
+		return type_idType;
+	}
+
+	public void setType_idType(int type_idType) {
+		this.type_idType = type_idType;
+	}
+
+	@Override
+	public String toString() {
+		return "Annonce [idAnnonce=" + idAnnonce + ", titreAnnonce=" + titreAnnonce + ", descAnnonce=" + descAnnonce
+				+ ", photoAnnonce=" + photoAnnonce + ", zoneAnnonce=" + zoneAnnonce + ", dateAnnonce=" + dateAnnonce
+				+ ", finAnnonce=" + finAnnonce + ", importanceAnnonce=" + importanceAnnonce + ", user_idUser="
+				+ user_idUser + ", type_idType=" + type_idType + "]";
+	}
+	
+	
+	
+	
 	
 	
 	

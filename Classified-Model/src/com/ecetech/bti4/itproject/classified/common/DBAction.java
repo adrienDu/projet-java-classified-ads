@@ -10,11 +10,15 @@ import java.sql.Statement;
 public class DBAction {
     private static final String dbPath   = "jdbc:mysql://localhost:3306/classified";
     private static final String user     = "root";
-    private static final String password = "";
+    //Docker linux
+    private static final String password = "password";
+//    private static final String password = "";
+
     private static Connection   con      = null;
     private static Statement    stm      = null;
     private static ResultSet    res      = null;
     private static int          erreur;
+    
 
     public static Exception DBConnexion() {
         try {
