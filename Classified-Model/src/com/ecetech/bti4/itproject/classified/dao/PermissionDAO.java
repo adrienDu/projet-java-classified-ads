@@ -32,10 +32,30 @@ public class PermissionDAO {
         return permission;
     }   
 	
-	//public String hasPermission(){
-		// DBAction.DBConnexion();
-	    // ArrayList<Permission> permission = new ArrayList<>();
-	     //String   req = ("SELECT * FROM Permission WHERE permission = 1");
-	//}
+	public boolean hasPermission( String idUser, String id_Permission ){
+		 DBAction.DBConnexion();
+		 ArrayList<Permission> permission = new ArrayList<>();
+		 boolean verif = false;
+	
+		
+			 String req = ("SELECT " + idUser + "FROM User WHERE Permission_idPermission = "+ id_Permission );
+			 try {
+		            DBAction.setRes(DBAction.getStm().executeQuery(req));
+		        } catch (SQLException ex) {
+		        	System.out.println(ex.getErrorCode());
+		        }
+
+		        if (DBAction.getRes() != null) {
+		        	
+		        	verif = true; 
+		        	
+		        }
+
+		        DBAction.DBClose();
+			
+			
+			 
+		return verif;
+	}
 
 }
