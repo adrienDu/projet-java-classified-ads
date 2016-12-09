@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.ecetech.bti4.itproject.classified.beans.Annonce;
+import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 import com.ecetech.bti4.itproject.classified.dao.AnnonceDAO;
 
 public class TestAnnonceDAO {
@@ -29,6 +30,7 @@ public class TestAnnonceDAO {
 	}
 
 	public void affichArayList(ArrayList<Annonce> annonces){
+		
 		ListIterator<Annonce> list = annonces.listIterator();
 		while (list.hasNext()) {
 			System.out.println(list.next().toString());
