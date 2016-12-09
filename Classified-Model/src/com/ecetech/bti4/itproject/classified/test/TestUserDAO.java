@@ -1,41 +1,63 @@
 package com.ecetech.bti4.itproject.classified.test;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ListIterator;
 
 import org.junit.Test;
 
+import com.ecetech.bti4.itproject.classified.beans.Annonce;
 import com.ecetech.bti4.itproject.classified.beans.User;
+import com.ecetech.bti4.itproject.classified.dao.AnnonceDAO;
 import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 
 public class TestUserDAO {
 
 	@Test
 	public void testGetUser() {
-	UserDAO userDAO = new UserDAO();
-	try {
-	User user =	userDAO.getUser("A1");
-	System.out.println(user.toString());	
-	} 
-	catch (SQLException e) {
-	e.printStackTrace();
-
-	System.out.println("erreur de connexion");
-}
+		System.out.println("get user");
+		UserDAO userDAO = new UserDAO();
+		try {
+			User user = userDAO.getUser("A1");
+			System.out.println(user.toString());
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
 	}
 
 	@Test
 	public void testGetAllUser() {
-		//fail("Not yet implemented");
+		System.out.println("get all user");
+		ArrayList<User> allusers = new ArrayList<>();
+		try {
+			allusers = UserDAO.getAllUser();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		affichArayList(allusers);
+
 	}
 
 	@Test
 	public void testSetUserStringStringStringString() {
-		//fail("Not yet implemented");
+		// fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetUserStringUser() {
 		// bvf fail("Not yet implemented");
 	}
+
+	
+	public void affichArayList(ArrayList<User> allusers){
+		ListIterator<User> list = allusers.listIterator();
+		int i = 1;
+		while (list.hasNext()) {
+			System.out.println(i+" "+list.next().toString());
+			i++;
+		}
+	}
+	
 
 }
