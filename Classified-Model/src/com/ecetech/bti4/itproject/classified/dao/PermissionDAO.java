@@ -34,7 +34,6 @@ public class PermissionDAO {
 	
 	public boolean hasPermission( String idUser, String id_Permission ){
 		 DBAction.DBConnexion();
-		 ArrayList<Permission> permission = new ArrayList<>();
 		 boolean verif = false;
 	
 		
@@ -47,8 +46,7 @@ public class PermissionDAO {
 
 		        if (DBAction.getRes() != null) {
 		        	
-		        	verif = true; 
-		        	
+		        	verif = true; 	
 		        }
 
 		        DBAction.DBClose();
@@ -56,6 +54,26 @@ public class PermissionDAO {
 			
 			 
 		return verif;
+	}
+	
+	//public void setPermission( String idUser, String id_Permission ) {
+		
+		// DBAction.DBConnexion();
+		 
+			// String req = ("UPDATE " + idUser + "FROM User WHERE Permission_idPermission = "+ id_Permission );
+			// try {
+		      //      DBAction.setRes((DBAction.getStm().executeUpdate(req));
+		       // } catch (SQLException ex) {
+		       // 	System.out.println(ex.getErrorCode());
+		       // }
+
+		       // DBAction.DBClose();
+		
+	//}
+	
+	public void ajoutPermission(){
+
+
 	}
 
 }
