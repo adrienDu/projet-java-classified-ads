@@ -3,19 +3,14 @@ package com.ecetech.bti4.itproject.classified.test;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ListIterator;
-
 import org.junit.Test;
-
-import com.ecetech.bti4.itproject.classified.beans.Annonce;
 import com.ecetech.bti4.itproject.classified.beans.User;
-import com.ecetech.bti4.itproject.classified.dao.AnnonceDAO;
 import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 
 public class TestUserDAO {
 
 	@Test
-<<<<<<< HEAD
-	  public void testGetUser() {
+	  public void testGetUser(){
 	    System.out.println("get user");
 	    UserDAO userDAO = new UserDAO();
 	    try {
@@ -33,14 +28,6 @@ public class TestUserDAO {
 		ArrayList<User> typeuser = new ArrayList<>();
 		try {
 			typeuser = UserDAO.getTypeUser("P");
-=======
-	public void testGetUser() {
-		System.out.println("get user");
-		UserDAO userDAO = new UserDAO();
-		try {
-			User user = userDAO.getUser("A1");
-			System.out.println(user.toString());
->>>>>>> 0ee6a75eab8c827bbb2e48ac3f6b639aedd9bbce
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
@@ -65,9 +52,7 @@ public class TestUserDAO {
 		System.out.println("ajouter un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.getAllUser();
 			userDAO.addUser("maeva@margueritat.fr","123AZERTY","P","classique");
-			userDAO.getAllUser();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
@@ -77,7 +62,7 @@ public class TestUserDAO {
 	
 	@Test
 	public void deleteUser() {
-		System.out.println("supprimer un user");
+		System.out.println("Supprimer un user");
 		UserDAO userDAO = new UserDAO();
 		try {
 			userDAO.deleteUser("7710c2fe-29e3-428a-9aa2-b142e8dd56a5");
@@ -86,7 +71,6 @@ public class TestUserDAO {
 			System.out.println("erreur de connexion");
 		}
 	}
-<<<<<<< HEAD
 	
 	//UPDATE
 	@Test
@@ -106,7 +90,6 @@ public class TestUserDAO {
 		System.out.println("modifier le mail d'un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			
 			userDAO.updateMdpUser("7710c2fe-29e3-428a-9aa2-b142e8dd56a5","123AZERTY");
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -150,9 +133,6 @@ public class TestUserDAO {
 		}
 	}
 	
-=======
-
->>>>>>> 0ee6a75eab8c827bbb2e48ac3f6b639aedd9bbce
 	public void affichArayList(ArrayList<User> allusers) {
 		ListIterator<User> list = allusers.listIterator();
 		int i = 1;
