@@ -23,16 +23,11 @@ public class TestAnnonceDAO {
 	@Test
 	public void testGetAllAnnonce() {
 		ArrayList<Annonce> annonces = new ArrayList<>();
-		try {
-			annonces = AnnonceDAO.getAllAnnonce();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		annonces = AnnonceDAO.getAllAnnonce();
 		affichArayList(annonces);
 
 	}
-
+/*
 	@Test
 	public void testGetAnnonce() {
 		Annonce annonce = new Annonce();
@@ -79,14 +74,14 @@ public class TestAnnonceDAO {
 			System.out.println(res);
 	}
 	
-	//@Test
-	/*public void testDelAnnonce(){
+	@Test
+	public void testDelAnnonce(){
 		boolean res;
 		String idAnnonceDel = "ffe35927-ba0b-11e6-a706-5c514fc83452";
 		res = AnnonceDAO.delAnnonce(idAnnonceDel);
 		System.out.println(res);
-	}*/
-
+	}
+*/
 	public void affichArayList(ArrayList<Annonce> annonces) {
 
 		ListIterator<Annonce> list = annonces.listIterator();
@@ -95,9 +90,10 @@ public class TestAnnonceDAO {
 
 		}
 	}
+	
 
 }
 
 
-}
+
 
