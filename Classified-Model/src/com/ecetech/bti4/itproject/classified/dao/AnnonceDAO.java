@@ -5,11 +5,13 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.sql.Date;
+import java.sql.ResultSet;
 
 import com.ecetech.bti4.itproject.classified.beans.Annonce;
 import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
+import com.mysql.fabric.xmlrpc.base.Array;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
@@ -153,6 +155,7 @@ public class AnnonceDAO {
 		return result;
 
 	}
+
 	// modifier annonce
 	public static boolean changeAnnonce(Annonce annonce) {
 		boolean result;
@@ -168,7 +171,8 @@ public class AnnonceDAO {
 		PreparedStatement req;
 
 		try {
-			req = (PreparedStatement) con.prepareStatement("UPDATE annonce SET titreAnnonce=?,descAnnonce=?,photoAnnonce=?,zoneAnnonce=?,dateAnnonce=?,finAnnonce=?,importanceAnnonce=? WHERE idAnnonce=?");
+			req = (PreparedStatement) con.prepareStatement(
+					"UPDATE annonce SET titreAnnonce=?,descAnnonce=?,photoAnnonce=?,zoneAnnonce=?,dateAnnonce=?,finAnnonce=?,importanceAnnonce=? WHERE idAnnonce=?");
 			req.setString(1, annonce.getTitreAnnonce());
 			req.setString(2, annonce.getDescAnnonce());
 			req.setString(3, annonce.getPhotoAnnonce());
@@ -177,7 +181,6 @@ public class AnnonceDAO {
 			req.setDate(6, annonce.getFinAnnonce());
 			req.setInt(7, annonce.getImportanceAnnonce());
 			req.setString(8, annonce.getIdAnnonce());
-	
 
 			nb = req.executeUpdate();
 
@@ -192,11 +195,30 @@ public class AnnonceDAO {
 		return result;
 
 	}
+
 	// afficher par categorie
+	/*public void affichAnnCat(){
+	Connection con = DBAction.getCon();
+	PreparedStatement req;
+	ResultSet res;
+	String nom;
+	int code;
+	req=con.prepareStatement();
+	req.setString(1,''cereales'');
+	res=req.executeQuery();
+	while(res.next())
+	{
+		code = getInt(1);
+		libelle = getString(2);
+	}req.close();
+	}*/
 
-	
 	// afficher toutes les annonces d'un utilisateur
-
+	public ArrayList<Annonce> affichAnnonceUser(){
+		ArrayList<Annonce> annonces; 
+		
+		return annonces;
+	}
 	// afficher par categorie et type
 
 	// afficher par date
