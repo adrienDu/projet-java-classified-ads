@@ -1,6 +1,7 @@
 package com.ecetech.bti4.itproject.classified.dao;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.UUID;
 import java.util.ArrayList;
 import java.util.Date;
@@ -69,8 +70,11 @@ public class UserDAO {
 		// etat
 		String EtatUser = "OK";
 		// date in user
+		SimpleDateFormat formater = null;
 		Date DateInUser = new Date();
-		System.out.println(new java.util.Date());
+		formater = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println(formater.format(DateInUser));
+		
 		// permission
 		String PermissionUser = "classique";
 		// requete
