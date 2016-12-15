@@ -20,51 +20,23 @@ public class AnnonceDAO {
 
 	// afficher toutes les annonces
 
-	public static ArrayList<Annonce> getAllAnnonce() throws SQLException {
-		DBAction.DBConnexion();
-		ArrayList<Annonce> annonces = new ArrayList<>();
-		String req = ("SELECT * FROM annonce");
+	public static ArrayList<Annonce> getAllAnnonce(){
+		ArrayList<Annonce> annonces = null; 
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
+		ResultSet res;
 		try {
-			DBAction.setRes(DBAction.getStm().executeQuery(req));
-		} catch (SQLException ex) {
-			System.out.println("toto " + ex.getErrorCode());
-		}
-
-		while (DBAction.getRes().next()) {
-			Annonce annonce = new Annonce(DBAction.getRes().getString(1), DBAction.getRes().getString(2),
-					DBAction.getRes().getString(3), DBAction.getRes().getString(4), DBAction.getRes().getInt(5),
-					DBAction.getRes().getDate(6), DBAction.getRes().getDate(7), DBAction.getRes().getInt(8),
-					DBAction.getRes().getDate(9), DBAction.getRes().getString(10), DBAction.getRes().getInt(11));
+			req = (PreparedStatement) con.prepareStatement("SELECT * FROM annonce");
+			res = req.executeQuery();
+			while(res.next()) {
+			Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getDate(9), res.getString(10), res.getInt(11));	
 			annonces.add(annonce);
-
+			}
+		} catch (SQLException e) {
+			
+			// TODO: handle exception
 		}
-
-		DBAction.DBClose();
-
-		return annonces;
-	}
-
-	public static ArrayList<Annonce> getAnnonce() throws SQLException {
-		DBAction.DBConnexion();
-		ArrayList<Annonce> annonces = new ArrayList<>();
-		String req = ("SELECT * FROM annonce");
-		try {
-			DBAction.setRes(DBAction.getStm().executeQuery(req));
-		} catch (SQLException ex) {
-			System.out.println("toto " + ex.getErrorCode());
-		}
-
-		while (DBAction.getRes().next()) {
-			Annonce annonce = new Annonce(DBAction.getRes().getString(1), DBAction.getRes().getString(2),
-					DBAction.getRes().getString(3), DBAction.getRes().getString(4), DBAction.getRes().getInt(5),
-					DBAction.getRes().getDate(6), DBAction.getRes().getDate(7), DBAction.getRes().getInt(8),
-					DBAction.getRes().getDate(9), DBAction.getRes().getString(10), DBAction.getRes().getInt(11));
-			annonces.add(annonce);
-
-		}
-
-		DBAction.DBClose();
-
+		
 		return annonces;
 	}
 
@@ -196,37 +168,49 @@ public class AnnonceDAO {
 
 	}
 
-	// afficher par categorie
-	/*public void affichAnnCat(){
-	Connection con = DBAction.getCon();
-	PreparedStatement req;
-	ResultSet res;
-	String nom;
-	int code;
-	req=con.prepareStatement();
-	req.setString(1,''cereales'');
-	res=req.executeQuery();
-	while(res.next())
-	{
-		code = getInt(1);
-		libelle = getString(2);
-	}req.close();
-	}*/
-
 	// afficher toutes les annonces d'un utilisateur
-	public ArrayList<Annonce> affichAnnonceUser(){
-		ArrayList<Annonce> annonces; 
+	public ArrayList<Annonce> affichAnnonceUser(String idUser){
+		ArrayList<Annonce> annonces = null; 
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
+		ResultSet res;
+		try {
+			req = (PreparedStatement) con.prepareStatement("SELECT * FROM annonce WHERE idUser = ?");
+			req.setString(1, idUser);
+			res = req.executeQuery();
+			while(res.next()) {
+			Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getDate(9), res.getString(10), res.getInt(11));	
+			annonces.add(annonce);
+			}
+		} catch (SQLException e) {
+			
+			// TODO: handle exception
+		}
 		
 		return annonces;
 	}
-	// afficher par categorie et type
 
-	// afficher par date
-
-	// afficher par prix
-
-	// afficher annonces expiré
-
-	// afficher annonces en cours
+	// afficher par type
+	public ArrayList<Annonce> affichAnnonceUser(int type){
+		ArrayList<Annonce> annonces = null; 
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
+		ResultSet res;
+		try {
+			req = (PreparedStatement) con.prepareStatement("SELECT * FROM annonce WHERE idType = ?");
+			req.setInt(1,type);
+			res = req.executeQuery();
+			while(res.next()) {
+			Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getDate(9), res.getString(10), res.getInt(11));	
+			annonces.add(annonce);
+			}
+		} catch (SQLException e) {
+			
+			// TODO: handle exception
+		}
+		
+		return annonces;
+	}
+	
 
 }
