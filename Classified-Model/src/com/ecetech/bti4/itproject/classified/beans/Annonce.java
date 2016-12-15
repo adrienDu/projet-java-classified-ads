@@ -1,6 +1,6 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Annonce {
 	/**
@@ -11,9 +11,10 @@ public class Annonce {
 	private String descAnnonce;
 	private String photoAnnonce;
 	private int zoneAnnonce;
-	private Date dateAnnonce;
-	private Date finAnnonce;
+	private java.sql.Date dateAnnonce;
+	private java.sql.Date finAnnonce;
 	private int importanceAnnonce;
+	private Date dateCreaAnnonce;
 	private String user_idUser;
 	private int type_idType;
 	
@@ -32,7 +33,7 @@ public class Annonce {
 	 */
 	
 	public Annonce(String idAnnonce, String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			Date dateAnnonce, Date finAnnonce, int importanceAnnonce, String user_idUser, int type_idType) {
+			Date dateAnnonce, Date finAnnonce, int importanceAnnonce, Date dateCreaAnnonce, String user_idUser, int type_idType) {
 		super();
 		this.idAnnonce = idAnnonce;
 		this.titreAnnonce = titreAnnonce;
@@ -42,12 +43,27 @@ public class Annonce {
 		this.dateAnnonce = dateAnnonce;
 		this.finAnnonce = finAnnonce;
 		this.importanceAnnonce = importanceAnnonce;
+		this.dateCreaAnnonce = dateCreaAnnonce;
 		this.user_idUser = user_idUser;
 		this.type_idType = type_idType;
 	}
-	
+	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
+			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, String user_idUser, int type_idType) {
+		super();
+		idAnnonce = null;
+		this.titreAnnonce = titreAnnonce;
+		this.descAnnonce = descAnnonce;
+		this.photoAnnonce = photoAnnonce;
+		this.zoneAnnonce = zoneAnnonce;
+		this.dateAnnonce = (Date) dateAnnonce;
+		this.finAnnonce = (Date) dateFin;
+		this.importanceAnnonce = importanceAnnonce;
+		dateCreaAnnonce =null;
+		this.user_idUser = user_idUser;
+		this.type_idType = type_idType;
+	}
 	public Annonce() {
-		this("","","","",0,null,null,0,"",0);
+		this("","","","",0,null,null,0,null,"",0);
 	}
 
 	
@@ -118,6 +134,15 @@ public class Annonce {
 	public void setImportanceAnnonce(int importanceAnnonce) {
 		this.importanceAnnonce = importanceAnnonce;
 	}
+	
+
+	public Date getDateCreaAnnonce() {
+		return dateCreaAnnonce;
+	}
+
+	public void setDateCreaAnnonce(Date dateCreaAnnonce) {
+		this.dateCreaAnnonce = dateCreaAnnonce;
+	}
 
 	public String getUser_idUser() {
 		return user_idUser;
@@ -135,15 +160,18 @@ public class Annonce {
 		this.type_idType = type_idType;
 	}
 
+	/*
+	 * toString
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Annonce [idAnnonce=" + idAnnonce + ", titreAnnonce=" + titreAnnonce + ", descAnnonce=" + descAnnonce
 				+ ", photoAnnonce=" + photoAnnonce + ", zoneAnnonce=" + zoneAnnonce + ", dateAnnonce=" + dateAnnonce
-				+ ", finAnnonce=" + finAnnonce + ", importanceAnnonce=" + importanceAnnonce + ", user_idUser="
-				+ user_idUser + ", type_idType=" + type_idType + "]";
+				+ ", finAnnonce=" + finAnnonce + ", importanceAnnonce=" + importanceAnnonce + ", dateCreaAnnonce="
+				+ dateCreaAnnonce + ", user_idUser=" + user_idUser + ", type_idType=" + type_idType + "]";
 	}
-	
-	
+
 	
 	
 	
