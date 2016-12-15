@@ -16,12 +16,6 @@ import com.ecetech.bti4.itproject.classified.common.DBAction;
  */
 public class EntrepriseDAO extends UserDAO {
 
-	/**
-	 * 
-	 */
-	
-
-
 	public static ArrayList getAllEntreprise() throws SQLException {
 		DBAction.DBConnexion();
 		ArrayList<Entreprise> alluser = new ArrayList<Entreprise>();
