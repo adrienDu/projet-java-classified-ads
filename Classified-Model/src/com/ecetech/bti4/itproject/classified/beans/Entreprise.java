@@ -90,4 +90,10 @@ public class Entreprise extends User {
 		this.tel_Ent = tel_Ent;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() +"Entreprise [nom_Ent=" + nom_Ent + ", num_Ad_Ent=" + num_Ad_Ent + ", rue_Ad_Ent=" + rue_Ad_Ent
+				+ ", cp_Ad_Ent=" + cp_Ad_Ent + ", ville_Ad_Ent=" + ville_Ad_Ent + ", tel_Ent=" + tel_Ent + "]";
+	}
+
 }
