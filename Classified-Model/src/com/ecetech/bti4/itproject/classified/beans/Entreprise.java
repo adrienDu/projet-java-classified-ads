@@ -1,9 +1,8 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
+public class Entreprise extends User {
 
-public class Entreprise extends User{
-
-	//private String idUser;
+	// private String idUser;
 	private String nom_Ent;
 	private int num_Ad_Ent;
 	private String rue_Ad_Ent;
@@ -11,38 +10,36 @@ public class Entreprise extends User{
 	private String ville_Ad_Ent;
 	private int tel_Ent;
 	private String siren_Ent;
-	
+
 	public Entreprise() {
 		super();
-		nom_Ent="";
-		num_Ad_Ent=0;
-		rue_Ad_Ent="";
-		cp_Ad_Ent=0;
-		ville_Ad_Ent="";
-		tel_Ent=0;
-		siren_Ent="";
-	}
-	
-	public Entreprise(/*String idUser,*/ String nom_Ent, int num_Ad_Ent, String rue_Ad_Ent, int cp_Ad_Ent,
-				String ville_Ad_Ent, int tel_Ent, String siren_Ent) {
-			super();
-			//this.idUser = idUser;
-			this.nom_Ent = nom_Ent;
-			this.num_Ad_Ent = num_Ad_Ent;
-			this.rue_Ad_Ent = rue_Ad_Ent;
-			this.cp_Ad_Ent = cp_Ad_Ent;
-			this.ville_Ad_Ent = ville_Ad_Ent;
-			this.tel_Ent = tel_Ent;
-			this.siren_Ent = siren_Ent;
-		}
-	
-	/*public String getIdUser() {
-		return idUser;
+		nom_Ent = "";
+		num_Ad_Ent = 0;
+		rue_Ad_Ent = "";
+		cp_Ad_Ent = 0;
+		ville_Ad_Ent = "";
+		tel_Ent = 0;
+		siren_Ent = "";
 	}
 
-	public void setIdUser(String idUser) {
-		this.idUser = idUser;
-	}*/
+	public Entreprise(/* String idUser, */ String nom_Ent, int num_Ad_Ent, String rue_Ad_Ent, int cp_Ad_Ent,
+			String ville_Ad_Ent, int tel_Ent, String siren_Ent) {
+		super();
+		// this.idUser = idUser;
+		this.nom_Ent = nom_Ent;
+		this.num_Ad_Ent = num_Ad_Ent;
+		this.rue_Ad_Ent = rue_Ad_Ent;
+		this.cp_Ad_Ent = cp_Ad_Ent;
+		this.ville_Ad_Ent = ville_Ad_Ent;
+		this.tel_Ent = tel_Ent;
+		this.siren_Ent = siren_Ent;
+	}
+
+	/*
+	 * public String getIdUser() { return idUser; }
+	 * 
+	 * public void setIdUser(String idUser) { this.idUser = idUser; }
+	 */
 
 	public String getNom_Ent() {
 		return nom_Ent;
@@ -91,7 +88,7 @@ public class Entreprise extends User{
 	public void setTel_Ent(int tel_Ent) {
 		this.tel_Ent = tel_Ent;
 	}
-	
+
 	public String getSiren_Ent() {
 		return siren_Ent;
 	}
@@ -105,8 +102,7 @@ public class Entreprise extends User{
 
 		return super.toString() + "Entreprise [nom_Ent=" + nom_Ent + ", num_Ad_Ent=" + num_Ad_Ent + ", rue_Ad_Ent="
 				+ rue_Ad_Ent + ", cp_Ad_Ent=" + cp_Ad_Ent + ", ville_Ad_Ent=" + ville_Ad_Ent + ", tel_Ent=" + tel_Ent
-				+ ", siren_Ent=" + siren_Ent
-				+"]";
+				+ ", siren_Ent=" + siren_Ent + "]";
 
 	}
 

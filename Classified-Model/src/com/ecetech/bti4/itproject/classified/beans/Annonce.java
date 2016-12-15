@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Annonce {
 	/**
-	 * Attributs 
+	 * Attributs
 	 */
 	private String idAnnonce;
 	private String titreAnnonce;
@@ -17,9 +17,10 @@ public class Annonce {
 	private Date dateCreaAnnonce;
 	private String user_idUser;
 	private int type_idType;
-	
+
 	/**
 	 * Constructor
+	 * 
 	 * @param idAnnonce
 	 * @param titreAnnonce
 	 * @param descAnnonce
@@ -31,9 +32,10 @@ public class Annonce {
 	 * @param user_idUser
 	 * @param type_idType
 	 */
-	
+
 	public Annonce(String idAnnonce, String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			Date dateAnnonce, Date finAnnonce, int importanceAnnonce, Date dateCreaAnnonce, String user_idUser, int type_idType) {
+			Date dateAnnonce, Date finAnnonce, int importanceAnnonce, Date dateCreaAnnonce, String user_idUser,
+			int type_idType) {
 		super();
 		this.idAnnonce = idAnnonce;
 		this.titreAnnonce = titreAnnonce;
@@ -47,8 +49,10 @@ public class Annonce {
 		this.user_idUser = user_idUser;
 		this.type_idType = type_idType;
 	}
+
 	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, Date dateCreaAnnonce, String user_idUser, int type_idType) {
+			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, Date dateCreaAnnonce,
+			String user_idUser, int type_idType) {
 		super();
 		idAnnonce = null;
 		this.titreAnnonce = titreAnnonce;
@@ -58,32 +62,35 @@ public class Annonce {
 		this.dateAnnonce = (Date) dateAnnonce;
 		this.finAnnonce = (Date) dateFin;
 		this.importanceAnnonce = importanceAnnonce;
-		this.dateCreaAnnonce =dateCreaAnnonce;
+		this.dateCreaAnnonce = dateCreaAnnonce;
 		this.user_idUser = user_idUser;
 		this.type_idType = type_idType;
-	}
-	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, String user_idUser, int type_idType) {
-		super();
-		idAnnonce = null;
-		this.titreAnnonce = titreAnnonce;
-		this.descAnnonce = descAnnonce;
-		this.photoAnnonce = photoAnnonce;
-		this.zoneAnnonce = zoneAnnonce;
-		this.dateAnnonce = (Date) dateAnnonce;
-		this.finAnnonce = (Date) dateFin;
-		this.importanceAnnonce = importanceAnnonce;
-		dateCreaAnnonce =null;
-		this.user_idUser = user_idUser;
-		this.type_idType = type_idType;
-	}
-	public Annonce() {
-		this("","","","",0,null,null,0,null,"",0);
 	}
 
-	
+	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
+			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, String user_idUser,
+			int type_idType) {
+		super();
+		idAnnonce = null;
+		this.titreAnnonce = titreAnnonce;
+		this.descAnnonce = descAnnonce;
+		this.photoAnnonce = photoAnnonce;
+		this.zoneAnnonce = zoneAnnonce;
+		this.dateAnnonce = (Date) dateAnnonce;
+		this.finAnnonce = (Date) dateFin;
+		this.importanceAnnonce = importanceAnnonce;
+		dateCreaAnnonce = null;
+		this.user_idUser = user_idUser;
+		this.type_idType = type_idType;
+	}
+
+	public Annonce() {
+		this("", "", "", "", 0, null, null, 0, null, "", 0);
+	}
+
 	/**
 	 * getters and setters
+	 * 
 	 * @return
 	 */
 	public String getIdAnnonce() {
@@ -149,7 +156,6 @@ public class Annonce {
 	public void setImportanceAnnonce(int importanceAnnonce) {
 		this.importanceAnnonce = importanceAnnonce;
 	}
-	
 
 	public Date getDateCreaAnnonce() {
 		return dateCreaAnnonce;
@@ -177,6 +183,7 @@ public class Annonce {
 
 	/*
 	 * toString
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -187,11 +194,4 @@ public class Annonce {
 				+ dateCreaAnnonce + ", user_idUser=" + user_idUser + ", type_idType=" + type_idType + "]";
 	}
 
-	
-	
-	
-	
-	
-	
-	
 }

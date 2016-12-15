@@ -12,6 +12,7 @@ public class Categorie {
 
 	/**
 	 * Constructor
+	 * 
 	 * @param idCategorie
 	 * @param nomCategorie
 	 * @param idType
@@ -28,7 +29,8 @@ public class Categorie {
 	}
 
 	/**
-	 * Getters and setters 
+	 * Getters and setters
+	 * 
 	 * @return
 	 */
 	public int getIdCategorie() {
@@ -60,6 +62,4 @@ public class Categorie {
 		return "Categorie [idCategorie=" + idCategorie + ", nomCategorie=" + nomCategorie + ", idType=" + idType + "]";
 	}
 
-	
-	
 }
