@@ -48,7 +48,7 @@ public class AssociationDAO {
 
 	// Ajouter un user Association dans la BDD
 	public static void addAssoUser(String MailUser, String MdpUser, String PermissionUser,
-			String NomAss, String SiretAss, int NumAss, String RueAss, int CpAss, String VilleAss, int TelAss)
+			String NomAss, String SiretAss, int NumAdAss, String RueAdAss, int CpAdAss, String VilleAdAss, int TelAss)
 			throws SQLException {
 		DBAction.DBConnexion();
 		// uuid
@@ -69,15 +69,22 @@ public class AssociationDAO {
 				+ formater.format(DateInUser) + "','" + TypeUser + "','" + PermissionUser
 				+ "')");
 		String req2 = ("INSERT INTO association (User_idUser, nomAss, siretAss, numAdAss, rueAdAss, cpAdAss, villeAdAss, telAss) VALUES('"
-				+ IdUser + "','" + NomAss + "','" + SiretAss + "','" + NumAss + "','" + RueAss + "','"
-				+ CpAss + "','" + VilleAss + "','" + TelAss
+				+ IdUser + "','" + NomAss + "','" + SiretAss + "','" + NumAdAss + "','" + RueAdAss + "','"
+				+ CpAdAss + "','" + VilleAdAss + "','" + TelAss
 				+ "')");
 		try {
 			DBAction.getStm().executeUpdate(req1);
-			DBAction.getStm().executeUpdate(req2);
+			
 		} catch (SQLException ex) {
 			System.out.println(req1);
 			System.out.println("catch" + ex.getErrorCode());
+		}
+		try {
+			DBAction.getStm().executeUpdate(req2);
+		} catch (SQLException e) {
+			// TODO: handle exception
+			System.out.println(req2);
+			System.out.println("catch" + e.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
