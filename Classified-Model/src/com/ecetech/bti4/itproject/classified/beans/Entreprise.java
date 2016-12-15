@@ -1,6 +1,6 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
-public class Entreprise {
+public class Entreprise extends User{
 	
 	
 
@@ -82,6 +82,13 @@ public class Entreprise {
 
 	public void setTel_Ent(int tel_Ent) {
 		this.tel_Ent = tel_Ent;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "Entreprise [idUser=" + idUser + ", nom_Ent=" + nom_Ent + ", num_Ad_Ent=" + num_Ad_Ent + ", rue_Ad_Ent="
+				+ rue_Ad_Ent + ", cp_Ad_Ent=" + cp_Ad_Ent + ", ville_Ad_Ent=" + ville_Ad_Ent + ", tel_Ent=" + tel_Ent
+				+ "]";
 	}
 
 }
