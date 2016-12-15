@@ -10,6 +10,7 @@ public class Entreprise extends User{
 	private int cp_Ad_Ent;
 	private String ville_Ad_Ent;
 	private int tel_Ent;
+	private String siren_Ent;
 	
 	public Entreprise() {
 		super();
@@ -19,10 +20,11 @@ public class Entreprise extends User{
 		cp_Ad_Ent=0;
 		ville_Ad_Ent="";
 		tel_Ent=0;
+		siren_Ent="";
 	}
 	
 	public Entreprise(/*String idUser,*/ String nom_Ent, int num_Ad_Ent, String rue_Ad_Ent, int cp_Ad_Ent,
-				String ville_Ad_Ent, int tel_Ent) {
+				String ville_Ad_Ent, int tel_Ent, String siren_Ent) {
 			super();
 			//this.idUser = idUser;
 			this.nom_Ent = nom_Ent;
@@ -31,6 +33,7 @@ public class Entreprise extends User{
 			this.cp_Ad_Ent = cp_Ad_Ent;
 			this.ville_Ad_Ent = ville_Ad_Ent;
 			this.tel_Ent = tel_Ent;
+			this.siren_Ent = siren_Ent;
 		}
 	
 	/*public String getIdUser() {
@@ -88,13 +91,22 @@ public class Entreprise extends User{
 	public void setTel_Ent(int tel_Ent) {
 		this.tel_Ent = tel_Ent;
 	}
+	
+	public String getSiren_Ent() {
+		return siren_Ent;
+	}
+
+	public void setSiren_Ent(String siren_Ent) {
+		this.siren_Ent = siren_Ent;
+	}
 
 	@Override
 	public String toString() {
 
 		return super.toString() + "Entreprise [nom_Ent=" + nom_Ent + ", num_Ad_Ent=" + num_Ad_Ent + ", rue_Ad_Ent="
 				+ rue_Ad_Ent + ", cp_Ad_Ent=" + cp_Ad_Ent + ", ville_Ad_Ent=" + ville_Ad_Ent + ", tel_Ent=" + tel_Ent
-				+ "]";
+				+ ", siren_Ent=" + siren_Ent
+				+"]";
 
 	}
 
