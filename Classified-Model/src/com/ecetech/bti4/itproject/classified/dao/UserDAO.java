@@ -5,19 +5,16 @@ import java.text.SimpleDateFormat;
 import java.util.UUID;
 import java.util.ArrayList;
 import java.util.Date;
-
-import com.ecetech.bti4.itproject.classified.beans.Association;
 import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
 public class UserDAO {
 	// Afficher un User en fonction de son id
-
 	public static User getUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
 		User Resultat = new User();
-		String req = ("SELECT * FROM user WHERE idUser='" + idUser + "' ");
+		String req = ("SELECT * FROM user WHERE idUser='" + idUser + "'");
 		try {
 			DBAction.setRes(DBAction.getStm().executeQuery(req));
 		} catch (SQLException ex) {
@@ -40,6 +37,7 @@ public class UserDAO {
 		return Resultat;
 	}
 
+<<<<<<< HEAD
 	// Afficher un User en fonction de son id
 	/*
 	 * public static User getUser(String idUser) throws SQLException {
@@ -87,6 +85,8 @@ public class UserDAO {
 		return typeuser;
 	}
 
+=======
+>>>>>>> 0ee6a75eab8c827bbb2e48ac3f6b639aedd9bbce
 	// Afficher tous les users
 	public static ArrayList getAllUser() throws SQLException {
 		DBAction.DBConnexion();
@@ -110,9 +110,8 @@ public class UserDAO {
 		return alluser;
 	}
 
-	// Ajouter un user dans la BDD
-	public static void addUser(String MailUser, String MdpUser, String TypeUser, String PermissionUser)
-			throws SQLException {
+	// Ajouter un user classique dans la BDD
+	public static void addUser(String MailUser, String MdpUser, String TypeUser, String PermissionUser) throws SQLException {
 		DBAction.DBConnexion();
 		// uuid
 		String IdUser = MakeUUID.generate();
@@ -132,94 +131,38 @@ public class UserDAO {
 		try {
 			DBAction.getStm().executeUpdate(req);
 		} catch (SQLException ex) {
-			System.out.println(req);
 			System.out.println("catch" + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
-
+	
 	// supprimer 1 user en fonction de son id
 	public static void deleteUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
-		String req = ("DELETE FROM user WHERE idUser ='" + idUser + "'");
+		String req = ("DELETE FROM user WHERE idUser ='"+ idUser +"'");
 		try {
 			DBAction.getStm().executeUpdate(req);
-			System.out.println("L'utilisateur ayant l'id=" + idUser + " a bien été supprimé.");
+			System.out.println("L'utilisateur ayant l'id="+idUser+" a bien été supprimé.");
 		} catch (SQLException ex) {
 			System.out.println(req);
 			System.out.println("Requête non valide " + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
-
-	// modifier mailuser
-	public static void updateMailUser(String idUser, String mailUser) throws SQLException {
+	
+	// modifier un user
+	/*public static void updateUser(String idUser, String mailUser, String mdpUser, ) throws SQLException {
 		DBAction.DBConnexion();
-		String req = ("UPDATE user SET mailUser='" + mailUser + "' WHERE idUser='" + idUser + "'");
+		String req = ();
 		try {
 			DBAction.getStm().executeUpdate(req);
-			System.out.println("Le mail de l'utilisateur ayant l'id=" + idUser + " a bien été modifié.");
+			System.out.println("");
 		} catch (SQLException ex) {
 			System.out.println(req);
 			System.out.println("Requête non valide " + ex.getErrorCode());
 		}
 		DBAction.DBClose();
-	}
-
-	// modifier mdpuser
-	public static void updateMdpUser(String idUser, String mdpUser) throws SQLException {
-		DBAction.DBConnexion();
-		String req = ("UPDATE user SET mdpUser='" + mdpUser + "' WHERE idUser='" + idUser + "'");
-		try {
-			DBAction.getStm().executeUpdate(req);
-			System.out.println("Le mot de passe de l'utilisateur ayant l'id=" + idUser + " a bien été modifié.");
-		} catch (SQLException ex) {
-			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
-		}
-		DBAction.DBClose();
-	}
-
-	// modifier l'etat d'un user
-	public static void updateEtatUser(String idUser, String etatUser) throws SQLException {
-		DBAction.DBConnexion();
-		String req = ("UPDATE user SET etatUser='" + etatUser + "' WHERE idUser='" + idUser + "'");
-		try {
-			DBAction.getStm().executeUpdate(req);
-			System.out.println("L'état de l'utilisateur ayant l'id=" + idUser + " a bien été modifié.");
-		} catch (SQLException ex) {
-			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
-		}
-		DBAction.DBClose();
-	}
-
-	// modifier le type d'un user
-	public static void updateTypeUser(String idUser, String typeUser) throws SQLException {
-		DBAction.DBConnexion();
-		String req = ("UPDATE user SET typeUser='" + typeUser + "' WHERE idUser='" + idUser + "'");
-		try {
-			DBAction.getStm().executeUpdate(req);
-			System.out.println("Le type de l'utilisateur ayant l'id=" + idUser + " a bien été modifié.");
-		} catch (SQLException ex) {
-			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
-		}
-		DBAction.DBClose();
-	}
-
-	// modifier la permission d'un user
-	public static void updatePermissionUser(String idUser, String permissionUser) throws SQLException {
-		DBAction.DBConnexion();
-		String req = ("UPDATE user SET Permission_idPermission='" + permissionUser + "' WHERE idUser='" + idUser + "'");
-		try {
-			DBAction.getStm().executeUpdate(req);
-			System.out.println("Les permissions de l'utilisateur ayant l'id=" + idUser + " ont bien été modifiées.");
-		} catch (SQLException ex) {
-			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
-		}
-		DBAction.DBClose();
-	}
-
+	}*/
+	
+	
 }
