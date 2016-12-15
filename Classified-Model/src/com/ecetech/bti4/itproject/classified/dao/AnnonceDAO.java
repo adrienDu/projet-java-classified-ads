@@ -10,11 +10,12 @@ import com.ecetech.bti4.itproject.classified.beans.Annonce;
 import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
 public class AnnonceDAO {
 
-	UUID uuid = UUID.randomUUID();
 	// afficher toutes les annonces
 
 	public static ArrayList<Annonce> getAllAnnonce() throws SQLException {
@@ -42,6 +43,7 @@ public class AnnonceDAO {
 	}
 
 	public static ArrayList<Annonce> getAnnonce() throws SQLException {
+		DBAction.DBConnexion();
 		ArrayList<Annonce> annonces = new ArrayList<>();
 		String req = ("SELECT * FROM annonce");
 		try {
@@ -88,24 +90,111 @@ public class AnnonceDAO {
 
 	// insert annonce
 
-	public static void newAnnonce(Annonce annonce){
-		String idAnnonce =MakeUUID.generate();
-		//date du jour
+	public static boolean newAnnonce(Annonce annonce) {
+		boolean result;
+		int nb;
+		String idAnnonce = MakeUUID.generate();
+		annonce.setIdAnnonce(idAnnonce);
+		// date du jour
 		java.sql.Date dateCreaAnnonce = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-		String req = ("INSERT INTO `annonce`(`idAnnonce`, `titreAnnonce`, `descAnnonce`, `photoAnnonce`, `zoneAnnonce`, `dateAnnonce`, `finAnnonce`, `importanceAnnonce`, `User_idUser`, `Type_idType`, `dateCreaAnnonce`) VALUES"
-				+ " ('"+idAnnonce+"','"+annonce.getTitreAnnonce()+"','"+annonce.getDescAnnonce()+"','"+annonce.getPhotoAnnonce()+"','"+annonce.getZoneAnnonce()+"','"+annonce.getDateAnnonce()+"','"+annonce.getFinAnnonce()+"','"+annonce.getImportanceAnnonce()+"','"+dateCreaAnnonce+"','"+annonce.getUser_idUser()+"','"+annonce.getType_idType()+"';");
-		try{
-			DBAction.setRes(DBAction.getStm().executeQuery(req));
-		}catch(SQLException e){
-			System.out.println(e.getErrorCode());
+		annonce.setDateCreaAnnonce(dateCreaAnnonce);
+
+		DBAction.DBConnexion();
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
+
+		try {
+			req = (PreparedStatement) con.prepareStatement("INSERT INTO annonce VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+			req.setString(1, idAnnonce);
+			req.setString(2, annonce.getTitreAnnonce());
+			req.setString(3, annonce.getDescAnnonce());
+			req.setString(4, annonce.getPhotoAnnonce());
+			req.setInt(5, annonce.getZoneAnnonce());
+			req.setDate(6, annonce.getDateAnnonce());
+			req.setDate(7, annonce.getFinAnnonce());
+			req.setInt(8, annonce.getImportanceAnnonce());
+			req.setDate(9, dateCreaAnnonce);
+			req.setString(10, annonce.getUser_idUser());
+			req.setInt(11, annonce.getType_idType());
+
+			nb = req.executeUpdate();
+
+			result = true;
+			req.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = false;
 		}
+		return result;
+
 	}
+
 	// delete annonce
+	public static boolean delAnnonce(String idAnnonce) {
+		boolean result;
+		int nb;
+		DBAction.DBConnexion();
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
 
+		try {
+			req = (PreparedStatement) con.prepareStatement("DELETE FROM `annonce` WHERE `idAnnonce`=?");
+			req.setString(1, idAnnonce);
+			nb = req.executeUpdate();
+			result = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			result = false;
+		}
+
+		return result;
+
+	}
 	// modifier annonce
+	public static boolean changeAnnonce(Annonce annonce) {
+		boolean result;
+		int nb;
+		String idAnnonce = MakeUUID.generate();
+		annonce.setIdAnnonce(idAnnonce);
+		// date du jour
+		java.sql.Date dateCreaAnnonce = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+		annonce.setDateCreaAnnonce(dateCreaAnnonce);
 
+		DBAction.DBConnexion();
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
+
+		try {
+			req = (PreparedStatement) con.prepareStatement("UPDATE annonce SET titreAnnonce=?,descAnnonce=?,photoAnnonce=?,zoneAnnonce=?,dateAnnonce=?,finAnnonce=?,importanceAnnonce=? WHERE idAnnonce=?");
+			req.setString(1, annonce.getTitreAnnonce());
+			req.setString(2, annonce.getDescAnnonce());
+			req.setString(3, annonce.getPhotoAnnonce());
+			req.setInt(4, annonce.getZoneAnnonce());
+			req.setDate(5, annonce.getDateAnnonce());
+			req.setDate(6, annonce.getFinAnnonce());
+			req.setInt(7, annonce.getImportanceAnnonce());
+			req.setString(8, annonce.getIdAnnonce());
+	
+
+			nb = req.executeUpdate();
+
+			result = true;
+			req.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = false;
+		}
+		return result;
+
+	}
 	// afficher par categorie
 
+	
 	// afficher toutes les annonces d'un utilisateur
 
 	// afficher par categorie et type
@@ -114,9 +203,8 @@ public class AnnonceDAO {
 
 	// afficher par prix
 
-	//afficher annonces expiré
-	
-	//afficher annonces en cours 
-	
+	// afficher annonces expiré
+
+	// afficher annonces en cours
 
 }
