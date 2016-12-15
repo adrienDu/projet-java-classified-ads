@@ -74,13 +74,14 @@ public class UserDAO {
 		Date DateInUser = new Date();
 		formater = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println(formater.format(DateInUser));
-		
+
 		// permission
 		String PermissionUser = "classique";
 		// requete
-		String req = ("INSERT INTO `user` VALUES (" + IdUser + "," + IdSocialUSer + "," + MailUser + "," + MdpUser + ","
-				+ EtatUser + "," + DateInUser + "," + TypeUser + "," + PermissionUser + ")");
-		
+		String req = ("INSERT INTO user (idUser, idSocialUser, mailUser, mdpUser, etatUser, dateInUser, typeUser, Permission_idPermission)  VALUES ('"
+				+ IdUser + "','" + IdSocialUSer + "','" + MailUser + "','" + MdpUser + "','" + EtatUser + "','"
+				+ formater.format(DateInUser) + "','" + TypeUser + "','" + PermissionUser + "')");
+
 		try {
 			DBAction.setRes(DBAction.getStm().executeQuery(req));
 			System.out.println("try");

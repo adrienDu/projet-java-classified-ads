@@ -44,7 +44,7 @@ public class TestUserDAO {
 		System.out.println("ajouter un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.addUser("test@test.fr","testpassword","Part");
+			UserDAO.addUser("test@test.fr","testpassword","P");
 			
 			UserDAO.getAllUser();
 		} catch (SQLException e) {
