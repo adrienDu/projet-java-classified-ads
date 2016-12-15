@@ -6,12 +6,11 @@ public class Permission {
 	private String idPermission;
 	
 	public Permission(String idPermission) {
-		super();
+
 		this.idPermission = idPermission;
 	}
 
 	public Permission() {
-		// TODO Auto-generated constructor stub
 		this("");
 	}
 
@@ -22,5 +21,12 @@ public class Permission {
 	public void setIdPermission(String idPermission) {
 		this.idPermission = idPermission;
 	}
+
+	@Override
+	public String toString() {
+		return " PERMISSION : " + idPermission;
+	}
+	
+	
 
 }
