@@ -188,7 +188,6 @@ public class AnnonceDAO {
 			}
 		} catch (SQLException e) {
 
-			// TODO: handle exception
 		}
 
 		return annonces;
