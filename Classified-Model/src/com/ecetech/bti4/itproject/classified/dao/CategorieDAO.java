@@ -39,7 +39,6 @@ public class CategorieDAO {
 
 	}
 
-
 	// modifier Categorie
 	public static boolean changeCat(Categorie categorie) {
 		boolean result;
@@ -61,7 +60,5 @@ public class CategorieDAO {
 			result = false;
 		}
 		return result;
-
 	}
-
 }

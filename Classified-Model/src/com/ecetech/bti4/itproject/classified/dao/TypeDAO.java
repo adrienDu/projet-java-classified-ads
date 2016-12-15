@@ -15,7 +15,7 @@ public class TypeDAO {
 		ArrayList<Type> result = null;
 		ResultSet res;
 		Type type = null;
-		DBAction.DBConnexion();
+		DBAction.DBConnexion(); 
 		Connection con = (Connection) DBAction.getCon();
 		PreparedStatement req;
 
