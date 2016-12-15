@@ -1,10 +1,14 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
+<<<<<<< HEAD
 public class Entreprise extends User{
+=======
+public class Entreprise extends User {
+>>>>>>> f75f9f5492a7c42db1afdf6d1986d85b5a40b87d
 	
 	
 
-	private String idUser;
+	//private String idUser;
 	private String nom_Ent;
 	private int num_Ad_Ent;
 	private String rue_Ad_Ent;
@@ -13,13 +17,19 @@ public class Entreprise extends User{
 	private int tel_Ent;
 	
 	public Entreprise() {
-		this("","",0,"",0,"",0);
+		super();
+		nom_Ent="";
+		num_Ad_Ent=0;
+		rue_Ad_Ent="";
+		cp_Ad_Ent=0;
+		ville_Ad_Ent="";
+		tel_Ent=0;
 	}
 	
-	public Entreprise(String idUser, String nom_Ent, int num_Ad_Ent, String rue_Ad_Ent, int cp_Ad_Ent,
+	public Entreprise(/*String idUser,*/ String nom_Ent, int num_Ad_Ent, String rue_Ad_Ent, int cp_Ad_Ent,
 				String ville_Ad_Ent, int tel_Ent) {
 			super();
-			this.idUser = idUser;
+			//this.idUser = idUser;
 			this.nom_Ent = nom_Ent;
 			this.num_Ad_Ent = num_Ad_Ent;
 			this.rue_Ad_Ent = rue_Ad_Ent;
@@ -28,13 +38,13 @@ public class Entreprise extends User{
 			this.tel_Ent = tel_Ent;
 		}
 	
-	public String getIdUser() {
+	/*public String getIdUser() {
 		return idUser;
 	}
 
 	public void setIdUser(String idUser) {
 		this.idUser = idUser;
-	}
+	}*/
 
 	public String getNom_Ent() {
 		return nom_Ent;
