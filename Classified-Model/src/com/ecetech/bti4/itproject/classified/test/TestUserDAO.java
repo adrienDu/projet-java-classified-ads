@@ -7,14 +7,14 @@ import java.util.ListIterator;
 import org.junit.Test;
 
 import com.ecetech.bti4.itproject.classified.beans.Annonce;
-import com.ecetech.bti4.itproject.classified.beans.Association;
 import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.dao.AnnonceDAO;
 import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 
 public class TestUserDAO {
-	
+
 	@Test
+<<<<<<< HEAD
 	  public void testGetUser() {
 	    System.out.println("get user");
 	    UserDAO userDAO = new UserDAO();
@@ -27,29 +27,24 @@ public class TestUserDAO {
 	    }
 	  }
 	
-	/*@Test
-	public void testGetUserById() {
-		System.out.println("get user");
-		UserDAO userDAO = new UserDAO();
-		try {
-			Association userA = userDAO.getUser("A1");
-			System.out.println(userA.toString());
-		} catch (SQLException e) {
-			e.printStackTrace();
-			System.out.println("erreur de connexion");
-		}
-	}*/
-	/*@Test
+	@Test
 	public void testGetUserByType() {
 		System.out.println("get user by type");
 		ArrayList<User> typeuser = new ArrayList<>();
 		try {
-			typeuser = UserDAO.getTypeUser("A");
+			typeuser = UserDAO.getTypeUser("P");
+=======
+	public void testGetUser() {
+		System.out.println("get user");
+		UserDAO userDAO = new UserDAO();
+		try {
+			User user = userDAO.getUser("A1");
+			System.out.println(user.toString());
+>>>>>>> 0ee6a75eab8c827bbb2e48ac3f6b639aedd9bbce
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
 		}
-		affichArayList(typeuser);
 	}
 
 	@Test
@@ -70,26 +65,28 @@ public class TestUserDAO {
 		System.out.println("ajouter un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.addUser("test@test.fr","testpassword","P","classique");
-			UserDAO.getAllUser();
+			userDAO.getAllUser();
+			userDAO.addUser("maeva@margueritat.fr","123AZERTY","P","classique");
+			userDAO.getAllUser();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
 		}
 	}
 	
+	
 	@Test
-	public void testDeleteUser() {
+	public void deleteUser() {
 		System.out.println("supprimer un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.deleteUser("7be84569-bba0-4195-b332-b53373b4361");
-			UserDAO.getAllUser();
+			userDAO.deleteUser("7710c2fe-29e3-428a-9aa2-b142e8dd56a5");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
 		}
 	}
+<<<<<<< HEAD
 	
 	//UPDATE
 	@Test
@@ -97,8 +94,7 @@ public class TestUserDAO {
 		System.out.println("modifier le mail d'un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.updateMailUser("A1","artisansmeunuisiers@am.fr");
-			UserDAO.getAllUser();
+			userDAO.updateMailUser("7710c2fe-29e3-428a-9aa2-b142e8dd56a5","adrien@duhoux.fr");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
@@ -110,8 +106,8 @@ public class TestUserDAO {
 		System.out.println("modifier le mail d'un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.updateMdpUser("A1","4rtisansM3");
-			UserDAO.getAllUser();
+			
+			userDAO.updateMdpUser("7710c2fe-29e3-428a-9aa2-b142e8dd56a5","123AZERTY");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
@@ -123,8 +119,7 @@ public class TestUserDAO {
 		System.out.println("modifier l'etat d'un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.updateEtatUser("A1","OK");
-			UserDAO.getAllUser();
+			userDAO.updateEtatUser("7710c2fe-29e3-428a-9aa2-b142e8dd56a5","BlackList");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
@@ -136,8 +131,7 @@ public class TestUserDAO {
 		System.out.println("modifier le type d'un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.updateTypeUser("A1","A");
-			UserDAO.getAllUser();
+			userDAO.updateTypeUser("7710c2fe-29e3-428a-9aa2-b142e8dd56a5","A");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
@@ -149,14 +143,16 @@ public class TestUserDAO {
 		System.out.println("modifier les permissions d'un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.updatePermissionUser("A1","admin");
-			UserDAO.getAllUser();
+			userDAO.updatePermissionUser("7710c2fe-29e3-428a-9aa2-b142e8dd56a5","admin");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");
 		}
 	}
 	
+=======
+
+>>>>>>> 0ee6a75eab8c827bbb2e48ac3f6b639aedd9bbce
 	public void affichArayList(ArrayList<User> allusers) {
 		ListIterator<User> list = allusers.listIterator();
 		int i = 1;
@@ -164,6 +160,6 @@ public class TestUserDAO {
 			System.out.println(i + " " + list.next().toString());
 			i++;
 		}
-	}*/
+	}
 
 }

@@ -1,6 +1,10 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
+<<<<<<< HEAD
+public class Entreprise extends User{
+=======
 public class Entreprise extends User {
+>>>>>>> f75f9f5492a7c42db1afdf6d1986d85b5a40b87d
 	
 	
 
@@ -88,6 +92,18 @@ public class Entreprise extends User {
 
 	public void setTel_Ent(int tel_Ent) {
 		this.tel_Ent = tel_Ent;
+	}
+
+	@Override
+	public String toString() {
+<<<<<<< HEAD
+		return super.toString() +"Entreprise [nom_Ent=" + nom_Ent + ", num_Ad_Ent=" + num_Ad_Ent + ", rue_Ad_Ent=" + rue_Ad_Ent
+				+ ", cp_Ad_Ent=" + cp_Ad_Ent + ", ville_Ad_Ent=" + ville_Ad_Ent + ", tel_Ent=" + tel_Ent + "]";
+=======
+		return super.toString() + "Entreprise [idUser=" + idUser + ", nom_Ent=" + nom_Ent + ", num_Ad_Ent=" + num_Ad_Ent + ", rue_Ad_Ent="
+				+ rue_Ad_Ent + ", cp_Ad_Ent=" + cp_Ad_Ent + ", ville_Ad_Ent=" + ville_Ad_Ent + ", tel_Ent=" + tel_Ent
+				+ "]";
+>>>>>>> 0ee6a75eab8c827bbb2e48ac3f6b639aedd9bbce
 	}
 
 }

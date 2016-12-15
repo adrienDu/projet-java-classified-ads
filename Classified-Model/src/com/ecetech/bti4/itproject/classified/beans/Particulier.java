@@ -1,10 +1,10 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
-public class Particulier {
+public class Particulier extends User{
 	/**
 	 * Attributs
 	 */
-	private String User_idUser;
+	//private String User_idUser;
 	private String nomPart;
 	private String prenomPart;
 	private int numAdPart;
@@ -17,12 +17,19 @@ public class Particulier {
 	 * Constructeurs
 	 */
 	public Particulier(){
-		this("", "", "", 0, "", 0, "", 0);
+		super();
+		nomPart="";
+		prenomPart="";
+		numAdPart=0;
+		rueAdPart="";
+		cpAdPart=0;
+		villeAdPart="";
+		telPart=0;
 	}
-	public Particulier(String user_idUser, String nomPart, String prenomPart, int numAdPart, String rueAdPart,
+	public Particulier(/*String user_idUser,*/ String nomPart, String prenomPart, int numAdPart, String rueAdPart,
 			int cpAdPart, String villeAdPart, int telPart) {
 		super();
-		User_idUser = user_idUser;
+		//User_idUser = user_idUser;
 		this.nomPart = nomPart;
 		this.prenomPart = prenomPart;
 		this.numAdPart = numAdPart;
@@ -37,12 +44,12 @@ public class Particulier {
 	 * Getters & Setters
 	 */
 	
-	public String getUser_idUser() {
+	/*public String getUser_idUser() {
 		return User_idUser;
 	}
 	public void setUser_idUser(String user_idUser) {
 		User_idUser = user_idUser;
-	}
+	}*/
 	public String getNomPart() {
 		return nomPart;
 	}
@@ -85,4 +92,12 @@ public class Particulier {
 	public void setTelPart(int telPart) {
 		this.telPart = telPart;
 	}
+	@Override
+	public String toString() {
+		return super.toString()+"Particulier [nomPart=" + nomPart + ", prenomPart=" + prenomPart + ", numAdPart=" + numAdPart
+				+ ", rueAdPart=" + rueAdPart + ", cpAdPart=" + cpAdPart + ", villeAdPart=" + villeAdPart + ", telPart="
+				+ telPart + "]";
+	}
+	
+	
 }
