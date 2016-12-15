@@ -40,24 +40,26 @@ public class TestUserDAO {
 	}
 
 	@Test
-	public void testSetUserStringStringStringString() {
-		// fail("Not yet implemented");
+	public void testAddUser() {
+		System.out.println("ajouter un user");
+		UserDAO userDAO = new UserDAO();
+		try {
+			userDAO.addUser("test@test.fr","testpassword","Part");
+			
+			UserDAO.getAllUser();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
 	}
 
-	@Test
-	public void testSetUserStringUser() {
-		// bvf fail("Not yet implemented");
-	}
-
-	
-	public void affichArayList(ArrayList<User> allusers){
+	public void affichArayList(ArrayList<User> allusers) {
 		ListIterator<User> list = allusers.listIterator();
 		int i = 1;
 		while (list.hasNext()) {
-			System.out.println(i+" "+list.next().toString());
+			System.out.println(i + " " + list.next().toString());
 			i++;
 		}
 	}
-	
 
 }

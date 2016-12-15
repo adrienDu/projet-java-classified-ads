@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
+import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
 public class UserDAO {
+	// Afficher un User en fonction de son id
 	public static User getUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
 		User Resultat = new User();
@@ -34,6 +36,7 @@ public class UserDAO {
 		return Resultat;
 	}
 
+	// Afficher tous les users
 	public static ArrayList getAllUser() throws SQLException {
 		DBAction.DBConnexion();
 		ArrayList<User> alluser = new ArrayList<User>();
@@ -55,30 +58,39 @@ public class UserDAO {
 
 		return alluser;
 	}
-	
-	public static User addUser(String MailUser, String MdpUser, String TypeUser) throws SQLException{
+
+	// Ajouter un user dans la BDD
+	public static void addUser(String MailUser, String MdpUser, String TypeUser) throws SQLException {
 		DBAction.DBConnexion();
-		//uuid
-		String IdUSer;
-		UUID uuid = UUID.randomUUID();
-		//id social
+		// uuid
+		String IdUser = MakeUUID.generate();
+		// id social
 		String IdSocialUSer = "";
-		//etat 
+		// etat
 		String EtatUser = "OK";
-		//date in user
-		Date DateInUser = new Date();	
-		System.out.println("Date in"+DateInUser);
-		//permission
-		String PermissionUser ="classique";
-		User newuser = new User(IdUSer, IdSocialUSer, EtatUser, MdpUser, EtatUser, DateInUser, TypeUser, PermissionUser);
-		//newuser.add();
-		return newuser;
+		// date in user
+		Date DateInUser = new Date();
+		System.out.println(new java.util.Date());
+		// permission
+		String PermissionUser = "classique";
+		// requete
+		String req = ("INSERT INTO `user` VALUES (" + IdUser + "," + IdSocialUSer + "," + MailUser + "," + MdpUser + ","
+				+ EtatUser + "," + DateInUser + "," + TypeUser + "," + PermissionUser + ")");
+		
+		try {
+			DBAction.setRes(DBAction.getStm().executeQuery(req));
+			System.out.println("try");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("catch" + ex.getErrorCode());
+		}
+		DBAction.DBClose();
 	}
-	//ajouter 1 user a partir id social
-	//supprimer 1 user
-	//supprimer tous les users
-	//modifier permission user
-	//modifier etat user
-	//modifier 1 user (mail, pwd, type)
-	//modifier tous les users
+	// ajouter 1 user a partir id social
+	// supprimer 1 user
+	// supprimer tous les users
+	// modifier permission user
+	// modifier etat user
+	// modifier 1 user (mail, pwd, type)
+	// modifier tous les users
 }
