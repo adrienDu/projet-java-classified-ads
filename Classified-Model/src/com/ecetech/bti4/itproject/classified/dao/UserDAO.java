@@ -1,6 +1,7 @@
 package com.ecetech.bti4.itproject.classified.dao;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.UUID;
 import java.util.ArrayList;
 import java.util.Date;
@@ -59,8 +60,8 @@ public class UserDAO {
 		return alluser;
 	}
 
-	// Ajouter un user dans la BDD
-	public static void addUser(String MailUser, String MdpUser, String TypeUser) throws SQLException {
+	// Ajouter un user classique dans la BDD
+	public static void addUser(String MailUser, String MdpUser, String TypeUser, String PermissionUser) throws SQLException {
 		DBAction.DBConnexion();
 		// uuid
 		String IdUser = MakeUUID.generate();
@@ -69,28 +70,49 @@ public class UserDAO {
 		// etat
 		String EtatUser = "OK";
 		// date in user
+		SimpleDateFormat formater = null;
 		Date DateInUser = new Date();
-		System.out.println(new java.util.Date());
-		// permission
-		String PermissionUser = "classique";
+		formater = new SimpleDateFormat("yyyy-MM-dd");
 		// requete
-		String req = ("INSERT INTO `user` VALUES (" + IdUser + "," + IdSocialUSer + "," + MailUser + "," + MdpUser + ","
-				+ EtatUser + "," + DateInUser + "," + TypeUser + "," + PermissionUser + ")");
-		
+		String req = ("INSERT INTO user (idUser, idSocialUser, mailUser, mdpUser, etatUser, dateInUser, typeUser, Permission_idPermission)  VALUES ('"
+				+ IdUser + "','" + IdSocialUSer + "','" + MailUser + "','" + MdpUser + "','" + EtatUser + "','"
+				+ formater.format(DateInUser) + "','" + TypeUser + "','" + PermissionUser + "')");
+
 		try {
-			DBAction.setRes(DBAction.getStm().executeQuery(req));
-			System.out.println("try");
+			DBAction.getStm().executeUpdate(req);
 		} catch (SQLException ex) {
-			System.out.println(req);
 			System.out.println("catch" + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
-	// ajouter 1 user a partir id social
-	// supprimer 1 user
-	// supprimer tous les users
-	// modifier permission user
-	// modifier etat user
-	// modifier 1 user (mail, pwd, type)
-	// modifier tous les users
+	
+	// supprimer 1 user en fonction de son id
+	public static void deleteUser(String idUser) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("DELETE FROM user WHERE idUser ='"+ idUser +"'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("L'utilisateur ayant l'id="+idUser+" a bien été supprimé.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+	
+	// modifier un user
+	/*public static void updateUser(String idUser, String mailUser, String mdpUser, ) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ();
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}*/
+	
+	
 }

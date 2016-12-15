@@ -48,6 +48,21 @@ public class Annonce {
 		this.type_idType = type_idType;
 	}
 	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
+			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, Date dateCreaAnnonce, String user_idUser, int type_idType) {
+		super();
+		idAnnonce = null;
+		this.titreAnnonce = titreAnnonce;
+		this.descAnnonce = descAnnonce;
+		this.photoAnnonce = photoAnnonce;
+		this.zoneAnnonce = zoneAnnonce;
+		this.dateAnnonce = (Date) dateAnnonce;
+		this.finAnnonce = (Date) dateFin;
+		this.importanceAnnonce = importanceAnnonce;
+		this.dateCreaAnnonce =dateCreaAnnonce;
+		this.user_idUser = user_idUser;
+		this.type_idType = type_idType;
+	}
+	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
 			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, String user_idUser, int type_idType) {
 		super();
 		idAnnonce = null;

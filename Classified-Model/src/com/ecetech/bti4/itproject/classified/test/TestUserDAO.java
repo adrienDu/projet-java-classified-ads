@@ -44,8 +44,20 @@ public class TestUserDAO {
 		System.out.println("ajouter un user");
 		UserDAO userDAO = new UserDAO();
 		try {
-			userDAO.addUser("test@test.fr","testpassword","Part");
-			
+			userDAO.addUser("test@test.fr","testpassword","P","classique");
+			UserDAO.getAllUser();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
+	}
+	
+	@Test
+	public void deleteUser() {
+		System.out.println("supprimer un user");
+		UserDAO userDAO = new UserDAO();
+		try {
+			userDAO.deleteUser("7be84569-bba0-4195-b332-b53373b4361");
 			UserDAO.getAllUser();
 		} catch (SQLException e) {
 			e.printStackTrace();
