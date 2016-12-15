@@ -1,11 +1,13 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
-public class Association {
+
+
+public class Association extends User {
 	
 	/**
 	 * Attributs
 	 */
-	private String User_idUser;
+	//private String User_idUser;
 	private String nomAss;
 	private String siretAss;
 	private int numAdAss;
@@ -19,13 +21,22 @@ public class Association {
 	 * Constructeurs
 	 */
 	public Association(){
-		this("","","",0,"",0,"",0);
-	}
+		super();
+		nomAss ="";
+		siretAss="";
+		numAdAss = 0;
+		rueAdAss = "";
+		cpAdAss=0;
+		villeAdAss="";
+		telAss=0;
+				
+	  }
 	
-	public Association(String user_idUser, String nomAss, String siretAss, int numAdAss, String rueAdAss, int cpAdAss,
+	
+	public Association(/*String user_idUser,*/ String nomAss, String siretAss, int numAdAss, String rueAdAss, int cpAdAss,
 			String villeAdAss, int telAss) {
 		super();
-		User_idUser = user_idUser;
+		//User_idUser = user_idUser;
 		this.nomAss = nomAss;
 		this.siretAss = siretAss;
 		this.numAdAss = numAdAss;
@@ -34,19 +45,18 @@ public class Association {
 		this.villeAdAss = villeAdAss;
 		this.telAss = telAss;
 	}
-
-
+	
 	/**
 	 * Getters & Setters
 	 */
 	
-	public String getUser_idUser() {
+	/*public String getUser_idUser() {
 		return User_idUser;
 	}
 
 	public void setUser_idUser(String user_idUser) {
 		User_idUser = user_idUser;
-	}
+	}*/
 
 	public String getNomAss() {
 		return nomAss;
@@ -103,4 +113,14 @@ public class Association {
 	public void setTelAss(int telAss) {
 		this.telAss = telAss;
 	}
+
+
+	@Override
+	public String toString() {
+		return super.toString() +"Association [nomAss=" + nomAss + ", siretAss=" + siretAss + ", numAdAss=" + numAdAss + ", rueAdAss="
+				+ rueAdAss + ", cpAdAss=" + cpAdAss + ", villeAdAss=" + villeAdAss + ", telAss=" + telAss + "]";
+	}
+	
+	
+	
 }
