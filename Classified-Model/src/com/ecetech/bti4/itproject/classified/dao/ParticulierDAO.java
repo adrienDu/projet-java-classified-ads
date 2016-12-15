@@ -8,7 +8,7 @@ import com.ecetech.bti4.itproject.classified.common.DBAction;
 
 public class ParticulierDAO {
 	// Afficher un User Association en fonction de son id
-			public static Particulier getAssoUser(String idUser) throws SQLException {
+			public static Particulier getPartUser(String idUser) throws SQLException {
 				DBAction.DBConnexion();
 				Particulier Resultat = new Particulier();
 				String req = ("SELECT * FROM user JOIN particulier ON user.idUser=particulier.User_idUser WHERE idUser='"

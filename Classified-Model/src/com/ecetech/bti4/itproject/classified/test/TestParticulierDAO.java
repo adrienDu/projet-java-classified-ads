@@ -6,19 +6,17 @@ import java.sql.SQLException;
 
 import org.junit.Test;
 
-import com.ecetech.bti4.itproject.classified.beans.Association;
-import com.ecetech.bti4.itproject.classified.dao.AssociationDAO;
+import com.ecetech.bti4.itproject.classified.beans.Particulier;
+import com.ecetech.bti4.itproject.classified.dao.ParticulierDAO;
 
-
-
-public class TestAssociationDAO {
+public class TestParticulierDAO {
 
 	@Test
-	  public void testGetAssoUser() {
+	  public void testGetPartUser() {
 	    System.out.println("get user");
-	    AssociationDAO userDAO = new AssociationDAO();
+	    ParticulierDAO userDAO = new ParticulierDAO();
 	    try {
-	      Association user = userDAO.getAssoUser("A1");
+	      Particulier user = userDAO.getPartUser("P1");
 	      System.out.println(user.toString());
 	    } catch (SQLException e) {
 	      e.printStackTrace();
