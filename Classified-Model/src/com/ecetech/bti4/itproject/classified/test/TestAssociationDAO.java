@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import com.ecetech.bti4.itproject.classified.beans.Association;
 import com.ecetech.bti4.itproject.classified.dao.AssociationDAO;
+import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 
 public class TestAssociationDAO {
 
@@ -36,13 +37,82 @@ public class TestAssociationDAO {
 			System.out.println("erreur de connexion");
 		}
 	}
-	
+
+	/*
+	 * @Test public void deleteAssoUser() {
+	 * System.out.println("Supprimer un user"); AssociationDAO userDAO = new
+	 * AssociationDAO(); try { userDAO.deleteAssoUser("A3"); } catch
+	 * (SQLException e) { e.printStackTrace();
+	 * System.out.println("erreur de connexion"); } }
+	 */
+
+	// UPDATE
 	@Test
-	public void deleteAssoUser() {
-		System.out.println("Supprimer un user");
+	public void TestUpdateNomAsso() {
+		System.out.println("modifier le nom d'une association");
 		AssociationDAO userDAO = new AssociationDAO();
 		try {
-			userDAO.deleteAssoUser("A4");
+			userDAO.updateNomAsso("A2", "Medecins sans frontiere");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
+	}
+
+	@Test
+	public void TestUpdateNumAdAsso() {
+		System.out.println("modifier le num de rue d'une association");
+		AssociationDAO userDAO = new AssociationDAO();
+		try {
+			userDAO.updateNumAdAsso("A2", 33);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
+	}
+
+	@Test
+	public void TestUpdateRueAdAsso() {
+		System.out.println("modifier la rue d'une association");
+		AssociationDAO userDAO = new AssociationDAO();
+		try {
+			userDAO.updateRueAdAsso("A2", "avenue Garnier");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
+	}
+	
+	@Test
+	public void TestUpdateCpAdAsso(){
+		System.out.println("modifier le cp de l'adresse d'une association");
+		AssociationDAO userDAO = new AssociationDAO();
+		try {
+			userDAO.updateCpAdAsso("A2",75003);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
+	}
+	
+	@Test
+	public void TestUpdateVilleAdAsso(){
+		System.out.println("modifier la ville de l'adresse d'une association");
+		AssociationDAO userDAO = new AssociationDAO();
+		try {
+			userDAO.updateVilleAdAsso("A2","Paris");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
+	}
+	
+	@Test
+	public void TestUpdateTelAdAsso(){
+		System.out.println("modifier le tel d'une association");
+		AssociationDAO userDAO = new AssociationDAO();
+		try {
+			userDAO.updateTelAsso("A2", 675432343);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");

@@ -47,8 +47,8 @@ public class AssociationDAO {
 	}
 
 	// Ajouter un user Association dans la BDD
-	public static void addAssoUser(String MailUser, String MdpUser, String PermissionUser,
-			String NomAss, String SiretAss, int NumAdAss, String RueAdAss, int CpAdAss, String VilleAdAss, int TelAss)
+	public static void addAssoUser(String MailUser, String MdpUser, String PermissionUser, String NomAss,
+			String SiretAss, int NumAdAss, String RueAdAss, int CpAdAss, String VilleAdAss, int TelAss)
 			throws SQLException {
 		DBAction.DBConnexion();
 		// uuid
@@ -61,20 +61,18 @@ public class AssociationDAO {
 		SimpleDateFormat formater = null;
 		Date DateInUser = new Date();
 		formater = new SimpleDateFormat("yyyy-MM-dd");
-		//type
-		String TypeUser="A";
+		// type
+		String TypeUser = "A";
 		// requete
 		String req1 = ("INSERT INTO user (idUser, idSocialUser, mailUser, mdpUser, etatUser, dateInUser, typeUser, Permission_idPermission)  VALUES ('"
 				+ IdUser + "','" + IdSocialUSer + "','" + MailUser + "','" + MdpUser + "','" + EtatUser + "','"
-				+ formater.format(DateInUser) + "','" + TypeUser + "','" + PermissionUser
-				+ "')");
+				+ formater.format(DateInUser) + "','" + TypeUser + "','" + PermissionUser + "')");
 		String req2 = ("INSERT INTO association (User_idUser, nomAss, siretAss, numAdAss, rueAdAss, cpAdAss, villeAdAss, telAss) VALUES('"
-				+ IdUser + "','" + NomAss + "','" + SiretAss + "','" + NumAdAss + "','" + RueAdAss + "','"
-				+ CpAdAss + "','" + VilleAdAss + "','" + TelAss
-				+ "')");
+				+ IdUser + "','" + NomAss + "','" + SiretAss + "','" + NumAdAss + "','" + RueAdAss + "','" + CpAdAss
+				+ "','" + VilleAdAss + "','" + TelAss + "')");
 		try {
 			DBAction.getStm().executeUpdate(req1);
-			
+
 		} catch (SQLException ex) {
 			System.out.println(req1);
 			System.out.println("catch req1" + ex.getErrorCode());
@@ -88,10 +86,11 @@ public class AssociationDAO {
 		}
 		DBAction.DBClose();
 	}
-	
-	//Supprimer un user Association dans la BDD
+
+	// Supprimer un user Association dans la BDD
 	public static void deleteAssoUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
+
 		String req1 = ("DELETE FROM association WHERE User_idUser ='" + idUser + "'");
 		String req2 = ("DELETE FROM user WHERE idUser ='" + idUser + "'");
 		try {
@@ -109,4 +108,89 @@ public class AssociationDAO {
 		}
 		DBAction.DBClose();
 	}
+
+	// modifier nom asso
+	public static void updateNomAsso(String idUser, String nomAsso) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE association SET nomAss='" + nomAsso + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le nom de l'association ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier num ad asso
+	public static void updateNumAdAsso(String idUser, int numAdAsso) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE association SET numAdAss='" + numAdAsso + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le numéro de rue de l'association ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier rue ad asso
+	public static void updateRueAdAsso(String idUser, String rueAdAsso) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE association SET rueAdAss='" + rueAdAsso + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le nom de rue de l'association ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier cp ad asso
+	public static void updateCpAdAsso(String idUser, int cpAdAsso) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE association SET cpAdAss='" + cpAdAsso + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le CP de l'adresse de l'association ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier ville ad asso
+	public static void updateVilleAdAsso(String idUser, String VilleAdAsso) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE association SET villeAdAss='" + VilleAdAsso + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("La ville de l'adresse de l'association ayant l'id=" + idUser + " a bien été modifiée.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier tel ad asso
+	public static void updateTelAsso(String idUser, int TelAsso) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE association SET telAss='" + TelAsso + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le tel de l'association ayant l'id=" + idUser + " a bien été modifiée.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+	
 }

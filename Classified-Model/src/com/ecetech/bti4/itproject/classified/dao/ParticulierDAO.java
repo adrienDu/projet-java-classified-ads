@@ -45,47 +45,143 @@ public class ParticulierDAO {
 
 		return Resultat;
 	}
-	
+
 	// Ajouter un user Particulier dans la BDD
-		public static void addPartUser(String MailUser, String MdpUser, String PermissionUser,
-				String NomPart, String PrenomPart, int NumAdPart, String RueAdPart, int CpAdPart, String VilleAdPart, int TelPart)
-				throws SQLException {
-			DBAction.DBConnexion();
-			// uuid
-			String IdUser = MakeUUID.generate();
-			// id social
-			String IdSocialUSer = "";
-			// etat
-			String EtatUser = "OK";
-			// date in user
-			SimpleDateFormat formater = null;
-			Date DateInUser = new Date();
-			formater = new SimpleDateFormat("yyyy-MM-dd");
-			//type
-			String TypeUser="P";
-			// requete
-			String req1 = ("INSERT INTO user (idUser, idSocialUser, mailUser, mdpUser, etatUser, dateInUser, typeUser, Permission_idPermission)  VALUES ('"
-					+ IdUser + "','" + IdSocialUSer + "','" + MailUser + "','" + MdpUser + "','" + EtatUser + "','"
-					+ formater.format(DateInUser) + "','" + TypeUser + "','" + PermissionUser
-					+ "')");
-			String req2 = ("INSERT INTO particulier (User_idUser, nomPart, prenomPart, numAdPart, rueAdPart, cpAdPart, villeAdPart, telPart) VALUES('"
-					+ IdUser + "','" + NomPart + "','" + PrenomPart + "','" + NumAdPart + "','" + RueAdPart + "','"
-					+ CpAdPart + "','" + VilleAdPart + "','" + TelPart
-					+ "')");
-			try {
-				DBAction.getStm().executeUpdate(req1);
-				
-			} catch (SQLException ex) {
-				System.out.println(req1);
-				System.out.println("catch" + ex.getErrorCode());
-			}
-			try {
-				DBAction.getStm().executeUpdate(req2);
-			} catch (SQLException e) {
-				// TODO: handle exception
-				System.out.println(req2);
-				System.out.println("catch" + e.getErrorCode());
-			}
-			DBAction.DBClose();
+	public static void addPartUser(String MailUser, String MdpUser, String PermissionUser, String NomPart,
+			String PrenomPart, int NumAdPart, String RueAdPart, int CpAdPart, String VilleAdPart, int TelPart)
+			throws SQLException {
+		DBAction.DBConnexion();
+		// uuid
+		String IdUser = MakeUUID.generate();
+		// id social
+		String IdSocialUSer = "";
+		// etat
+		String EtatUser = "OK";
+		// date in user
+		SimpleDateFormat formater = null;
+		Date DateInUser = new Date();
+		formater = new SimpleDateFormat("yyyy-MM-dd");
+		// type
+		String TypeUser = "P";
+		// requete
+		String req1 = ("INSERT INTO user (idUser, idSocialUser, mailUser, mdpUser, etatUser, dateInUser, typeUser, Permission_idPermission)  VALUES ('"
+				+ IdUser + "','" + IdSocialUSer + "','" + MailUser + "','" + MdpUser + "','" + EtatUser + "','"
+				+ formater.format(DateInUser) + "','" + TypeUser + "','" + PermissionUser + "')");
+		String req2 = ("INSERT INTO particulier (User_idUser, nomPart, prenomPart, numAdPart, rueAdPart, cpAdPart, villeAdPart, telPart) VALUES('"
+				+ IdUser + "','" + NomPart + "','" + PrenomPart + "','" + NumAdPart + "','" + RueAdPart + "','"
+				+ CpAdPart + "','" + VilleAdPart + "','" + TelPart + "')");
+		try {
+			DBAction.getStm().executeUpdate(req1);
+
+		} catch (SQLException ex) {
+			System.out.println(req1);
+			System.out.println("catch" + ex.getErrorCode());
 		}
+		try {
+			DBAction.getStm().executeUpdate(req2);
+		} catch (SQLException e) {
+			// TODO: handle exception
+			System.out.println(req2);
+			System.out.println("catch" + e.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier nom part
+	public static void updateNomPart(String idUser, String nomPart) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE particulier SET nomPart='" + nomPart + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le nom de la personne ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier prenom part
+	public static void updatePrenomPart(String idUser, String prenomPart) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE particulier SET prenomPart='" + prenomPart + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le prenom de la personne ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier num ad part
+	public static void updateNumAdPart(String idUser, int numAdPart) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE particulier SET numAdPart='" + numAdPart + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le numéro de rue de la personne ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier rue ad part
+	public static void updateRueAdPart(String idUser, String rueAdPart) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE particulier SET rueAdPart='" + rueAdPart + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le nom de rue de la personne ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier cp ad part
+	public static void updateCpAdPart(String idUser, int cpAdPart) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE particulier SET cpAdPart='" + cpAdPart + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le CP de l'adresse de la personne ayant l'id=" + idUser + " a bien été modifié.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier ville ad part
+	public static void updateVilleAdPart(String idUser, String VilleAdPart) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE association SET villeAdPart='" + VilleAdPart + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("La ville de l'adresse de la personne ayant l'id=" + idUser + " a bien été modifiée.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
+
+	// modifier tel ad asso
+	public static void updateTelPart(String idUser, int TelPart) throws SQLException {
+		DBAction.DBConnexion();
+		String req = ("UPDATE particulier SET telPart='" + TelPart + "' WHERE User_idUser='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req);
+			System.out.println("Le tel de la personne ayant l'id=" + idUser + " a bien été modifiée.");
+		} catch (SQLException ex) {
+			System.out.println(req);
+			System.out.println("Requête non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
 }
