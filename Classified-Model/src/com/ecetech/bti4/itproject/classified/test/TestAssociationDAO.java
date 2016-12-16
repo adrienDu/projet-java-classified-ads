@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import com.ecetech.bti4.itproject.classified.beans.Association;
 import com.ecetech.bti4.itproject.classified.dao.AssociationDAO;
-import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 
 public class TestAssociationDAO {
 
@@ -32,6 +31,18 @@ public class TestAssociationDAO {
 		try {
 			userDAO.addAssoUser("croixrouge@mail.com", "rouge123", "classique", "La Croix Rouge", "12JOFEO23123", 55,
 					"Avenue de Paris", 75004, "Paris", 0123423456);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur de connexion");
+		}
+	}
+	
+	@Test
+	public void deleteAssoUser() {
+		System.out.println("Supprimer un user");
+		AssociationDAO userDAO = new AssociationDAO();
+		try {
+			userDAO.deleteAssoUser("A4");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("erreur de connexion");

@@ -77,16 +77,36 @@ public class AssociationDAO {
 			
 		} catch (SQLException ex) {
 			System.out.println(req1);
-			System.out.println("catch" + ex.getErrorCode());
+			System.out.println("catch req1" + ex.getErrorCode());
 		}
 		try {
 			DBAction.getStm().executeUpdate(req2);
 		} catch (SQLException e) {
 			// TODO: handle exception
 			System.out.println(req2);
-			System.out.println("catch" + e.getErrorCode());
+			System.out.println("catch req2" + e.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
-
+	
+	//Supprimer un user Association dans la BDD
+	public static void deleteAssoUser(String idUser) throws SQLException {
+		DBAction.DBConnexion();
+		String req1 = ("DELETE FROM association WHERE User_idUser ='" + idUser + "'");
+		String req2 = ("DELETE FROM user WHERE idUser ='" + idUser + "'");
+		try {
+			DBAction.getStm().executeUpdate(req1);
+		} catch (SQLException ex) {
+			System.out.println(req1);
+			System.out.println("Requête 1 non valide " + ex.getErrorCode());
+		}
+		try {
+			DBAction.getStm().executeUpdate(req2);
+			System.out.println("L'utilisateur ayant l'id=" + idUser + " a bien été supprimé.");
+		} catch (SQLException ex) {
+			System.out.println(req2);
+			System.out.println("Requête 2 non valide " + ex.getErrorCode());
+		}
+		DBAction.DBClose();
+	}
 }
