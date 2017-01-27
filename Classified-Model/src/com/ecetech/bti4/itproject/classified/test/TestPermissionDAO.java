@@ -16,9 +16,17 @@ import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 
 public class TestPermissionDAO {
 	
-	
+	/**
+	 * Test la Class PermissionDAO
+	 * @author Maeva, Adrien, Moaz
+	 *
+	 */
+
 	
 	@Test
+	/**
+	 * Test GetAllPermission
+	 */
 	public void testGetAllPermission() {
 		System.out.println("||Test de GetAllPermission||");
 		ArrayList<Permission> permission = new ArrayList<>();
@@ -34,6 +42,9 @@ public class TestPermissionDAO {
 	}
 	
 	@Test
+	/**
+	 * Test HasPermission
+	 */
 	public void testHasPermission() {
 		System.out.println("||Test de HasPermission||");
 		boolean permission = PermissionDAO.hasPermission("A2", "classique");
@@ -44,6 +55,9 @@ public class TestPermissionDAO {
 	}
 	
 	@Test
+	/**
+	 * Test setPermission
+	 */
 	public void testsetPermission() {
 		System.out.println("||Test de SetPermission||");
 		PermissionDAO p = new PermissionDAO();
@@ -54,10 +68,13 @@ public class TestPermissionDAO {
 	
 	
 	@Test
+	/**
+	 * Test AddPermi
+	 */
 	public void testAddPermi() {
 		System.out.println("||Test de addPermission||");
 		PermissionDAO p = new PermissionDAO();
-		p.addPermi("Modérateur");
+		p.addPermi("Modï¿½rateur");
 		System.out.println("--TEST OK--");
 	
 	}

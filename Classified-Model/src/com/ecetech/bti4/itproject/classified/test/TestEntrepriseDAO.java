@@ -17,8 +17,17 @@ import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 
 public class TestEntrepriseDAO {
 	
+	/**
+	 * Test la Class EntrepriseDAO
+	 * @author Maeva, Adrien, Moaz
+	 *
+	 */
+
 
 	@Test
+	/**
+	 * Test GetEntUser
+	 */
 	  public void testGetEntUser() {
 	    System.out.println("get user");
 	    EntrepriseDAO userDAO = new EntrepriseDAO();
@@ -32,6 +41,9 @@ public class TestEntrepriseDAO {
 	  }
 	
 	@Test
+	/**
+	 * Test AddEntUser
+	 */
 	public void testAddEntUser() {
 		System.out.println("ajouter un user particulier");
 		EntrepriseDAO userDAO = new EntrepriseDAO();
@@ -44,35 +56,7 @@ public class TestEntrepriseDAO {
 		}
 	}
 	
-	/*Moaz @Test
-	public void test() {
-	
-		Entreprise a = new Entreprise();
-		System.out.println(a);
-		
-	}
-
-	
-	@Test
-	public void testGetAllUser() {
-		System.out.println("get all entreprise");
-		ArrayList<Entreprise> allentreprise = new ArrayList<>();
-		try {
-			allentreprise = EntrepriseDAO.getAllEntreprise();
-		
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		affichArayList(allentreprise);
-
-	}
-	
-	public void affichArayList(ArrayList<Entreprise> allentreprise) {
-		ListIterator<Entreprise> list = allentreprise.listIterator();
-		int i = 1;
-		while (list.hasNext()) {
-			System.out.println(i + " "+ list.next().toString());
-			i++;
-		}
-	}*/
+	/*
+	 * Manque partie 
+	 */
 }

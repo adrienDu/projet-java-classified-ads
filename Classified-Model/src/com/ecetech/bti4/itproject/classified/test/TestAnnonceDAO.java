@@ -18,17 +18,28 @@ import com.ecetech.bti4.itproject.classified.dao.AnnonceDAO;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 public class TestAnnonceDAO {
-	
+	/**
+	 * Test la Class AnnonceDAO
+	 * @author Maeva, Adrien, Moaz
+	 *
+	 */
+
 
 	@Test
+	/**
+	 * Test getAllAnnonce
+	 */
 	public void testGetAllAnnonce() {
 		ArrayList<Annonce> annonces = new ArrayList<>();
 		annonces = AnnonceDAO.getAllAnnonce();
 		affichArayList(annonces);
 
 	}
-/*
+
 	@Test
+	/**
+	 * Test getAnnonce
+	 */
 	public void testGetAnnonce() {
 		Annonce annonce = new Annonce();
 		try {
@@ -37,7 +48,7 @@ public class TestAnnonceDAO {
 			e.printStackTrace();
 		}
 		if(annonce == null){
-			System.out.println("pas de resultat trouvé");
+			System.out.println("pas de resultat trouve");
 		}
 		else {
 			System.out.println(annonce.toString());
@@ -46,6 +57,9 @@ public class TestAnnonceDAO {
 	}
 
 	@Test
+	/**
+	 * Test getNewAnnonce
+	 */
 	public void testNewAnnonce() {
 		boolean res;
 		
@@ -75,13 +89,16 @@ public class TestAnnonceDAO {
 	}
 	
 	@Test
+	/**
+	 * Test DelAnnonce
+	 */
 	public void testDelAnnonce(){
 		boolean res;
 		String idAnnonceDel = "ffe35927-ba0b-11e6-a706-5c514fc83452";
 		res = AnnonceDAO.delAnnonce(idAnnonceDel);
 		System.out.println(res);
 	}
-*/
+
 	public void affichArayList(ArrayList<Annonce> annonces) {
 
 		ListIterator<Annonce> list = annonces.listIterator();

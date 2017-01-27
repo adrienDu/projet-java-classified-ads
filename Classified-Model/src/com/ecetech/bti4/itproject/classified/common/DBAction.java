@@ -8,18 +8,28 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DBAction {
+	/**
+	 * Contient des outils d'acces a la base de donnee
+	 *
+	 */
+
+	///Chemin d'acces a la BDD
     private static final String dbPath   = "jdbc:mysql://localhost:3306/classifieds";
+    ///User utilise pour se connecter
     private static final String user     = "root";
-    //Docker linux
+    ///Mot de passe de connection
     private static final String password = "";
-//    private static final String password = "";
 
     private static Connection   con      = null;
     private static Statement    stm      = null;
     private static ResultSet    res      = null;
     private static int          erreur;
     
-
+/**
+ * public static DBConnexion()
+ * initie une connection a la base de donnee
+ * @return null si connecte ou un message d'erreur
+ */
     public static Exception DBConnexion() {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -34,6 +44,11 @@ public class DBAction {
         }
     }
 
+    /**
+     * public static DBClose()
+     * termine la connection a la base de donnee
+     * @return un message d'erreur si besoins
+     */
     public static int DBClose() {
         try {
             stm.close();
@@ -45,6 +60,11 @@ public class DBAction {
         return erreur;
     }
 
+    /**
+     * Getters & setters 
+     * 
+     * @return
+     */
     public static Connection getCon() {
         return con;
     }
@@ -70,5 +90,3 @@ public class DBAction {
     }
 }
 
-
-//~ Formatted by Jindent --- http://www.jindent.com
