@@ -13,6 +13,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 /**
+ * Represente une categorie d'annonce
  * @author Maeva, Adrien, Moaz
  *
  */

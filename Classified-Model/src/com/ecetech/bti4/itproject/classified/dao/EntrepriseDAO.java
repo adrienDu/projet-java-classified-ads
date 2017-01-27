@@ -15,6 +15,7 @@ import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
 /**
+ * Represente une entreprise
  * @author Maeva, Adrien, Moaz
  *
  */

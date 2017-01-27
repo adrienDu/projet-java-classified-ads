@@ -17,9 +17,10 @@ import com.mysql.jdbc.PreparedStatement;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
 /**
+ * Represente une Annonce
  * @author Maeva, Adrien, Moaz
- *
  */
+
 public class AnnonceDAO {
 
 	/** public fonction getAllAnnonce()

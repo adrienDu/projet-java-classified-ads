@@ -12,8 +12,8 @@ import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
 /**
+ * Represente un utilisateur
  * @author Maeva, Adrien, Moaz
- *
  */
 
 public class UserDAO {

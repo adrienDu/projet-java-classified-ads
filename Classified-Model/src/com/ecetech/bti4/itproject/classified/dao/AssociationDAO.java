@@ -9,6 +9,7 @@ import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
 /**
+ * Represente une association
  * @author Maeva, Adrien, Moaz
  *
  */

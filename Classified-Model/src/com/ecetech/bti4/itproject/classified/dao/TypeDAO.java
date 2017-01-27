@@ -11,6 +11,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 /**
+ * Represente un type
  * @author Maeva, Adrien, Moaz
  *
  */

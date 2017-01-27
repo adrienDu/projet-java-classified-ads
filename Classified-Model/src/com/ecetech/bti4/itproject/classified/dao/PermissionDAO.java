@@ -8,6 +8,7 @@ import com.ecetech.bti4.itproject.classified.beans.Permission;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 
 /**
+ * Represente une permission
  * @author Maeva, Adrien, Moaz
  *
  */
