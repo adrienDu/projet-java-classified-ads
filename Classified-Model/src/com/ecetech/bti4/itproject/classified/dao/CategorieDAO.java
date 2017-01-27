@@ -12,8 +12,17 @@ import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
+/**
+ * @author Maeva, Adrien, Moaz
+ *
+ */
+
 public class CategorieDAO {
-	// afficher toutes les categories
+	/** public fonction getAllCat()
+	 * \breif Affiche toutes les categories 
+	 * 
+	 * Renvoie une Arraylist contenant toutes les categories de la base de donnee
+	**/
 	public static ArrayList<Categorie> getAllCat() {
 		ArrayList<Categorie> result = null;
 		ResultSet res;
@@ -39,7 +48,11 @@ public class CategorieDAO {
 
 	}
 
-	// modifier Categorie
+	/** public fonction changeCat()
+	 * \breif Modifie une categorie
+	 * 
+	 * Renvoie un boolean
+	**/
 	public static boolean changeCat(Categorie categorie) {
 		boolean result;
 		int nb;

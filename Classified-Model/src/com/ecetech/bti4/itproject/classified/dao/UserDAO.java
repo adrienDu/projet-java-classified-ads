@@ -11,8 +11,17 @@ import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
+/**
+ * @author Maeva, Adrien, Moaz
+ *
+ */
+
 public class UserDAO {
-	// Afficher un User en fonction de son id
+	/** public fonction getUser()
+	 * \breif Affiche un utilisateur 
+	 * 
+	 * Renvoie une Arraylist contenant un utilisateur
+	**/
 
 	public static User getUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
@@ -40,7 +49,12 @@ public class UserDAO {
 		return Resultat;
 	}
 
-	// Afficher les users en fonction de leur type
+	
+	/** public fonction getTypeUser()
+	 * \breif Afficher les users en fonction de leur type
+	 * 
+	 * Renvoie une Arraylist contenant un utilisateur en fonction de son type
+	**/
 	public static ArrayList getTypeUser(String typeUser) throws SQLException {
 		DBAction.DBConnexion();
 		ArrayList<User> typeuser = new ArrayList<User>();
@@ -63,7 +77,12 @@ public class UserDAO {
 		return typeuser;
 	}
 
-	// Afficher tous les users
+	
+	/** public fonction getAllUser()
+	 * \breif Afficher les users 
+	 * 
+	 * Renvoie une Arraylist contenant les utilisateurs
+	**/
 	public static ArrayList getAllUser() throws SQLException {
 		DBAction.DBConnexion();
 		ArrayList<User> alluser = new ArrayList<User>();
@@ -86,7 +105,11 @@ public class UserDAO {
 		return alluser;
 	}
 
-	// Ajouter un user dans la BDD
+	/** public fonction addUser()
+	 * \breif Ajoute un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void addUser(String MailUser, String MdpUser, String TypeUser, String PermissionUser)
 			throws SQLException {
 		DBAction.DBConnexion();
@@ -114,7 +137,11 @@ public class UserDAO {
 		DBAction.DBClose();
 	}
 
-	// supprimer 1 user en fonction de son id
+	/** public fonction deleterUser()
+	 * \breif Supprime un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void deleteUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("DELETE FROM user WHERE idUser ='" + idUser + "'");
@@ -128,7 +155,11 @@ public class UserDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier mailuser
+	/** public fonction updateMailUser()
+	 * \breif Modifie le mail d'un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateMailUser(String idUser, String mailUser) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE user SET mailUser='" + mailUser + "' WHERE idUser='" + idUser + "'");
@@ -142,7 +173,11 @@ public class UserDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier mdpuser
+	/** public fonction updateMdpUser()
+	 * \breif Modifie le mot de passe d'un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateMdpUser(String idUser, String mdpUser) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE user SET mdpUser='" + mdpUser + "' WHERE idUser='" + idUser + "'");
@@ -156,7 +191,11 @@ public class UserDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier l'etat d'un user
+	/** public fonction updateEtatUser()
+	 * \breif Modifie l'etat d'un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateEtatUser(String idUser, String etatUser) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE user SET etatUser='" + etatUser + "' WHERE idUser='" + idUser + "'");
@@ -170,7 +209,11 @@ public class UserDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier le type d'un user
+	/** public fonction updateTypeUser()
+	 * \breif Modifie le type d'un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateTypeUser(String idUser, String typeUser) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE user SET typeUser='" + typeUser + "' WHERE idUser='" + idUser + "'");
@@ -184,7 +227,11 @@ public class UserDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier la permission d'un user
+	/** public fonction updatePermissionUser()
+	 * \breif Modifie la permission d'un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updatePermissionUser(String idUser, String permissionUser) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE user SET Permission_idPermission='" + permissionUser + "' WHERE idUser='" + idUser + "'");

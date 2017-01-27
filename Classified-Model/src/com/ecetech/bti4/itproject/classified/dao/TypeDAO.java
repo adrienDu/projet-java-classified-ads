@@ -10,7 +10,19 @@ import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
+/**
+ * @author Maeva, Adrien, Moaz
+ *
+ */
+
+
 public class TypeDAO {
+	
+	/** public fonction getAllType()
+	 * \breif Affiche les types 
+	 * 
+	 * Renvoie une Arraylist contenant tous les types de la base de donnee
+	**/
 	public static ArrayList<Type> getAllType() {
 		ArrayList<Type> result = null;
 		ResultSet res;
@@ -37,7 +49,11 @@ public class TypeDAO {
 	}
 
 
-	// modifier Type
+	/** public fonction changeType()
+	 * \breif Modifie le type
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static boolean changeType(Type type) {
 		boolean result;
 		int nb;

@@ -8,9 +8,18 @@ import com.ecetech.bti4.itproject.classified.beans.Association;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
+/**
+ * @author Maeva, Adrien, Moaz
+ *
+ */
+
 public class AssociationDAO {
 
-	// Afficher un User Association en fonction de son id
+	/** public fonction getAssoUser()
+	 * \breif Affiche une association
+	 * 
+	 * Renvoie une Arraylist contenant une association de la base de donnee
+	**/
 	public static Association getAssoUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
 		Association Resultat = new Association();
@@ -46,7 +55,11 @@ public class AssociationDAO {
 		return Resultat;
 	}
 
-	// Ajouter un user Association dans la BDD
+	/** public fonction addAssoUser()
+	 * \breif Ajoute une association a la base de donnee
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void addAssoUser(String MailUser, String MdpUser, String PermissionUser, String NomAss,
 			String SiretAss, int NumAdAss, String RueAdAss, int CpAdAss, String VilleAdAss, int TelAss)
 			throws SQLException {
@@ -87,7 +100,11 @@ public class AssociationDAO {
 		DBAction.DBClose();
 	}
 
-	// Supprimer un user Association dans la BDD
+	/** public fonction deleteAssoUser()
+	 * \breif Supprime une association de la base de donnee
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void deleteAssoUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
 
@@ -109,7 +126,11 @@ public class AssociationDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier nom asso
+	/** public fonction updateNomAssoAsso()
+	 * \breif Modifie le nom d'une association
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateNomAsso(String idUser, String nomAsso) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE association SET nomAss='" + nomAsso + "' WHERE User_idUser='" + idUser + "'");
@@ -122,8 +143,11 @@ public class AssociationDAO {
 		}
 		DBAction.DBClose();
 	}
-
-	// modifier num ad asso
+	/** public fonction updateNumAsso()
+	 * \breif Modifie le numero d'une association de la base de donnee
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateNumAdAsso(String idUser, int numAdAsso) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE association SET numAdAss='" + numAdAsso + "' WHERE User_idUser='" + idUser + "'");
@@ -137,7 +161,11 @@ public class AssociationDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier rue ad asso
+	/** public fonction updateRueAsso()
+	 * \breif Modifie la rue d'une association de la base de donnee
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateRueAdAsso(String idUser, String rueAdAsso) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE association SET rueAdAss='" + rueAdAsso + "' WHERE User_idUser='" + idUser + "'");
@@ -151,7 +179,11 @@ public class AssociationDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier cp ad asso
+	/** public fonction updateCpAssor()
+	 * \breif Modifie le numero d'une association de la base de donnee
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateCpAdAsso(String idUser, int cpAdAsso) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE association SET cpAdAss='" + cpAdAsso + "' WHERE User_idUser='" + idUser + "'");
@@ -165,7 +197,11 @@ public class AssociationDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier ville ad asso
+	/** public fonction updateVilleAdAsso()
+	 * \breif Modifie la ville d'une association de la base de donnee
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateVilleAdAsso(String idUser, String VilleAdAsso) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE association SET villeAdAss='" + VilleAdAsso + "' WHERE User_idUser='" + idUser + "'");
@@ -179,7 +215,11 @@ public class AssociationDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier tel ad asso
+	/** public fonction updateTelAsso()
+	 * \breif Modifie le numero de telephone d'une association de la base de donnee
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateTelAsso(String idUser, int TelAsso) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE association SET telAss='" + TelAsso + "' WHERE User_idUser='" + idUser + "'");

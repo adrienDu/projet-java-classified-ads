@@ -7,8 +7,17 @@ import com.ecetech.bti4.itproject.classified.beans.Annonce;
 import com.ecetech.bti4.itproject.classified.beans.Permission;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 
-public class PermissionDAO {
+/**
+ * @author Maeva, Adrien, Moaz
+ *
+ */
 
+public class PermissionDAO {
+	/** public fonction getAllPermission()
+	 * \breif Affiche les permissions des utilisateurs
+	 * 
+	 * Renvoie une Arraylist contenant toutes les permissions de la base de donnee
+	**/
 	public static ArrayList<Permission> getAllPermission() throws SQLException {
         DBAction.DBConnexion();
         ArrayList<Permission> permission = new ArrayList<>();
@@ -31,6 +40,11 @@ public class PermissionDAO {
         return permission;
     }   
 	
+	/** public fonction hasPermission()
+	 * \breif Affiche la permission de utilisateur
+	 * 
+	 * Renvoie un boolean
+	**/
 	public static boolean hasPermission( String idUser, String id_Permission ){
 		 DBAction.DBConnexion();
 		 boolean verif = false;
@@ -60,6 +74,12 @@ public class PermissionDAO {
 		return verif;
 	}
 	
+	/** public fonction setPermission()
+	 * \breif Modifie la permission d'un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
+	
 	public void setPermission( String idUser, String id_Permission ) {
 		
 		 DBAction.DBConnexion();
@@ -77,7 +97,11 @@ public class PermissionDAO {
 		
 	}
 	
-	
+	/** public fonction addPermission()
+	 * \breif Ajoute une permission a un utilisateur
+	 * 
+	 * Ne renvoie rien
+	**/
 	public void addPermi( String id_Permission ){
 		
 		DBAction.DBConnexion();

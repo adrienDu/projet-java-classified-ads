@@ -9,8 +9,17 @@ import com.ecetech.bti4.itproject.classified.beans.Particulier;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
+/**
+ * @author Maeva, Adrien, Moaz
+ *
+ */
+
 public class ParticulierDAO {
-	// Afficher un User Association en fonction de son id
+	/** public fonction getParttUser()
+	 * \breif Affiche un particulier
+	 * 
+	 * Renvoie une Arraylist contenant un particulier de la base de donnee
+	**/
 	public static Particulier getPartUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
 		Particulier Resultat = new Particulier();
@@ -46,7 +55,11 @@ public class ParticulierDAO {
 		return Resultat;
 	}
 
-	// Ajouter un user Particulier dans la BDD
+	/** public fonction addPartUser()
+	 * \breif Modifie un particulier
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void addPartUser(String MailUser, String MdpUser, String PermissionUser, String NomPart,
 			String PrenomPart, int NumAdPart, String RueAdPart, int CpAdPart, String VilleAdPart, int TelPart)
 			throws SQLException {
@@ -87,7 +100,11 @@ public class ParticulierDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier nom part
+	/** public fonction updateNomPart()
+	 * \breif Modifie le nom d'un particulier
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateNomPart(String idUser, String nomPart) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE particulier SET nomPart='" + nomPart + "' WHERE User_idUser='" + idUser + "'");
@@ -101,7 +118,11 @@ public class ParticulierDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier prenom part
+	/** public fonction updatePrenomPart()
+	 * \breif Modifie le prenom d'un particulier
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updatePrenomPart(String idUser, String prenomPart) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE particulier SET prenomPart='" + prenomPart + "' WHERE User_idUser='" + idUser + "'");
@@ -115,7 +136,11 @@ public class ParticulierDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier num ad part
+	/** public fonction updateNumAdPart()
+	 * \breif Modifie le numero de telephone d'un particulier
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateNumAdPart(String idUser, int numAdPart) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE particulier SET numAdPart='" + numAdPart + "' WHERE User_idUser='" + idUser + "'");
@@ -129,7 +154,11 @@ public class ParticulierDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier rue ad part
+	/** public fonction updateRueAdPart()
+	 * \breif Modifie la rue de l'adresse d'un particulier
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateRueAdPart(String idUser, String rueAdPart) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE particulier SET rueAdPart='" + rueAdPart + "' WHERE User_idUser='" + idUser + "'");
@@ -142,8 +171,12 @@ public class ParticulierDAO {
 		}
 		DBAction.DBClose();
 	}
-
-	// modifier cp ad part
+	
+	/** public fonction updateCpAdPart()
+	 * \breif Modifie le code postale d'un particulier
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateCpAdPart(String idUser, int cpAdPart) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE particulier SET cpAdPart='" + cpAdPart + "' WHERE User_idUser='" + idUser + "'");
@@ -157,7 +190,11 @@ public class ParticulierDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier ville ad part
+	/** public fonction updateVilleAdPart()
+	 * \breif Modifie le code postale d'un particulier
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateVilleAdPart(String idUser, String VilleAdPart) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE association SET villeAdPart='" + VilleAdPart + "' WHERE User_idUser='" + idUser + "'");
@@ -171,7 +208,11 @@ public class ParticulierDAO {
 		DBAction.DBClose();
 	}
 
-	// modifier tel ad asso
+	/** public fonction updateTemPart()
+	 * \breif Modifie le numero d'un particulier
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void updateTelPart(String idUser, int TelPart) throws SQLException {
 		DBAction.DBConnexion();
 		String req = ("UPDATE particulier SET telPart='" + TelPart + "' WHERE User_idUser='" + idUser + "'");

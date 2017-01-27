@@ -15,12 +15,16 @@ import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 
 /**
- * @author saad9_000
+ * @author Maeva, Adrien, Moaz
  *
  */
 public class EntrepriseDAO {
 
-	// Afficher un User Entreprise en fonction de son id
+	/** public fonction getEntUser()
+	 * \breif Affiche une entreprise
+	 * 
+	 * Renvoie une Arraylist contenant une entreprise de la base de donnee
+	**/
 	public static Entreprise getEntUser(String idUser) throws SQLException {
 		DBAction.DBConnexion();
 		Entreprise Resultat = new Entreprise();
@@ -56,7 +60,11 @@ public class EntrepriseDAO {
 		return Resultat;
 	}
 
-	// Ajouter un user Entreprise dans la BDD
+	/** public fonction getEntUser()
+	 * \breif Modifie une entreprise
+	 * 
+	 * Ne renvoie rien
+	**/
 	public static void addEntUser(String MailUser, String MdpUser, String PermissionUser, String NomEnt,
 			int NumAdEnt, String RueAdEnt, int CpAdEnt, String VilleAdEnt, int TelEnt, String SirenEnt)
 			throws SQLException {

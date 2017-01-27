@@ -17,7 +17,7 @@ import com.mysql.jdbc.PreparedStatement;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
 /**
- * @author saad9_000
+ * @author Maeva, Adrien, Moaz
  *
  */
 public class AnnonceDAO {
@@ -25,7 +25,7 @@ public class AnnonceDAO {
 	/** public fonction getAllAnnonce()
 	 * \breif Affiche toutes les annonces 
 	 * 
-	 * Renvoie une Arraylist contenant toutes les annonces de la base de donnée
+	 * Renvoie une Arraylist contenant toutes les annonces de la base de donnee
 	**/
 	public static ArrayList<Annonce> getAllAnnonce() {
 		ArrayList<Annonce> annonces = null;
@@ -49,7 +49,11 @@ public class AnnonceDAO {
 		return annonces;
 	}
 
-	// afficher une annonce particuliere
+	/** public fonction getAnnonce()
+	 * \breif Affiche une annonce 
+	 * 
+	 * Renvoie une Arraylist contenant une annonce de la base de donnee
+	**/
 	public static Annonce getAnnonce(String idAnnonce) throws SQLException {
 		DBAction.DBConnexion();
 		Annonce annonce = null;
@@ -71,7 +75,11 @@ public class AnnonceDAO {
 		return annonce;
 	}
 
-	// insert annonce
+	/** public fonction newAnnonce()
+	 * \breif Cree une nouvelle annonce
+	 * 
+	 * Renvoie un boolean 
+	**/
 
 	public static boolean newAnnonce(Annonce annonce) {
 		boolean result;
@@ -114,7 +122,11 @@ public class AnnonceDAO {
 
 	}
 
-	// delete annonce
+	/** public fonction delAnnonce()
+	 * \breif Supprime une annocne
+	 * 
+	 * Renvoie un boolean
+	**/
 	public static boolean delAnnonce(String idAnnonce) {
 		boolean result;
 		int nb;
@@ -137,7 +149,11 @@ public class AnnonceDAO {
 
 	}
 
-	// modifier annonce
+	/** public fonction changelAnnonce()
+	 * \breif Modifie une annonce
+	 * 
+	 * Renvoie un boolean
+	**/
 	public static boolean changeAnnonce(Annonce annonce) {
 		boolean result;
 		int nb;
@@ -177,7 +193,11 @@ public class AnnonceDAO {
 
 	}
 
-	// afficher toutes les annonces d'un utilisateur
+	/** public fonction affichAnnonceUser()
+	 * \breif Affiche toutes les annonces d'un user
+	 * 
+	 * Renvoie une Arraylist contenant toutes les annonces d'un user
+	**/
 	public ArrayList<Annonce> affichAnnonceUser(String idUser) {
 		ArrayList<Annonce> annonces = null;
 		Connection con = (Connection) DBAction.getCon();
@@ -200,7 +220,11 @@ public class AnnonceDAO {
 		return annonces;
 	}
 
-	// afficher par type
+	/** public fonction afficheAnnonceUser()
+	 * \breif Affiche tout les types d'annonces
+	 * 
+	 * Renvoie une Arraylist contenant toutes les types d'annonces de la base de donnee
+	**/
 	public ArrayList<Annonce> affichAnnonceUser(int type) {
 		ArrayList<Annonce> annonces = null;
 		Connection con = (Connection) DBAction.getCon();
