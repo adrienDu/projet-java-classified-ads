@@ -16,10 +16,17 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
+/**
+ * @author saad9_000
+ *
+ */
 public class AnnonceDAO {
 
-	// afficher toutes les annonces
-
+	/** public fonction getAllAnnonce()
+	 * \breif Affiche toutes les annonces 
+	 * 
+	 * Renvoie une Arraylist contenant toutes les annonces de la base de donnée
+	**/
 	public static ArrayList<Annonce> getAllAnnonce() {
 		ArrayList<Annonce> annonces = null;
 		Connection con = (Connection) DBAction.getCon();
