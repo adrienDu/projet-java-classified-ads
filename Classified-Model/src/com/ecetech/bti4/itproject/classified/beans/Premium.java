@@ -2,6 +2,11 @@ package com.ecetech.bti4.itproject.classified.beans;
 
 import java.util.Date;
 
+/**
+ * Represente une tilisateur premium
+ * @author Maeva, Adrien, Moaz
+ */
+
 public class Premium {
 	
 

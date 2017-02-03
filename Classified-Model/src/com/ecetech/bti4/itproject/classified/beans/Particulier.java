@@ -1,5 +1,11 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
+
+/**
+ * Represente un Particulier
+ * @author Maeva, Adrien, Moaz
+ */
+
 public class Particulier extends User{
 	/**
 	 * Attributs

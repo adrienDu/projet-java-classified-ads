@@ -1,5 +1,11 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
+
+/**
+ * Represente une Association
+ * @author Maeva, Adrien, Moaz
+ */
+
 public class Association extends User {
 
 	/**
