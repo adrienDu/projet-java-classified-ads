@@ -7,6 +7,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+/**
+ * Class DB Action, methodes liée a la base de donnée 
+ * @author Maeva, Adrien, Moaz
+ */
+
 public class DBAction {
 	/**
 	 * Contient des outils d'acces a la base de donnee
