@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="com.ecetech.bti4.itproject.classified.dao.\lPermissionDAO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1dao_1_1_permission_d_a_o.html"];
+}

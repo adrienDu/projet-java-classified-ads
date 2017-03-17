@@ -8,61 +8,23 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.ListIterator;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import com.ecetech.bti4.itproject.classified.beans.Annonce;
-import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 import com.ecetech.bti4.itproject.classified.dao.AnnonceDAO;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 public class TestAnnonceDAO {
-	/**
-	 * Test la Class AnnonceDAO
-	 * @author Maeva, Adrien, Moaz
-	 *
-	 */
-
 
 	@Test
-	/**
-	 * Test getAllAnnonce
-	 */
-	public void testGetAllAnnonce() {
-		ArrayList<Annonce> annonces = new ArrayList<>();
-		annonces = AnnonceDAO.getAllAnnonce();
-		affichArayList(annonces);
-
+	public void test1GetAllAnnonce() {
+		ArrayList<Annonce> annonces = AnnonceDAO.getAllAnnonce();
+		assertTrue("All Annonce", annonces != null);
 	}
 
 	@Test
-	/**
-	 * Test getAnnonce
-	 */
-	public void testGetAnnonce() {
-		Annonce annonce = new Annonce();
-		try {
-			annonce = AnnonceDAO.getAnnonce("ffe35927-ba0b-11e6-a706-5c514fc83452");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		if(annonce == null){
-			System.out.println("pas de resultat trouve");
-		}
-		else {
-			System.out.println(annonce.toString());
-
-		}
-	}
-
-	@Test
-	/**
-	 * Test getNewAnnonce
-	 */
-	public void testNewAnnonce() {
+	public void test2NewAnnonce() {
 		boolean res;
-		
+
 		String stringDatepostAnnonce = "2016-12-17";
 		String stringDatefinAnnonce = "2016-12-20";
 		String stringDatecreaAnnonce = "2016-12-15";
@@ -76,27 +38,76 @@ public class TestAnnonceDAO {
 			ndateFinAnnonce = new SimpleDateFormat("yyyy-MM-dd").parse(stringDatefinAnnonce);
 
 		} catch (java.text.ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		java.sql.Date dateAnnonce = new java.sql.Date(ndateAnnonce.getTime()); 
-		java.sql.Date dateFin = new java.sql.Date(ndateFinAnnonce.getTime()); 
-				
-		Annonce annonce = new Annonce("", "ceci est une annonce de test d insert", " ",75000, dateAnnonce, dateFin, 0, "E1",0);
+		java.sql.Date dateAnnonce = new java.sql.Date(ndateAnnonce.getTime());
+		java.sql.Date dateFin = new java.sql.Date(ndateFinAnnonce.getTime());
 
-			res = AnnonceDAO.newAnnonce(annonce);	
-			System.out.println(res);
+		Annonce annonce = new Annonce("ffe35927-ba0b-11e6-a706-000000000", "ceci est une annonce de test d insert", " ",
+				75000, dateAnnonce, dateFin, 0, "E1", 0);
+
+		assertTrue(AnnonceDAO.newAnnonce(annonce));
+
 	}
-	
+
 	@Test
-	/**
-	 * Test DelAnnonce
-	 */
-	public void testDelAnnonce(){
-		boolean res;
-		String idAnnonceDel = "ffe35927-ba0b-11e6-a706-5c514fc83452";
-		res = AnnonceDAO.delAnnonce(idAnnonceDel);
-		System.out.println(res);
+	public void test3ChangeAnnonce() {
+		String stringDatepostAnnonce = "2016-12-17";
+		String stringDatefinAnnonce = "2016-12-20";
+		String stringDatecreaAnnonce = "2016-12-15";
+
+		Date ndateAnnonce = null;
+		Date ndateFinAnnonce = null;
+		Date ndateCreaAnnonce = null;
+
+		try {
+			ndateAnnonce = new SimpleDateFormat("yyyy-MM-dd").parse(stringDatepostAnnonce);
+			ndateFinAnnonce = new SimpleDateFormat("yyyy-MM-dd").parse(stringDatefinAnnonce);
+
+		} catch (java.text.ParseException e) {
+			e.printStackTrace();
+		}
+		java.sql.Date dateAnnonce = new java.sql.Date(ndateAnnonce.getTime());
+		java.sql.Date dateFin = new java.sql.Date(ndateFinAnnonce.getTime());
+
+		Annonce annonce = new Annonce("ffe35927-ba0b-11e6-a706-000000000", "ceci est une annonce de test d insert", " ",
+				75015, dateAnnonce, dateFin, 0, "E1", 0);
+		assertTrue(AnnonceDAO.changeAnnonce(annonce));
+
+	}
+
+	@Test
+	public void test4GetAnnonce() throws SQLException {
+		String stringDatepostAnnonce = "2016-12-17";
+		String stringDatefinAnnonce = "2016-12-20";
+		String stringDatecreaAnnonce = "2016-12-15";
+
+		Date ndateAnnonce = null;
+		Date ndateFinAnnonce = null;
+		Date ndateCreaAnnonce = null;
+
+		try {
+			ndateAnnonce = new SimpleDateFormat("yyyy-MM-dd").parse(stringDatepostAnnonce);
+			ndateFinAnnonce = new SimpleDateFormat("yyyy-MM-dd").parse(stringDatefinAnnonce);
+
+		} catch (java.text.ParseException e) {
+			e.printStackTrace();
+		}
+		java.sql.Date dateAnnonce = new java.sql.Date(ndateAnnonce.getTime());
+		java.sql.Date dateFin = new java.sql.Date(ndateFinAnnonce.getTime());
+
+		Annonce annonce = new Annonce("ffe35927-ba0b-11e6-a706-000000000", "ceci est une annonce de test d insert", " ",
+				75015, dateAnnonce, dateFin, 0, "E1", 0);
+		assertTrue(annonce.equals(AnnonceDAO.getAnnonce("ffe35927-ba0b-11e6-a706-000000000")));
+
+	}
+
+	
+
+	@Test
+	public void test5DelAnnonce() {
+		String idAnnonceDel = "ffe35927-ba0b-11e6-a706-000000000";
+		assertTrue(AnnonceDAO.delAnnonce(idAnnonceDel));
 	}
 
 	public void affichArayList(ArrayList<Annonce> annonces) {
@@ -108,9 +119,16 @@ public class TestAnnonceDAO {
 		}
 	}
 	
+	
+
+	@Test
+	public void test4AffichAnnonceUserString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void test5AffichAnnonceUserInt() {
+		fail("Not yet implemented");
+	}
 
 }
-
-
-
-

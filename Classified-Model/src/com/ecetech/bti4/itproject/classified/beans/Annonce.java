@@ -2,6 +2,11 @@ package com.ecetech.bti4.itproject.classified.beans;
 
 import java.sql.Date;
 
+/**
+ * Represente une Annonce
+ * @author Maeva, Adrien, Moaz
+ */
+
 public class Annonce {
 	/**
 	 * Attributs

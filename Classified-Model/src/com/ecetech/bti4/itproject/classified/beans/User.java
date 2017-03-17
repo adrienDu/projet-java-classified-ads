@@ -2,6 +2,11 @@ package com.ecetech.bti4.itproject.classified.beans;
 
 import java.util.Date;
 
+/**
+ * Represente un User
+ * @author Maeva, Adrien, Moaz
+ */
+
 public class User {
 	
 	/**

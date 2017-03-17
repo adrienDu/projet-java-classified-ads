@@ -19,8 +19,6 @@ var searchData=
   ['updatevilleadasso',['updateVilleAdAsso',['../classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1dao_1_1_association_d_a_o.html#a65048bf95fdcd35ee35d5c0bee623b8b',1,'com::ecetech::bti4::itproject::classified::dao::AssociationDAO']]],
   ['updatevilleadpart',['updateVilleAdPart',['../classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1dao_1_1_particulier_d_a_o.html#aa902ab4baffe2f3d01ab2d652d084e57',1,'com::ecetech::bti4::itproject::classified::dao::ParticulierDAO']]],
   ['user',['User',['../classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1beans_1_1_user.html',1,'com::ecetech::bti4::itproject::classified::beans']]],
-  ['user',['User',['../classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1beans_1_1_user.html#a1c64ba162d05851b1816cdae8f1d2e84',1,'com.ecetech.bti4.itproject.classified.beans.User.User(String idUser, String idSocialUser, String mailUser, String mdpUser, String etatUser, Date dateInUser, String typeUser, String permission_idPermission)'],['../classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1beans_1_1_user.html#a5c8183b739fb3263329e53fb5b7cbb04',1,'com.ecetech.bti4.itproject.classified.beans.User.User()']]],
-  ['user_2ejava',['User.java',['../_user_8java.html',1,'']]],
-  ['userdao',['UserDAO',['../classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1dao_1_1_user_d_a_o.html',1,'com::ecetech::bti4::itproject::classified::dao']]],
-  ['userdao_2ejava',['UserDAO.java',['../_user_d_a_o_8java.html',1,'']]]
+  ['user',['User',['../classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1beans_1_1_user.html#a1c64ba162d05851b1816cdae8f1d2e84',1,'com::ecetech::bti4::itproject::classified::beans::User']]],
+  ['userdao',['UserDAO',['../classcom_1_1ecetech_1_1bti4_1_1itproject_1_1classified_1_1dao_1_1_user_d_a_o.html',1,'com::ecetech::bti4::itproject::classified::dao']]]
 ];

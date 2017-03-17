@@ -1,5 +1,11 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
+
+/**
+ * Represente une Entreprise
+ * @author Maeva, Adrien, Moaz
+ */
+
 public class Entreprise extends User {
 
 	// private String idUser;

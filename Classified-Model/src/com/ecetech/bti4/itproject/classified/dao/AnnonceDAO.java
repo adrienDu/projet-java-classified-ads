@@ -85,8 +85,10 @@ public class AnnonceDAO {
 	public static boolean newAnnonce(Annonce annonce) {
 		boolean result;
 		int nb;
-		String idAnnonce = MakeUUID.generate();
-		annonce.setIdAnnonce(idAnnonce);
+		if(annonce.getIdAnnonce() == ""){
+			annonce.setIdAnnonce(MakeUUID.generate());
+		}
+
 		// date du jour
 		java.sql.Date dateCreaAnnonce = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 		annonce.setDateCreaAnnonce(dateCreaAnnonce);
@@ -97,7 +99,7 @@ public class AnnonceDAO {
 
 		try {
 			req = (PreparedStatement) con.prepareStatement("INSERT INTO annonce VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-			req.setString(1, idAnnonce);
+			req.setString(1, annonce.getIdAnnonce());
 			req.setString(2, annonce.getTitreAnnonce());
 			req.setString(3, annonce.getDescAnnonce());
 			req.setString(4, annonce.getPhotoAnnonce());
@@ -123,6 +125,7 @@ public class AnnonceDAO {
 
 	}
 
+	
 	/** public fonction delAnnonce()
 	 * \breif Supprime une annocne
 	 * 

@@ -1,5 +1,10 @@
 package com.ecetech.bti4.itproject.classified.beans;
 
+/**
+ * Represente une Type d'annonce
+ * @author Maeva, Adrien, Moaz
+ */
+
 public class Type {
 
 	/**
