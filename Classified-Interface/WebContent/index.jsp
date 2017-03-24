@@ -4,7 +4,7 @@
 <html>
 <head>
 <!-- Import -->
-<%@ page import="javax.ws.rs.HEAD" %>
+<%@ page import="" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Classifieds</title>
 
