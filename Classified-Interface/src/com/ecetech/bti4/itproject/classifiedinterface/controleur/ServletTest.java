@@ -1,4 +1,4 @@
-package servlet;
+package com.ecetech.bti4.itproject.classifiedinterface.controleur;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,17 +48,17 @@ public class ServletTest extends HttpServlet {
             
         PrintWriter out = response.getWriter();
         VUE = "/WEB-INF/error.jsp";
-        // @param forward page vers laquelle la requette est dispatché
+        // @param forward page vers laquelle la requette est dispatchï¿½
         // @param action
         String action = request.getParameter("action");
         String log = request.getParameter("log");
-        // on verifie si une action est bien demandée
+        // on verifie si une action est bien demandï¿½e
 //      if ((action != null) || (action.length() != 0)) {
         if ((action == null)) {    // no action param
             VUE = "/WEB-INF/error.jsp";
         } else {                   // action param
 
-            // Acces à la page d'authentification
+            // Acces ï¿½ la page d'authentification
             if (action.equals("register")) {
                 //if(session.getId().isEmpty()){                 
                     VUE = "/WEB-INF/register.jsp";
@@ -208,7 +208,7 @@ public class ServletTest extends HttpServlet {
                 String              motDePasse   = request.getParameter(CHAMP_PASS);
 
                 try {
-                    //Recherche de l'élève dans la base de donnée.
+                    //Recherche de l'ï¿½lï¿½ve dans la base de donnï¿½e.
                     Informations = validationEleve(email, motDePasse);
 
                     // validationMotsDePasse(motDePasse);
@@ -218,11 +218,11 @@ public class ServletTest extends HttpServlet {
                 if(!Informations.isEmpty()){
                     
                 
-                        /* Initialisation du résultat global de la validation. */
+                        /* Initialisation du rï¿½sultat global de la validation. */
                         if (erreurs.isEmpty()) {
-                            resultat = "Succès de la connexion.";
+                            resultat = "Succï¿½s de la connexion.";
 
-                            /* Stockage du résultat et des messages d'erreur dans l'objet request */
+                            /* Stockage du rï¿½sultat et des messages d'erreur dans l'objet request */
                             request.setAttribute(ATT_ERREURS, erreurs);
                             request.setAttribute(ATT_RESULTAT, resultat);
                             session = request.getSession();
@@ -234,16 +234,16 @@ public class ServletTest extends HttpServlet {
                             request.setAttribute("etat", "connexion");
                             VUE = "/WEB-INF/index.jsp";
                         } else {
-                            resultat = "Échec de la connexion.";
+                            resultat = "ï¿½chec de la connexion.";
 
-                            /* Stockage du résultat et des messages d'erreur dans l'objet request */
+                            /* Stockage du rï¿½sultat et des messages d'erreur dans l'objet request */
                             request.setAttribute(ATT_ERREURS, erreurs);
                             request.setAttribute(ATT_RESULTAT, resultat);
                             VUE = "/WEB-INF/connexionFail.jsp";
                         }
                 }else{
-                    resultat = "Échec de la connexion.";
-                    /* Stockage du résultat et des messages d'erreur dans l'objet request */
+                    resultat = "ï¿½chec de la connexion.";
+                    /* Stockage du rï¿½sultat et des messages d'erreur dans l'objet request */
                             request.setAttribute(ATT_ERREURS, erreurs);
                             request.setAttribute(ATT_RESULTAT, resultat);
                             VUE = "/WEB-INF/connexionFail.jsp";
@@ -282,11 +282,11 @@ public class ServletTest extends HttpServlet {
                     }
                 }
 
-                /* Initialisation du résultat global de la validation. */
+                /* Initialisation du rï¿½sultat global de la validation. */
                 if (erreurs.isEmpty()) {
-                    resultat = "Succès de l'inscription.";
+                    resultat = "Succï¿½s de l'inscription.";
 
-                    /* Stockage du résultat et des messages d'erreur dans l'objet request */
+                    /* Stockage du rï¿½sultat et des messages d'erreur dans l'objet request */
                     request.setAttribute(ATT_ERREURS, erreurs);
                     request.setAttribute(ATT_RESULTAT, resultat);
                     session = request.getSession();
@@ -297,17 +297,17 @@ public class ServletTest extends HttpServlet {
                      session.setAttribute("candidature", "0");
                      request.setAttribute("etat", "connexion");
 
-                    /* Transmission de la paire d'objets request/response à notre JSP */
+                    /* Transmission de la paire d'objets request/response ï¿½ notre JSP */
                     VUE = "/WEB-INF/indexNew.jsp";
                 } else {
-                    resultat = "Échec de l'inscription.";
+                    resultat = "ï¿½chec de l'inscription.";
 
-                    /* Stockage du résultat et des messages d'erreur dans l'objet request */
+                    /* Stockage du rï¿½sultat et des messages d'erreur dans l'objet request */
                     request.setAttribute(ATT_ERREURS, erreurs);
                     request.setAttribute(ATT_RESULTAT, resultat);
                     VUE = "/WEB-INF/error.jsp";
 
-                    /* Transmission de la paire d'objets request/response à notre JSP */
+                    /* Transmission de la paire d'objets request/response ï¿½ notre JSP */
                 }
             }
 
@@ -339,21 +339,21 @@ public class ServletTest extends HttpServlet {
                     erreurs.put("Request", e.getMessage());
                 }
 
-                /* Initialisation du résultat global de la validation. */
+                /* Initialisation du rï¿½sultat global de la validation. */
                 if (erreurs.isEmpty()) {
-                    resultat = "Succès de l'inscription.";
+                    resultat = "Succï¿½s de l'inscription.";
                     session.setAttribute("candidature", "1");
                     VUE = "/WEB-INF/succes.jsp";
                 } else {
-                    resultat = "Échec de l'inscription.";
+                    resultat = "ï¿½chec de l'inscription.";
                     VUE      = "/WEB-INF/error.jsp";
                 }
 
-                /* Stockage du résultat et des messages d'erreur dans l'objet request */
+                /* Stockage du rï¿½sultat et des messages d'erreur dans l'objet request */
                 request.setAttribute(ATT_ERREURS, erreurs);
                 request.setAttribute(ATT_RESULTAT, resultat);
 
-                /* Transmission de la paire d'objets request/response à notre JSP */
+                /* Transmission de la paire d'objets request/response ï¿½ notre JSP */
             }
             
             if(action.equals("AllCandidature"))

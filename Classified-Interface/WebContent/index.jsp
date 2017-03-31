@@ -16,6 +16,13 @@
 			</div>
 		</div>
 	</div>
+	<form action="MainServelt?idaction=connection">
+		User <input type="text" name="emailuser"> </br> 
+		Password <input type="password" name="psw"></br> 
+		<input type="submit">
+	</form>
+
+
 </body>
 
 </html>

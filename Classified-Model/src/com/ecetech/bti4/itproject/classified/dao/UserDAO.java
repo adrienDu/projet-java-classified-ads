@@ -17,6 +17,41 @@ import com.ecetech.bti4.itproject.classified.common.MakeUUID;
  */
 
 public class UserDAO {
+	
+	/** public fonction getUser()
+	 * \breif Affiche un utilisateur 
+	 * 
+	 * Renvoie une Arraylist contenant un utilisateur
+	**/
+
+	public static User getUserByeMail(String idUseremail) throws SQLException {
+		DBAction.DBConnexion();
+		User Resultat = new User();
+		String req = ("SELECT * FROM user WHERE mailUser='" + idUseremail + "' ");
+		try {
+			DBAction.setRes(DBAction.getStm().executeQuery(req));
+		} catch (SQLException ex) {
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
+			Resultat.setTypeUser("-1#"+ex.getErrorCode());
+		}
+
+		while (DBAction.getRes().next()) {
+			Resultat.setIdUser(DBAction.getRes().getString(1));
+			Resultat.setIdSocialUser(DBAction.getRes().getString(2));
+			Resultat.setMailUser(DBAction.getRes().getString(3));
+			Resultat.setMdpUser(DBAction.getRes().getString(4));
+			Resultat.setEtatUser(DBAction.getRes().getString(5));
+			Resultat.setDateInUser(DBAction.getRes().getDate(6));
+			Resultat.setTypeUser(DBAction.getRes().getString(7));
+			Resultat.setPermission_idPermission(DBAction.getRes().getString(8));
+		}
+
+		DBAction.DBClose();
+
+		return Resultat;
+	}
+
+	
 	/** public fonction getUser()
 	 * \breif Affiche un utilisateur 
 	 * 
@@ -30,7 +65,7 @@ public class UserDAO {
 		try {
 			DBAction.setRes(DBAction.getStm().executeQuery(req));
 		} catch (SQLException ex) {
-			System.out.println("Requête non valide " + ex.getErrorCode());
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
 		}
 
 		while (DBAction.getRes().next()) {
@@ -62,7 +97,7 @@ public class UserDAO {
 		try {
 			DBAction.setRes(DBAction.getStm().executeQuery(req));
 		} catch (SQLException ex) {
-			System.out.println("Requête non valide " + ex.getErrorCode());
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
 		}
 
 		while (DBAction.getRes().next()) {
@@ -147,10 +182,10 @@ public class UserDAO {
 		String req = ("DELETE FROM user WHERE idUser ='" + idUser + "'");
 		try {
 			DBAction.getStm().executeUpdate(req);
-			System.out.println("L'utilisateur ayant l'id=" + idUser + " a bien été supprimé.");
+			System.out.println("L'utilisateur ayant l'id=" + idUser + " a bien ï¿½tï¿½ supprimï¿½.");
 		} catch (SQLException ex) {
 			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
@@ -165,10 +200,10 @@ public class UserDAO {
 		String req = ("UPDATE user SET mailUser='" + mailUser + "' WHERE idUser='" + idUser + "'");
 		try {
 			DBAction.getStm().executeUpdate(req);
-			System.out.println("Le mail de l'utilisateur ayant l'id=" + idUser + " a bien été modifié.");
+			System.out.println("Le mail de l'utilisateur ayant l'id=" + idUser + " a bien ï¿½tï¿½ modifiï¿½.");
 		} catch (SQLException ex) {
 			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
@@ -183,10 +218,10 @@ public class UserDAO {
 		String req = ("UPDATE user SET mdpUser='" + mdpUser + "' WHERE idUser='" + idUser + "'");
 		try {
 			DBAction.getStm().executeUpdate(req);
-			System.out.println("Le mot de passe de l'utilisateur ayant l'id=" + idUser + " a bien été modifié.");
+			System.out.println("Le mot de passe de l'utilisateur ayant l'id=" + idUser + " a bien ï¿½tï¿½ modifiï¿½.");
 		} catch (SQLException ex) {
 			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
@@ -201,10 +236,10 @@ public class UserDAO {
 		String req = ("UPDATE user SET etatUser='" + etatUser + "' WHERE idUser='" + idUser + "'");
 		try {
 			DBAction.getStm().executeUpdate(req);
-			System.out.println("L'état de l'utilisateur ayant l'id=" + idUser + " a bien été modifié.");
+			System.out.println("L'ï¿½tat de l'utilisateur ayant l'id=" + idUser + " a bien ï¿½tï¿½ modifiï¿½.");
 		} catch (SQLException ex) {
 			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
@@ -219,10 +254,10 @@ public class UserDAO {
 		String req = ("UPDATE user SET typeUser='" + typeUser + "' WHERE idUser='" + idUser + "'");
 		try {
 			DBAction.getStm().executeUpdate(req);
-			System.out.println("Le type de l'utilisateur ayant l'id=" + idUser + " a bien été modifié.");
+			System.out.println("Le type de l'utilisateur ayant l'id=" + idUser + " a bien ï¿½tï¿½ modifiï¿½.");
 		} catch (SQLException ex) {
 			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
@@ -237,10 +272,10 @@ public class UserDAO {
 		String req = ("UPDATE user SET Permission_idPermission='" + permissionUser + "' WHERE idUser='" + idUser + "'");
 		try {
 			DBAction.getStm().executeUpdate(req);
-			System.out.println("Les permissions de l'utilisateur ayant l'id=" + idUser + " ont bien été modifiées.");
+			System.out.println("Les permissions de l'utilisateur ayant l'id=" + idUser + " ont bien ï¿½tï¿½ modifiï¿½es.");
 		} catch (SQLException ex) {
 			System.out.println(req);
-			System.out.println("Requête non valide " + ex.getErrorCode());
+			System.out.println("Requï¿½te non valide " + ex.getErrorCode());
 		}
 		DBAction.DBClose();
 	}
