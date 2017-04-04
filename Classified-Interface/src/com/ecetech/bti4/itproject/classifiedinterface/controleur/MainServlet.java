@@ -4,16 +4,21 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-import javax.servlet.ServletConfig;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import javax.servlet.ServletConfig;
 
 import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 import com.ecetech.bti4.itproject.classifiedinterface.utils.QualityDataQualification;
+import com.sun.glass.ui.Window.Level;
+import com.sun.istack.logging.Logger;
 
 /**
  * Servlet implementation class MainServlet
@@ -31,7 +36,7 @@ public class MainServlet extends HttpServlet {
 		// @param forward page vers laquelle la requette est dispatch�
 		// @param action
 		String idaction = request.getParameter("idaction");
-		// String log = request.getParameter("log");
+		String log = request.getParameter("log");
 		// on verifie si une action est bien demand�e
 		// if ((action != null) || (action.length() != 0)) {
 		if ((idaction == null)) { // no action param
@@ -140,8 +145,15 @@ public class MainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		  
+	            try {
+					processRequest(request, response);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	        } 	//response.getWriter().append("Served at: ").append(request.getContextPath());
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

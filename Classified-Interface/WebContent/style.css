@@ -1,13 +1,21 @@
 @CHARSET "ISO-8859-1";
 .title{
+	margin-top:50px;
+	margin-bottom:15px;
 	font-size: 80px;
 	text-align: center;
 	font-weight: 600;
     letter-spacing: 2px;
 	font-family: 'Lusitana', Arial, sans-serif;
 	text-transform: uppercase;
+	text-decoration: underline;
 }
 
 .inscription{
+	font-size: 20px;
 	text-align: right;
+}
+
+.border{
+	border-bottom: solid #000 1px;
 }

@@ -19,7 +19,7 @@
 	<form action="MainServelt?idaction=connection">
 		User <input type="text" name="emailuser"> </br> 
 		Password <input type="password" name="psw"></br> 
-		<input type="submit">
+		<input type="submit" name="Valider" value="Valider">
 	</form>
 
 

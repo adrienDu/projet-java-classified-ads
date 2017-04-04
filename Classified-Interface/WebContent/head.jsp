@@ -41,8 +41,14 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<h1 class="title">Classifieds</h1>
+				<div>
 				<p><%=new Date()%></p>
-				<a class="inscription" href="">Sign In/Sign Up</a>
+				</div>
+				<div class="inscription" >
+				<a href="">Sign In/Sign Up</a>
+				</div>
+				<hr class="border">
+				<hr class="border">
 			</div>
 		</div>
 	</div>
