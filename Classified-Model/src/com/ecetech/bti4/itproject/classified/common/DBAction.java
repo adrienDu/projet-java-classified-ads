@@ -19,7 +19,7 @@ public class DBAction {
 	 */
 
 	///Chemin d'acces a la BDD
-    private static final String dbPath   = "jdbc:mysql://localhost:3306/classifieds";
+    private static final String dbPath   = "jdbc:mysql://localhost:3306/mydb";
     ///User utilise pour se connecter
     private static final String user     = "root";
     ///Mot de passe de connection

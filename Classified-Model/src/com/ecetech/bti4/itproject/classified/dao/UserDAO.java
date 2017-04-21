@@ -65,7 +65,7 @@ public class UserDAO {
 		try {
 			DBAction.setRes(DBAction.getStm().executeQuery(req));
 		} catch (SQLException ex) {
-			System.out.println("Requ�te non valide " + ex.getErrorCode());
+			System.out.println("Requete non valide " + ex.getErrorCode());
 		}
 
 		while (DBAction.getRes().next()) {
