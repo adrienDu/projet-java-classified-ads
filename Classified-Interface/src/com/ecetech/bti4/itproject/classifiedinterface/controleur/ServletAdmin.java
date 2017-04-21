@@ -30,7 +30,7 @@ public class ServletAdmin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		 RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/admin/index.jsp");
+		 RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/admin/loginAdmin.jsp");
 	     dispatcher.forward(request, response);
 
 	}
