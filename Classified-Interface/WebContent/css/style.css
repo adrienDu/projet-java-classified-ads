@@ -1,21 +1,32 @@
 @CHARSET "ISO-8859-1";
-.title{
-	margin-top:0px;
-	margin-bottom:15px;
+
+.title {
+	margin-top: 0px;
+	margin-bottom: 15px;
 	font-size: 80px;
 	text-align: center;
 	font-weight: 100;
-    letter-spacing: 2px;
-	font-family:'Slab', Arial, sans-serif;
+	letter-spacing: 2px;
+	font-family: 'Slab', Arial, sans-serif;
 	text-transform: uppercase;
 	text-decoration: underline;
 }
 
-.inscription{
+.inscription {
 	font-size: 16px;
 	text-align: rigth;
 }
 
-.border{
+.border {
 	border-bottom: solid #000 1px;
+}
+
+.li-tri {
+	list-style: none;
+	margin-left: -50px;
+	padding-left: 0;
+}
+
+.btn-submit {
+	margin-left: 30px;
 }
