@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html lang="en">
 
@@ -5,15 +7,15 @@
 	<meta charset="utf-8"/>
 	<title>Admin Panel classified</title>
 	
-	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/admin.layout.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>
-	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/admin.ie.css" type="text/css" media="screen" />
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
-	<script src="js/hideshow.js" type="text/javascript"></script>
-	<script src="js/jquery.tablesorter.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="js/jquery.equalHeight.js"></script>
+	<script src="js/admin.jquery-1.5.2.min.js" type="text/javascript"></script>
+	<script src="js/admin.hideshow.js" type="text/javascript"></script>
+	<script src="js/admin.jquery.tablesorter.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/admin.jquery.equalHeight.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() 
     	{ 
