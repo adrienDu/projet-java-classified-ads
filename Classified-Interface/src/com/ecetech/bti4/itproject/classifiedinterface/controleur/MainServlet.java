@@ -18,7 +18,6 @@ import com.ecetech.bti4.itproject.classified.beans.User;
 import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 import com.ecetech.bti4.itproject.classifiedinterface.utils.QualityDataQualification;
 import com.sun.glass.ui.Window.Level;
-import com.sun.istack.logging.Logger;
 
 /**
  * Servlet implementation class MainServlet
