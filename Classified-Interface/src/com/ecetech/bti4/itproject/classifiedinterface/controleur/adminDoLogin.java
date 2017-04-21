@@ -30,6 +30,9 @@ public class adminDoLogin extends HttpServlet {
 	public static final String ATT_ERREURS = "erreurs";
 	public static final String ATT_RESULTAT = "resultat";
 
+	// ErrorString
+	private String errorString = null;
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -42,7 +45,8 @@ public class adminDoLogin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doPost(request, response);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -52,7 +56,8 @@ public class adminDoLogin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
 			processRequest(request, response);
@@ -65,32 +70,41 @@ public class adminDoLogin extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		response.setContentType("text/html;charset=UTF-8");
-		
-		PrintWriter out = response.getWriter();
-
-		VUE = "/WEB-INF/error.jsp";
-
-		// @param forward page vers laquelle la requette est dispatché
 
 		// @param action
 		String log = request.getParameter("log");
 		String mail = request.getParameter("inputEmail");
 		String pswd = request.getParameter("inputPassword");
 		User user = null;
-		VUE = "/WEB-INF/error.jsp";
 
 		if (QualityDataQualification.verifData(mail) || QualityDataQualification.verifData(pswd)) {
-			if(QualityDataQualification.verifyEmail(mail)){
-				user= UserDAO.getUserByeMail(mail);
-				if(user != null){
-					if(QualityDataQualification.validationMDP(user.getMdpUser(), pswd)){
-						System.out.println("login");
-				}
-					else { System.out.println("mauvais mdp");
+			if (QualityDataQualification.verifyEmail(mail)) {
+				user = UserDAO.getUserByeMail(mail);
+				if (user != null) {
+					if (QualityDataQualification.validationMDP(user.getMdpUser(), pswd)) {
+						VUE = "/WEB-INF/admin/index.jsp";
+
+					} else {
+						VUE = "/WEB-INF/admin/loginAdmin.jsp";
+						errorString = "Mot de passe inccorect";
 					}
+				} else {
+					VUE = "/WEB-INF/admin/loginAdmin.jsp";
+					errorString = "Utilisateur innexistant";
+				}
+
+			} else {
+				VUE = "/WEB-INF/admin/loginAdmin.jsp";
+				errorString = "Mail inccorect";
 			}
-		
+
+		} else {
+			VUE = "/WEB-INF/admin/loginAdmin.jsp";
+			errorString = "Mail ou Mot de passe manquant";
 		}
+
+		request.setAttribute("errorString", errorString);
+		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
-	}
+
 }
