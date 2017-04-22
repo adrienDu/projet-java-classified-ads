@@ -85,11 +85,7 @@ public class adminDoLogin extends HttpServlet {
 				if (user != null) {
 					if (QualityDataQualification.validationMDP(user.getMdpUser(), pswd)) {
 						VUE = "/WEB-INF/admin/index.jsp";
-						System.out.println(user.getIdUser());
-						UserSes userSes = new UserSes(user.getIdUser(), user.getPermission_idPermission());
-						userSes.setIdUser(user.getIdUser());
-						userSes.setPermission_idPermission(user.getPermission_idPermission());
-						session.setAttribute(SESSION_ADMIN, userSes);
+						session.setAttribute(SESSION_ADMIN, user);
 
 					} else {
 						VUE = "/WEB-INF/admin/loginAdmin.jsp";

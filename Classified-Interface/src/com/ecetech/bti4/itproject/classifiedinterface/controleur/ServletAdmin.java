@@ -40,10 +40,12 @@ public class ServletAdmin extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		UserSes user = (UserSes) session.getAttribute(SESSION_ADMIN);
+		if(session.getAttribute(SESSION_ADMIN) != null){System.out.println("attribute "+session.getAttribute(SESSION_ADMIN).toString());}
+		User user = (User) session.getAttribute(SESSION_ADMIN);
+		
 		if (user != null) {
-			System.out.println("if null");
-			if (user.getPermission_idPermission() == "admin") {
+			System.out.println("if null" + user.toString() + "permission" + user.getPermission_idPermission());
+			if ("admin".compareTo(user.getPermission_idPermission()) == 0) {
 				System.out.println("if admin");
 
 				VUE = "/WEB-INF/admin/index.jsp";

@@ -57,7 +57,7 @@
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><a href="index.html">Classifieds Admin</a></h1>
-			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="http://localhost:8080/Classified-Interface/index">Voir site</a></div>
+			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="http://localhost:8080/Classified-Interface/ServletIndex">Voir site</a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	
@@ -100,7 +100,7 @@
 		<ul class="toggle">
 			<li class="icn_settings"><a href="#">Options</a></li>
 			<li class="icn_security"><a href="#">Security</a></li>
-			<li class="icn_jump_back"><a href="#">Logout</a></li>
+			<li class="icn_jump_back"><a href="logoutAdmin.jsp">Logout</a></li>
 		</ul>
 		
 		<footer>
@@ -349,5 +349,20 @@
 
 
 </body>
+ <% 
+        if(request.getParameter("logout") != null) {
+               session.invalidate();
+               response.sendRedirect("http://localhost:8080/Classified-Interface/admin");
 
+        }
+    %>
+    <SCRIPT LANGUAGE="JavaScript">
+        <!--
+        function button1()
+        {
+            document.form1.buttonName.value = "yes";
+            form1.submit();
+        } 
+        // --> 
+    </SCRIPT>
 </html>
