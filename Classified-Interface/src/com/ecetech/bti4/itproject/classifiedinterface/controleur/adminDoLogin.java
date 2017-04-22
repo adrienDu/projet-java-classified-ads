@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ecetech.bti4.itproject.classified.beans.User;
+import com.ecetech.bti4.itproject.classified.beans.UserSes;
 import com.ecetech.bti4.itproject.classified.dao.UserDAO;
 import com.ecetech.bti4.itproject.classifiedinterface.utils.QualityDataQualification;
 
@@ -29,6 +30,7 @@ public class adminDoLogin extends HttpServlet {
 	public static final String CHAMP_PASS = "motdepasse";
 	public static final String ATT_ERREURS = "erreurs";
 	public static final String ATT_RESULTAT = "resultat";
+	public static final String SESSION_ADMIN = "sessionUtilisateur";
 
 	// ErrorString
 	private String errorString = null;
@@ -68,7 +70,7 @@ public class adminDoLogin extends HttpServlet {
 	}
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		HttpSession session = request.getSession();
 		response.setContentType("text/html;charset=UTF-8");
 
 		// @param action
@@ -83,6 +85,11 @@ public class adminDoLogin extends HttpServlet {
 				if (user != null) {
 					if (QualityDataQualification.validationMDP(user.getMdpUser(), pswd)) {
 						VUE = "/WEB-INF/admin/index.jsp";
+						System.out.println(user.getIdUser());
+						UserSes userSes = new UserSes(user.getIdUser(), user.getPermission_idPermission());
+						userSes.setIdUser(user.getIdUser());
+						userSes.setPermission_idPermission(user.getPermission_idPermission());
+						session.setAttribute(SESSION_ADMIN, userSes);
 
 					} else {
 						VUE = "/WEB-INF/admin/loginAdmin.jsp";
@@ -101,9 +108,11 @@ public class adminDoLogin extends HttpServlet {
 		} else {
 			VUE = "/WEB-INF/admin/loginAdmin.jsp";
 			errorString = "Mail ou Mot de passe manquant";
+			session.setAttribute( SESSION_ADMIN, null );
 		}
 
 		request.setAttribute("errorString", errorString);
+
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
