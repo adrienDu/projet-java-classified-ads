@@ -18,16 +18,17 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
 /**
  * Represente une Annonce
+ * 
  * @author Maeva, Adrien, Moaz
  */
 
 public class AnnonceDAO {
 
-	/** public fonction getAllAnnonce()
-	 * \breif Affiche toutes les annonces 
+	/**
+	 * public fonction getAllAnnonce() \breif Affiche toutes les annonces
 	 * 
 	 * Renvoie une Arraylist contenant toutes les annonces de la base de donnee
-	**/
+	 **/
 	public static ArrayList<Annonce> getAllAnnonce() {
 		ArrayList<Annonce> annonces = null;
 		Connection con = (Connection) DBAction.getCon();
@@ -38,7 +39,7 @@ public class AnnonceDAO {
 			res = req.executeQuery();
 			while (res.next()) {
 				Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4),
-						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getDate(9), res.getString(10),
+						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getString(9), res.getInt(10),
 						res.getInt(11));
 				annonces.add(annonce);
 			}
@@ -50,11 +51,11 @@ public class AnnonceDAO {
 		return annonces;
 	}
 
-	/** public fonction getAnnonce()
-	 * \breif Affiche une annonce 
+	/**
+	 * public fonction getAnnonce() \breif Affiche une annonce
 	 * 
 	 * Renvoie une Arraylist contenant une annonce de la base de donnee
-	**/
+	 **/
 	public static Annonce getAnnonce(String idAnnonce) throws SQLException {
 		DBAction.DBConnexion();
 		Annonce annonce = null;
@@ -65,7 +66,7 @@ public class AnnonceDAO {
 				annonce = new Annonce(DBAction.getRes().getString(1), DBAction.getRes().getString(2),
 						DBAction.getRes().getString(3), DBAction.getRes().getString(4), DBAction.getRes().getInt(5),
 						DBAction.getRes().getDate(6), DBAction.getRes().getDate(7), DBAction.getRes().getInt(8),
-						DBAction.getRes().getDate(9), DBAction.getRes().getString(10), DBAction.getRes().getInt(11));
+						DBAction.getRes().getString(9), DBAction.getRes().getInt(10), DBAction.getRes().getInt(11));
 			}
 		} catch (SQLException ex) {
 			System.out.println(ex.getErrorCode());
@@ -76,22 +77,21 @@ public class AnnonceDAO {
 		return annonce;
 	}
 
-	/** public fonction newAnnonce()
-	 * \breif Cree une nouvelle annonce
+	/**
+	 * public fonction newAnnonce() \breif Cree une nouvelle annonce
 	 * 
-	 * Renvoie un boolean 
-	**/
+	 * Renvoie un boolean
+	 **/
 
 	public static boolean newAnnonce(Annonce annonce) {
 		boolean result;
 		int nb;
-		if(annonce.getIdAnnonce() == ""){
+		if (annonce.getIdAnnonce() == "") {
 			annonce.setIdAnnonce(MakeUUID.generate());
 		}
 
 		// date du jour
 		java.sql.Date dateCreaAnnonce = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-		annonce.setDateCreaAnnonce(dateCreaAnnonce);
 
 		DBAction.DBConnexion();
 		Connection con = (Connection) DBAction.getCon();
@@ -104,12 +104,11 @@ public class AnnonceDAO {
 			req.setString(3, annonce.getDescAnnonce());
 			req.setString(4, annonce.getPhotoAnnonce());
 			req.setInt(5, annonce.getZoneAnnonce());
-			req.setDate(6, annonce.getDateAnnonce());
-			req.setDate(7, annonce.getFinAnnonce());
-			req.setInt(8, annonce.getImportanceAnnonce());
-			req.setDate(9, dateCreaAnnonce);
-			req.setString(10, annonce.getUser_idUser());
-			req.setInt(11, annonce.getType_idType());
+			req.setDate(6, annonce.getFinAnnonce());
+			req.setInt(7, annonce.getImportanceAnnonce());
+			req.setDate(8, dateCreaAnnonce);
+			req.setString(9, annonce.getUser_idUser());
+			req.setInt(10, annonce.getType_idType());
 
 			nb = req.executeUpdate();
 
@@ -125,12 +124,11 @@ public class AnnonceDAO {
 
 	}
 
-	
-	/** public fonction delAnnonce()
-	 * \breif Supprime une annocne
+	/**
+	 * public fonction delAnnonce() \breif Supprime une annocne
 	 * 
 	 * Renvoie un boolean
-	**/
+	 **/
 	public static boolean delAnnonce(String idAnnonce) {
 		boolean result;
 		int nb;
@@ -153,11 +151,11 @@ public class AnnonceDAO {
 
 	}
 
-	/** public fonction changelAnnonce()
-	 * \breif Modifie une annonce
+	/**
+	 * public fonction changelAnnonce() \breif Modifie une annonce
 	 * 
 	 * Renvoie un boolean
-	**/
+	 **/
 	public static boolean changeAnnonce(Annonce annonce) {
 		boolean result;
 		int nb;
@@ -165,7 +163,6 @@ public class AnnonceDAO {
 		annonce.setIdAnnonce(idAnnonce);
 		// date du jour
 		java.sql.Date dateCreaAnnonce = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-		annonce.setDateCreaAnnonce(dateCreaAnnonce);
 
 		DBAction.DBConnexion();
 		Connection con = (Connection) DBAction.getCon();
@@ -197,11 +194,12 @@ public class AnnonceDAO {
 
 	}
 
-	/** public fonction affichAnnonceUser()
-	 * \breif Affiche toutes les annonces d'un user
+	/**
+	 * public fonction affichAnnonceUser() \breif Affiche toutes les annonces
+	 * d'un user
 	 * 
 	 * Renvoie une Arraylist contenant toutes les annonces d'un user
-	**/
+	 **/
 	public ArrayList<Annonce> affichAnnonceUser(String idUser) {
 		ArrayList<Annonce> annonces = null;
 		Connection con = (Connection) DBAction.getCon();
@@ -213,7 +211,7 @@ public class AnnonceDAO {
 			res = req.executeQuery();
 			while (res.next()) {
 				Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4),
-						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getDate(9), res.getString(10),
+						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getString(9), res.getInt(10),
 						res.getInt(11));
 				annonces.add(annonce);
 			}
@@ -224,11 +222,13 @@ public class AnnonceDAO {
 		return annonces;
 	}
 
-	/** public fonction afficheAnnonceUser()
-	 * \breif Affiche tout les types d'annonces
+	/**
+	 * public fonction afficheAnnonceUser() \breif Affiche tout les types
+	 * d'annonces
 	 * 
-	 * Renvoie une Arraylist contenant toutes les types d'annonces de la base de donnee
-	**/
+	 * Renvoie une Arraylist contenant toutes les types d'annonces de la base de
+	 * donnee
+	 **/
 	public ArrayList<Annonce> affichAnnonceUser(int type) {
 		ArrayList<Annonce> annonces = null;
 		Connection con = (Connection) DBAction.getCon();
@@ -240,7 +240,7 @@ public class AnnonceDAO {
 			res = req.executeQuery();
 			while (res.next()) {
 				Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4),
-						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getDate(9), res.getString(10),
+						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getString(9), res.getInt(10),
 						res.getInt(11));
 				annonces.add(annonce);
 			}

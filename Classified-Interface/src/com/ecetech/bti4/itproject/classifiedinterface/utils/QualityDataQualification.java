@@ -19,7 +19,13 @@ public class QualityDataQualification {
 			return true;
 
 	}
+	public static boolean verifData(int data) {
+		if (data == 99)
+			return false;
+		else
+			return true;
 
+	}
 	/**
 	 * Valide le mot de passe
 	 * 

@@ -19,8 +19,8 @@ public class Annonce {
 	private java.sql.Date dateAnnonce;
 	private java.sql.Date finAnnonce;
 	private int importanceAnnonce;
-	private Date dateCreaAnnonce;
 	private String user_idUser;
+	private int cat_idCategorie;
 	private int type_idType;
 
 	/**
@@ -39,7 +39,7 @@ public class Annonce {
 	 */
 
 	public Annonce(String idAnnonce, String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			Date dateAnnonce, Date finAnnonce, int importanceAnnonce, Date dateCreaAnnonce, String user_idUser,
+			Date dateAnnonce, Date finAnnonce, int importanceAnnonce, String user_idUser,int string,
 			int type_idType) {
 		super();
 		this.idAnnonce = idAnnonce;
@@ -50,14 +50,14 @@ public class Annonce {
 		this.dateAnnonce = dateAnnonce;
 		this.finAnnonce = finAnnonce;
 		this.importanceAnnonce = importanceAnnonce;
-		this.dateCreaAnnonce = dateCreaAnnonce;
 		this.user_idUser = user_idUser;
+		this.cat_idCategorie = string;
 		this.type_idType = type_idType;
 	}
 
 	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
 			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, Date dateCreaAnnonce,
-			String user_idUser, int type_idType) {
+			String user_idUser,int cat_idCategorie, int type_idType) {
 		super();
 		idAnnonce = null;
 		this.titreAnnonce = titreAnnonce;
@@ -67,13 +67,13 @@ public class Annonce {
 		this.dateAnnonce = (Date) dateAnnonce;
 		this.finAnnonce = (Date) dateFin;
 		this.importanceAnnonce = importanceAnnonce;
-		this.dateCreaAnnonce = dateCreaAnnonce;
 		this.user_idUser = user_idUser;
+		this.cat_idCategorie = cat_idCategorie;
 		this.type_idType = type_idType;
 	}
 
 	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, String user_idUser,
+			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, String user_idUser,int cat_idCategorie,
 			int type_idType) {
 		super();
 		idAnnonce = null;
@@ -84,13 +84,13 @@ public class Annonce {
 		this.dateAnnonce = (Date) dateAnnonce;
 		this.finAnnonce = (Date) dateFin;
 		this.importanceAnnonce = importanceAnnonce;
-		dateCreaAnnonce = null;
 		this.user_idUser = user_idUser;
+		this.cat_idCategorie = cat_idCategorie;
 		this.type_idType = type_idType;
 	}
 
 	public Annonce() {
-		this("", "", "", "", 0, null, null, 0, null, "", 0);
+		this("", "", "", "", 0,null, null, 0, "", 0,0);
 	}
 
 	/**
@@ -162,12 +162,14 @@ public class Annonce {
 		this.importanceAnnonce = importanceAnnonce;
 	}
 
-	public Date getDateCreaAnnonce() {
-		return dateCreaAnnonce;
+
+
+	public int getCat_idCategorie() {
+		return cat_idCategorie;
 	}
 
-	public void setDateCreaAnnonce(Date dateCreaAnnonce) {
-		this.dateCreaAnnonce = dateCreaAnnonce;
+	public void setCat_idCategorie(int cat_idCategorie) {
+		this.cat_idCategorie = cat_idCategorie;
 	}
 
 	public String getUser_idUser() {
@@ -185,8 +187,7 @@ public class Annonce {
 	public void setType_idType(int type_idType) {
 		this.type_idType = type_idType;
 	}
-
-	/*
+/*
 	 * toString
 	 * 
 	 * @see java.lang.Object#toString()
@@ -195,8 +196,11 @@ public class Annonce {
 	public String toString() {
 		return "Annonce [idAnnonce=" + idAnnonce + ", titreAnnonce=" + titreAnnonce + ", descAnnonce=" + descAnnonce
 				+ ", photoAnnonce=" + photoAnnonce + ", zoneAnnonce=" + zoneAnnonce + ", dateAnnonce=" + dateAnnonce
-				+ ", finAnnonce=" + finAnnonce + ", importanceAnnonce=" + importanceAnnonce + ", dateCreaAnnonce="
-				+ dateCreaAnnonce + ", user_idUser=" + user_idUser + ", type_idType=" + type_idType + "]";
+				+ ", finAnnonce=" + finAnnonce + ", importanceAnnonce=" + importanceAnnonce + ", user_idUser="
+				+ user_idUser + ", cat_idCategorie=" + cat_idCategorie + ", type_idType=" + type_idType + "]";
 	}
+
+	
+
 
 }
