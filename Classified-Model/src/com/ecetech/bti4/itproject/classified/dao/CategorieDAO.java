@@ -25,7 +25,7 @@ public class CategorieDAO {
 	 * Renvoie une Arraylist contenant toutes les categories de la base de donnee
 	**/
 	public static ArrayList<Categorie> getAllCat() {
-		ArrayList<Categorie> result = null;
+		ArrayList<Categorie> result = new ArrayList<Categorie>();
 		ResultSet res;
 		Categorie categorie = null;
 		DBAction.DBConnexion();

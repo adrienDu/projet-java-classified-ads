@@ -43,8 +43,7 @@ public class TestAnnonceDAO {
 		java.sql.Date dateAnnonce = new java.sql.Date(ndateAnnonce.getTime());
 		java.sql.Date dateFin = new java.sql.Date(ndateFinAnnonce.getTime());
 
-		Annonce annonce = new Annonce("ffe35927-ba0b-11e6-a706-000000000", "ceci est une annonce de test d insert", " ",
-				75000, dateAnnonce, dateFin, 0, "E1", 0);
+		Annonce annonce = new Annonce();
 
 		assertTrue(AnnonceDAO.newAnnonce(annonce));
 
@@ -70,8 +69,7 @@ public class TestAnnonceDAO {
 		java.sql.Date dateAnnonce = new java.sql.Date(ndateAnnonce.getTime());
 		java.sql.Date dateFin = new java.sql.Date(ndateFinAnnonce.getTime());
 
-		Annonce annonce = new Annonce("ffe35927-ba0b-11e6-a706-000000000", "ceci est une annonce de test d insert", " ",
-				75015, dateAnnonce, dateFin, 0, "E1", 0);
+		Annonce annonce = new Annonce();
 		assertTrue(AnnonceDAO.changeAnnonce(annonce));
 
 	}
@@ -96,8 +94,7 @@ public class TestAnnonceDAO {
 		java.sql.Date dateAnnonce = new java.sql.Date(ndateAnnonce.getTime());
 		java.sql.Date dateFin = new java.sql.Date(ndateFinAnnonce.getTime());
 
-		Annonce annonce = new Annonce("ffe35927-ba0b-11e6-a706-000000000", "ceci est une annonce de test d insert", " ",
-				75015, dateAnnonce, dateFin, 0, "E1", 0);
+		Annonce annonce = new Annonce();
 		assertTrue(annonce.equals(AnnonceDAO.getAnnonce("ffe35927-ba0b-11e6-a706-000000000")));
 
 	}

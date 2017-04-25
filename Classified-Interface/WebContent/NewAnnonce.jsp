@@ -1,3 +1,4 @@
+<%@page import="com.ecetech.bti4.itproject.classified.dao.CategorieDAO"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.ForEach"%>
 <%@page import="com.ecetech.bti4.itproject.classified.beans.Categorie"%>
 <%@page import="java.util.ArrayList"%>
@@ -16,7 +17,7 @@
 </head>
 <body>
 	<h1>Créer une annonce</h1>
-		<form  method="post" action="newAnnonce">
+	<form method="post" action="newAnnonce">
 
 		<div class="form-group">
 			<!-- Name field -->
@@ -133,6 +134,7 @@
 				</script>
 			</div>
 		</div>
+		</div>
 		<div class="form-group">
 			<label class="control-label requiredField">Description</label></br>
 			<textarea class="form-control" cols="40" id="desc" name="desc"
@@ -148,8 +150,8 @@
 		-->
 		<div class="form-group">
 			<!-- Message field -->
-			<label class="control-label ">Lieux de
-				l'annonce / impact de l'annonce</label> <SELECT name="zone" id="zone" size="1">
+			<label class="control-label ">Lieux de l'annonce / impact de
+				l'annonce</label> <SELECT name="zone" id="zone" size="1">
 				<OPTION value="75001">75001</OPTION>
 				<OPTION value="75002">75002</OPTION>
 				<OPTION value="75003">75003</OPTION>
@@ -170,8 +172,6 @@
 				<OPTION value="75018">75018</OPTION>
 				<OPTION value="75019">75019</OPTION>
 				<OPTION value="75020">75020</OPTION>
-
-
 			</SELECT>
 		</div>
 		<div class="form-group">
@@ -188,6 +188,4 @@
 		</div>
 	</form>
 </body>
-
-
 </html>

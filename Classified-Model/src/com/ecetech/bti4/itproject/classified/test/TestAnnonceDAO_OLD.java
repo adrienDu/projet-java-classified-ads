@@ -84,7 +84,7 @@ public class TestAnnonceDAO_OLD {
 		java.sql.Date dateAnnonce = new java.sql.Date(ndateAnnonce.getTime()); 
 		java.sql.Date dateFin = new java.sql.Date(ndateFinAnnonce.getTime()); 
 				
-		Annonce annonce = new Annonce("", "ceci est une annonce de test d insert", " ",75000, dateAnnonce, dateFin, 0, "E1",0);
+		Annonce annonce = new Annonce();
 
 			res = AnnonceDAO.newAnnonce(annonce);	
 			System.out.println(res);
