@@ -493,10 +493,9 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="col-md-9">
-
 				<div class="row">
-
 					<div class="col-md-12">
 						<ul class="nav nav-pills navigation">
 							<li role="presentation"><a href="#">Achats</a></li>
@@ -507,10 +506,9 @@
 								href="#">Publier une annonce</a></li>
 						</ul>
 					</div>
-
 				</div>
-				<div class="row">
 
+				<div class="row">
 					<div class="col-sm-4 col-lg-4 col-md-4">
 						<div class="thumbnail">
 							<img src="http://placehold.it/320x150" alt="">
@@ -660,7 +658,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
-	
+
 </body>
 
 </html>

@@ -37,29 +37,33 @@
 <!-- Frontawesome -->
 <script src="https://use.fontawesome.com/dffe9d8685.js"></script>
 
-<%//time 
-				DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("EEEE d MMMM yyyy", Locale.FRENCH);
-				DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HH:mm");
-				LocalDate ldate = LocalDate.now();
-				LocalTime tdate = LocalTime.now();
-				String date = dateformatter.format(ldate);
-				String time = timeformatter.format(tdate);
-
-				%>
+<%
+	//time 
+	DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("EEEE d MMMM yyyy", Locale.FRENCH);
+	DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HH:mm");
+	LocalDate ldate = LocalDate.now();
+	LocalTime tdate = LocalTime.now();
+	String date = dateformatter.format(ldate);
+	String time = timeformatter.format(tdate);
+%>
 <title>Classifieds</title>
 
 </head>
 <body>
-	<div class="container-fluid header">
+	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
 				<h1 class="title">Classifieds</h1>
 				<div>
-					<p><%=date %></p>
-					<p><%=time  %></p>
+					<p class=date id="date"><%=date%></p>
 				</div>
-				<div class="inscription">
-					<a href="">Sign In/Sign Up</a>
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="nav nav-pills navigation">
+							<li role="presentation" class="pull-left"><p class=time><%=time%></p></li>
+							<li role="presentation" class="pull-right"><a href="#">Sign In / Sign Up</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

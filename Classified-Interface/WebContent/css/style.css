@@ -1,7 +1,9 @@
 @CHARSET "ISO-8859-1";
 
+<!-- Head.jsp -->
+
 .header {
-	margin-bottom: 100px;
+	margin-bottom: 80px;
 }
 
 .title {
@@ -16,14 +18,11 @@
 	text-decoration: underline;
 }
 
-.inscription {
-	font-size: 16px;
-	text-align: rigth;
+#date {
+	text-align: center;
 }
 
-.border {
-	border-bottom: solid #000 1px;
-}
+<!-- Index.jsp -->
 
 .li-tri {
 	list-style: none;
