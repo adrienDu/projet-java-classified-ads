@@ -46,12 +46,12 @@
 			<h2>Connexion</h2>
 		</div>
 	
-		<form class="form-signin" method="post" action="adminDoLogin">
-			<label for="inputEmail" class="sr-only">Email address</label> <input
-				type="email" id="inputEmail" name="inputEmail" class="form-control"
+		<form class="form-signin" method="post" action="ServletLogin">
+			<label for="inputEmailConnexion" class="sr-only">Email address</label> <input
+				type="email" id="inputEmailConnexion" name="inputEmailConnexion" class="form-control"
 				placeholder="Email address" required autofocus> <label
-				for="inputPassword" class="sr-only">Password</label> <input
-				type="password" id="inputPassword" name="inputPassword"
+				for="inputPasswordConnexion" class="sr-only">Password</label> <input
+				type="password" id="inputPasswordConnexion" name="inputPasswordConnexion"
 				class="form-control" placeholder="Password" required>
 				
 			<%if((request.getAttribute("errorString"))!=null){ %>
@@ -73,25 +73,7 @@
 			<h2>Inscription</h2>
 		</div>
 		
-		<form class="form-signin" method="post" action="adminDoLogin">
-			<label for="inputEmail" class="sr-only">Email address</label> <input
-				type="email" id="inputEmail" name="inputEmail" class="form-control"
-				placeholder="Email address" required autofocus> <label
-				for="inputPassword" class="sr-only">Password</label> <input
-				type="password" id="inputPassword" name="inputPassword"
-				class="form-control" placeholder="Password" required>
-				
-			<%if((request.getAttribute("errorString"))!=null){ %>
-			<div class="alert alert-danger">
-				<\br><strong>Erreur!</strong>${errorString}
-			</div>
-			<%}
-			       
-				%>
-			<div class="checkbox">
-			</div>
-			<button class="btn inverse btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
-		</form>
+		
 
 	</div>
 

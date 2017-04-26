@@ -23,49 +23,7 @@ public class ServletLogin extends HttpServlet {
 	public static final String SESSION_USER = "sessionUtilisateur";
 	public static String VUE = "/WEB-INF/error.jsp";
 	private String error = null;
-
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HttpSession session = request.getSession();
-		response.setContentType("text/html;charset=UTF-8");
-
-		// @param action
-		String log = request.getParameter("log");
-		String mail = request.getParameter("inputEmail");
-		String pswd = request.getParameter("inputPassword");
-		User user = null;
-
-		if (QualityDataQualification.verifData(mail) || QualityDataQualification.verifData(pswd)) {
-			if (QualityDataQualification.verifyEmail(mail)) {
-				user = UserDAO.getUserByeMail(mail);
-				if (user != null) {
-					if (QualityDataQualification.validationMDP(user.getMdpUser(), pswd)) {
-						VUE = "/WEB-INF/view/index.jsp";
-						session.setAttribute(SESSION_USER, user);
-
-					} else {
-						VUE = "/WEB-INF/ConnexionInscription.jsp";
-						
-					}
-				} else {
-					VUE = "/WEB-INF/ConnexionInscription.jsp";
-					
-				}
-
-			} else {
-				VUE = "/WEB-INF/ConnexionInscription.jsp";
-				
-			}
-
-		} else {
-			VUE = "/WEB-INF/ConnexionInscription.jsp";
-			error = "Mail ou Mot de passe manquant";
-			session.setAttribute( SESSION_USER, null );
-		}
-
-		request.setAttribute("errorString", error);
-
-		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
-	}
+	HttpSession session;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -84,22 +42,68 @@ public class ServletLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		 try {
-				processRequest(request, response);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-     } 	//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+      	response.getWriter().append("Served at: ").append(request.getContextPath());
 
-	
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		try {
+			processRequest(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session = request.getSession();
+		response.setContentType("text/html;charset=UTF-8");
+
+		// @param action
+		
+		String mail = request.getParameter("inputEmailConnexion");
+		String pswd = request.getParameter("inputPasswordConnexion");
+		User user = null;
+
+		if (QualityDataQualification.verifData(mail) || QualityDataQualification.verifData(pswd)) {
+			if (QualityDataQualification.verifyEmail(mail)) {
+				user = UserDAO.getUserByeMail(mail);
+				if (user != null) {
+					if (QualityDataQualification.validationMDP(user.getMdpUser(), pswd)) {
+						VUE = "/ConnexionInscription.jsp";
+						session.setAttribute(SESSION_USER, user);
+
+					} else {
+						VUE = "/ConnexionFail.jsp";
+						error = "Mot de passe inccorect";
+						
+					}
+				} else {
+					VUE = "/ConnexionFail.jsp";
+					error = "Utilisateur innexistant";
+					
+				}
+
+			} else {
+				VUE = "/ConnexionFail.jsp";
+				error = "Mail inccorect";
+				
+			}
+
+		} else {
+			VUE = "/ConnexionFail.jsp";
+			error = "Mail ou Mot de passe manquant";
+			session.setAttribute( SESSION_USER, null );
+		}
+
+		request.setAttribute("errorString", error);
+
+		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
 }
