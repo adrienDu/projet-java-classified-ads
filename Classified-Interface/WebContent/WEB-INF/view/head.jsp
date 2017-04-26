@@ -1,5 +1,8 @@
+<%@page import="java.time.LocalTime"%>
+<%@page import="java.time.LocalDate"
+	import="java.time.format.DateTimeFormatter" import="java.util.Locale"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,6 +36,16 @@
 	rel="stylesheet">
 <!-- Frontawesome -->
 <script src="https://use.fontawesome.com/dffe9d8685.js"></script>
+
+<%//time 
+				DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("EEEE d MMMM yyyy", Locale.FRENCH);
+				DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HH:mm");
+				LocalDate ldate = LocalDate.now();
+				LocalTime tdate = LocalTime.now();
+				String date = dateformatter.format(ldate);
+				String time = timeformatter.format(tdate);
+
+				%>
 <title>Classifieds</title>
 
 </head>
@@ -42,10 +55,11 @@
 			<div class="col-xs-12">
 				<h1 class="title">Classifieds</h1>
 				<div>
-				<p><%=new Date()%></p>
+					<p><%=date %></p>
+					<p><%=time  %></p>
 				</div>
-				<div class="inscription" >
-				<a href="">Sign In/Sign Up</a>
+				<div class="inscription">
+					<a href="">Sign In/Sign Up</a>
 				</div>
 			</div>
 		</div>

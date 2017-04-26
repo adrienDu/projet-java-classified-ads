@@ -1,5 +1,10 @@
 package com.ecetech.bti4.itproject.classifiedinterface.utils;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 /**
  * 
  * @author adri-laptop
@@ -95,5 +100,16 @@ public class QualityDataQualification {
 		// mettre en place la même méthode de criptage de psw
 		return null;
 	}
+	
+	/**
+	 * Verifie le format d'une date
+	 */
 
+	public static Date dateChecker(String dateT){
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy", Locale.FRENCH);
+		LocalDate ldate = LocalDate.parse(dateT, formatter);
+		System.out.println(ldate);
+		Date date = Date.valueOf(ldate);
+		return date;
+	}
 }

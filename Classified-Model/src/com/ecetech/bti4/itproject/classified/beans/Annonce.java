@@ -4,6 +4,7 @@ import java.sql.Date;
 
 /**
  * Represente une Annonce
+ * 
  * @author Maeva, Adrien, Moaz
  */
 
@@ -16,9 +17,12 @@ public class Annonce {
 	private String descAnnonce;
 	private String photoAnnonce;
 	private int zoneAnnonce;
-	private java.sql.Date dateAnnonce;
+	private float prix;
+	private String contact;
+	private java.sql.Date debAnnonce;
 	private java.sql.Date finAnnonce;
 	private int importanceAnnonce;
+	private java.sql.Date dateAnnonce;
 	private String user_idUser;
 	private int cat_idCategorie;
 	private int type_idType;
@@ -38,26 +42,52 @@ public class Annonce {
 	 * @param type_idType
 	 */
 
+	// constructeur complet
+
+
 	public Annonce(String idAnnonce, String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			Date dateAnnonce, Date finAnnonce, int importanceAnnonce, String user_idUser,int string,
-			int type_idType) {
+			float prix, String contact, Date debAnnonce, Date finAnnonce, Date dateAnnonce, int importanceAnnonce,
+			String user_idUser, int cat_idCategorie, int type_idType) {
 		super();
 		this.idAnnonce = idAnnonce;
 		this.titreAnnonce = titreAnnonce;
 		this.descAnnonce = descAnnonce;
 		this.photoAnnonce = photoAnnonce;
 		this.zoneAnnonce = zoneAnnonce;
+		this.prix = prix;
+		this.contact = contact;
+		this.debAnnonce = debAnnonce;
+		this.finAnnonce = finAnnonce;
 		this.dateAnnonce = dateAnnonce;
+		this.importanceAnnonce = importanceAnnonce;
+		this.user_idUser = user_idUser;
+		this.cat_idCategorie = cat_idCategorie;
+		this.type_idType = type_idType;
+	}
+
+	public Annonce(String idAnnonce, String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
+			float prix, String contact, Date debAnnonce, Date finAnnonce, int importanceAnnonce, Date dateAnnonce,
+			String user_idUser, int cat_idCategorie, int type_idType) {
+		super();
+		this.idAnnonce = idAnnonce;
+		this.titreAnnonce = titreAnnonce;
+		this.descAnnonce = descAnnonce;
+		this.photoAnnonce = photoAnnonce;
+		this.zoneAnnonce = zoneAnnonce;
+		this.prix = prix;
+		this.contact = contact;
+		this.debAnnonce = debAnnonce;
 		this.finAnnonce = finAnnonce;
 		this.importanceAnnonce = importanceAnnonce;
+		this.dateAnnonce = dateAnnonce;
 		this.user_idUser = user_idUser;
-		this.cat_idCategorie = string;
+		this.cat_idCategorie = cat_idCategorie;
 		this.type_idType = type_idType;
 	}
 
 	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, Date dateCreaAnnonce,
-			String user_idUser,int cat_idCategorie, int type_idType) {
+			java.sql.Date dateAnnonce, java.sql.Date dateFin, int importanceAnnonce, Date dateCreaAnnonce,
+			String user_idUser, int cat_idCategorie, int type_idType) {
 		super();
 		idAnnonce = null;
 		this.titreAnnonce = titreAnnonce;
@@ -73,8 +103,8 @@ public class Annonce {
 	}
 
 	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
-			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, String user_idUser,int cat_idCategorie,
-			int type_idType) {
+			java.util.Date dateAnnonce, java.util.Date dateFin, int importanceAnnonce, String user_idUser,
+			int cat_idCategorie, int type_idType) {
 		super();
 		idAnnonce = null;
 		this.titreAnnonce = titreAnnonce;
@@ -88,10 +118,13 @@ public class Annonce {
 		this.cat_idCategorie = cat_idCategorie;
 		this.type_idType = type_idType;
 	}
+
+
 
 	public Annonce() {
-		this("", "", "", "", 0,null, null, 0, "", 0,0);
+		super();
 	}
+
 
 	/**
 	 * getters and setters
@@ -162,8 +195,6 @@ public class Annonce {
 		this.importanceAnnonce = importanceAnnonce;
 	}
 
-
-
 	public int getCat_idCategorie() {
 		return cat_idCategorie;
 	}
@@ -187,7 +218,24 @@ public class Annonce {
 	public void setType_idType(int type_idType) {
 		this.type_idType = type_idType;
 	}
-/*
+
+	public float getPrix() {
+		return prix;
+	}
+
+	public void setPrix(float prix) {
+		this.prix = prix;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	/*
 	 * toString
 	 * 
 	 * @see java.lang.Object#toString()
@@ -199,8 +247,5 @@ public class Annonce {
 				+ ", finAnnonce=" + finAnnonce + ", importanceAnnonce=" + importanceAnnonce + ", user_idUser="
 				+ user_idUser + ", cat_idCategorie=" + cat_idCategorie + ", type_idType=" + type_idType + "]";
 	}
-
-	
-
 
 }

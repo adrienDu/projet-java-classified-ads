@@ -38,9 +38,9 @@ public class AnnonceDAO {
 			req = (PreparedStatement) con.prepareStatement("SELECT * FROM annonce");
 			res = req.executeQuery();
 			while (res.next()) {
-				Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4),
-						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getString(9), res.getInt(10),
-						res.getInt(11));
+				Annonce annonce = annonce = new Annonce(DBAction.getRes().getString(1), DBAction.getRes().getString(2),
+						DBAction.getRes().getString(3), DBAction.getRes().getString(4), DBAction.getRes().getInt(5),DBAction.getRes().getFloat(6),DBAction.getRes().getString(7),
+						DBAction.getRes().getDate(8), DBAction.getRes().getDate(9), DBAction.getRes().getInt(10),DBAction.getRes().getDate(11), DBAction.getRes().getString(12), DBAction.getRes().getInt(13), DBAction.getRes().getInt(14));
 				annonces.add(annonce);
 			}
 		} catch (SQLException e) {
@@ -64,9 +64,8 @@ public class AnnonceDAO {
 			DBAction.setRes(DBAction.getStm().executeQuery(req));
 			while (DBAction.getRes().next()) {
 				annonce = new Annonce(DBAction.getRes().getString(1), DBAction.getRes().getString(2),
-						DBAction.getRes().getString(3), DBAction.getRes().getString(4), DBAction.getRes().getInt(5),
-						DBAction.getRes().getDate(6), DBAction.getRes().getDate(7), DBAction.getRes().getInt(8),
-						DBAction.getRes().getString(9), DBAction.getRes().getInt(10), DBAction.getRes().getInt(11));
+						DBAction.getRes().getString(3), DBAction.getRes().getString(4), DBAction.getRes().getInt(5),DBAction.getRes().getFloat(6),DBAction.getRes().getString(7),
+						DBAction.getRes().getDate(8), DBAction.getRes().getDate(9), DBAction.getRes().getInt(10),DBAction.getRes().getDate(11), DBAction.getRes().getString(12), DBAction.getRes().getInt(13), DBAction.getRes().getInt(14));
 			}
 		} catch (SQLException ex) {
 			System.out.println(ex.getErrorCode());
@@ -86,7 +85,7 @@ public class AnnonceDAO {
 	public static boolean newAnnonce(Annonce annonce) {
 		boolean result;
 		int nb;
-		if (annonce.getIdAnnonce() == "") {
+		if (annonce.getIdAnnonce() == "" || annonce.getIdAnnonce() == null) {
 			annonce.setIdAnnonce(MakeUUID.generate());
 		}
 
@@ -98,17 +97,21 @@ public class AnnonceDAO {
 		PreparedStatement req;
 
 		try {
-			req = (PreparedStatement) con.prepareStatement("INSERT INTO annonce VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+			req = (PreparedStatement) con.prepareStatement("INSERT INTO annonce VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			req.setString(1, annonce.getIdAnnonce());
 			req.setString(2, annonce.getTitreAnnonce());
 			req.setString(3, annonce.getDescAnnonce());
 			req.setString(4, annonce.getPhotoAnnonce());
 			req.setInt(5, annonce.getZoneAnnonce());
-			req.setDate(6, annonce.getFinAnnonce());
-			req.setInt(7, annonce.getImportanceAnnonce());
-			req.setDate(8, dateCreaAnnonce);
-			req.setString(9, annonce.getUser_idUser());
-			req.setInt(10, annonce.getType_idType());
+			req.setFloat(6, annonce.getPrix());
+			req.setString(7, annonce.getContact());
+			req.setDate(8, annonce.getDateAnnonce());
+			req.setDate(9, annonce.getFinAnnonce());
+			req.setInt(10, annonce.getImportanceAnnonce());
+			req.setDate(11, dateCreaAnnonce);
+			req.setString(12, annonce.getUser_idUser());
+			req.setInt(13, annonce.getCat_idCategorie());
+			req.setInt(14, annonce.getType_idType());
 
 			nb = req.executeUpdate();
 
@@ -210,9 +213,9 @@ public class AnnonceDAO {
 			req.setString(1, idUser);
 			res = req.executeQuery();
 			while (res.next()) {
-				Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4),
-						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getString(9), res.getInt(10),
-						res.getInt(11));
+				Annonce annonce = new Annonce(DBAction.getRes().getString(1), DBAction.getRes().getString(2),
+						DBAction.getRes().getString(3), DBAction.getRes().getString(4), DBAction.getRes().getInt(5),DBAction.getRes().getFloat(6),DBAction.getRes().getString(7),
+						DBAction.getRes().getDate(8), DBAction.getRes().getDate(9), DBAction.getRes().getInt(10),DBAction.getRes().getDate(11), DBAction.getRes().getString(12), DBAction.getRes().getInt(13), DBAction.getRes().getInt(14));
 				annonces.add(annonce);
 			}
 		} catch (SQLException e) {
@@ -239,9 +242,9 @@ public class AnnonceDAO {
 			req.setInt(1, type);
 			res = req.executeQuery();
 			while (res.next()) {
-				Annonce annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4),
-						res.getInt(5), res.getDate(6), res.getDate(7), res.getInt(8), res.getString(9), res.getInt(10),
-						res.getInt(11));
+				Annonce annonce = annonce = new Annonce(DBAction.getRes().getString(1), DBAction.getRes().getString(2),
+						DBAction.getRes().getString(3), DBAction.getRes().getString(4), DBAction.getRes().getInt(5),DBAction.getRes().getFloat(6),DBAction.getRes().getString(7),
+						DBAction.getRes().getDate(8), DBAction.getRes().getDate(9), DBAction.getRes().getInt(10),DBAction.getRes().getDate(11), DBAction.getRes().getString(12), DBAction.getRes().getInt(13), DBAction.getRes().getInt(14));
 				annonces.add(annonce);
 			}
 		} catch (SQLException e) {

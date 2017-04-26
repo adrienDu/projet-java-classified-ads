@@ -1,4 +1,6 @@
 <%@page import="com.ecetech.bti4.itproject.classified.dao.CategorieDAO"%>
+<%@page import="com.ecetech.bti4.itproject.classified.dao.UserDAO"%>
+<%@page import="com.ecetech.bti4.itproject.classified.beans.User"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.ForEach"%>
 <%@page import="com.ecetech.bti4.itproject.classified.beans.Categorie"%>
 <%@page import="java.util.ArrayList"%>
@@ -11,6 +13,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%
 	// User user =(User) session.getAttribute("sessionUtilisateur");
+	User user = UserDAO.getUser("A1");
+	System.out.println(user);
 %>
 
 <title>Insert title here</title>
@@ -130,7 +134,7 @@
 				Choissisez une catégorie:
 				<script type="text/javascript" language="JavaScript">
 					document
-							.write('<select name="cat" id="cat"><option value="">Vehicule</option></select>')
+							.write('<select name="cat" id="cat"><option value="0">Vehicule</option></select>')
 				</script>
 			</div>
 		</div>
@@ -138,8 +142,7 @@
 		<div class="form-group">
 			<label class="control-label requiredField">Description</label></br>
 			<textarea class="form-control" cols="40" id="desc" name="desc"
-				rows="10">
-				</textarea>
+				rows="10"></textarea>
 		</div>
 		<!-- 
 		<div class="form-group">
