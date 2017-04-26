@@ -14,6 +14,14 @@
 
 <title>Classifieds</title>
 
+<!--  Icone  -->
+
+<link rel="shortcut icon" href="images/Image1.png">
+<link rel="icon" type="image/png" href="images/newspaper.png">
+
+
+<!-- <div>Icons made by <a href="http://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -61,195 +69,106 @@
 								<form name="TriAchats">
 									<div class="form-group">
 										<div class="checkbox">
-										<ul>Catégories
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Autres">
-												Autres
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Electromenager">
-												Electroménager
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Evenements">
-												Evénements
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Immobilier">
-												Immobilier
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Livres">
-												Livres
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Loisirs">
-												Loisirs
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="MaisonJardin">
-												Maison / Jardin
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="MaterielPro">
-												Matériel Professionnel
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Mobilier">
-												Mobilier
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Multimédias">
-												Multimédias
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Vehicules">
-												Véhicules
-											</label>
-											</li>
+											<ul>
+												Catégories
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Autres"> Autres
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Electromenager">
+														Electroménager
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Evenements"> Evénements
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Immobilier"> Immobilier
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Livres"> Livres
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Loisirs"> Loisirs
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="MaisonJardin"> Maison /
+														Jardin
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="MaterielPro"> Matériel
+														Professionnel
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Mobilier"> Mobilier
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Multimédias"> Multimédias
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Vehicules"> Véhicules
+												</label></li>
 											</ul>
-											<ul>Date
-											<li class="li-tri">
-											<label><input type="checkbox" name="Aujourdhui">
-												Aujourd'hui
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Semaine">
-												Cette semaine
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois">
-												Ce dernier mois
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois3">
-												Ces 3 derniers mois
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois4+">
-												Ces 4 ou plus derniers mois
-											</label>
-											</li>
+											<ul>
+												Date
+												<li class="li-tri"><label><input
+														type="checkbox" name="Aujourdhui"> Aujourd'hui </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Semaine"> Cette semaine </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois"> Ce dernier mois </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois3"> Ces 3 derniers mois
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois4+"> Ces 4 ou plus
+														derniers mois </label></li>
 											</ul>
-											<ul>Lieux
-											<li class="li-tri">
-											<label><input type="checkbox" name="75001">
-												75001
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75001">
-												75002
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75003">
-												75003
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75004">
-												75004
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75005">
-												75005
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75006">
-												75006
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75007">
-												75007
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75008">
-												75008
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75009">
-												75009
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75010">
-												75010
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75011">
-												75011
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75012">
-												75012
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75013">
-												75013
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75014">
-												75014
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75015">
-												75015
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75016">
-												75016
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75017">
-												75017
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75018">
-												75018
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75019">
-												75019
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75020">
-												75020
-											</label>
-											</li>
+											<ul>
+												Lieux
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001"> 75001 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001"> 75002 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75003"> 75003 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75004"> 75004 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75005"> 75005 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75006"> 75006 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75007"> 75007 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75008"> 75008 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75009"> 75009 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75010"> 75010 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75011"> 75011 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75012"> 75012 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75013"> 75013 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75014"> 75014 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75015"> 75015 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75016"> 75016 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75017"> 75017 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75018"> 75018 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75019"> 75019 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75020"> 75020 </label></li>
 											</ul>
 										</div>
-										</div>
-										<button type="submit" class="btn btn-default btn-submit">Submit</button>
+									</div>
+									<button type="submit" class="btn btn-default btn-submit">Submit</button>
 								</form>
 
 							</div>
@@ -266,201 +185,112 @@
 						<div id="collapseTwo" class="panel-collapse collapse"
 							role="tabpanel" aria-labelledby="headingTwo">
 							<div class="panel-body">
-							
-							<form name="TriVentes">
+
+								<form name="TriVentes">
 									<div class="form-group">
 										<div class="checkbox">
-										<ul>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Autres">
-												Autres
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Electromenager">
-												Electroménager
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Evenements">
-												Evénements
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Immobilier">
-												Immobilier
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Livres">
-												Livres
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Loisirs">
-												Loisirs
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="MaisonJardin">
-												Maison / Jardin
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="MaterielPro">
-												Matériel Professionnel
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Mobilier">
-												Mobilier
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Multimédias">
-												Multimédias
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Vehicules">
-												Véhicules
-											</label>
-											</li>
+											<ul>
+												Catégories
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Autres"> Autres
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Electromenager">
+														Electroménager
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Evenements"> Evénements
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Immobilier"> Immobilier
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Livres"> Livres
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Loisirs"> Loisirs
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="MaisonJardin"> Maison /
+														Jardin
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="MaterielPro"> Matériel
+														Professionnel
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Mobilier"> Mobilier
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Multimédias"> Multimédias
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Vehicules"> Véhicules
+												</label></li>
 											</ul>
-											<ul>Date
-											<li class="li-tri">
-											<label><input type="checkbox" name="Aujourdhui">
-												Aujourd'hui
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Semaine">
-												Cette semaine
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois">
-												Ce dernier mois
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois3">
-												Ces 3 derniers mois
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois4+">
-												Ces 4 ou plus derniers mois
-											</label>
-											</li>
+											<ul>
+												Date
+												<li class="li-tri"><label><input
+														type="checkbox" name="Aujourdhui"> Aujourd'hui </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Semaine"> Cette semaine </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois"> Ce dernier mois </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois3"> Ces 3 derniers mois
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois4+"> Ces 4 ou plus
+														derniers mois </label></li>
 											</ul>
-											<ul>Lieux
-											<li class="li-tri">
-											<label><input type="checkbox" name="75001">
-												75001
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75001">
-												75002
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75003">
-												75003
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75004">
-												75004
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75005">
-												75005
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75006">
-												75006
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75007">
-												75007
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75008">
-												75008
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75009">
-												75009
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75010">
-												75010
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75011">
-												75011
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75012">
-												75012
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75013">
-												75013
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75014">
-												75014
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75015">
-												75015
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75016">
-												75016
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75017">
-												75017
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75018">
-												75018
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75019">
-												75019
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75020">
-												75020
-											</label>
-											</li>
+											<ul>
+												Lieux
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001"> 75001 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001"> 75002 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75003"> 75003 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75004"> 75004 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75005"> 75005 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75006"> 75006 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75007"> 75007 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75008"> 75008 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75009"> 75009 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75010"> 75010 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75011"> 75011 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75012"> 75012 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75013"> 75013 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75014"> 75014 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75015"> 75015 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75016"> 75016 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75017"> 75017 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75018"> 75018 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75019"> 75019 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75020"> 75020 </label></li>
 											</ul>
 										</div>
-										</div>
-										<button type="submit" class="btn btn-default btn-submit">Submit</button>
+									</div>
+									<button type="submit" class="btn btn-default btn-submit">Submit</button>
 								</form>
-							
+
 							</div>
 						</div>
 					</div>
@@ -476,176 +306,97 @@
 						<div id="collapseThree" class="panel-collapse collapse"
 							role="tabpanel" aria-labelledby="headingThree">
 							<div class="panel-body">
-							
-							<form name="TriRecherches">
+
+								<form name="TriRecherches">
 									<div class="form-group">
 										<div class="checkbox">
-										<ul>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Autres">
-												Autres
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Covoiturage">
-												Covoiturage
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Fomrations">
-												Formations / Activités
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Jobs">
-												Jobs
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="PetitsBoulots">
-												Petits Boulots
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Stages">
-												Stages / Alternances
-											</label>
-											</li>
+											<ul>
+												Catégories
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Autres"> Autres
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Covoiturage"> Covoiturage
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Fomrations"> Formations /
+														Activités
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Jobs"> Jobs
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="PetitsBoulots"> Petits
+														Boulots
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Stages"> Stages /
+														Alternances
+												</label></li>
 											</ul>
-											<ul>Date
-											<li class="li-tri">
-											<label><input type="checkbox" name="Aujourdhui">
-												Aujourd'hui
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Semaine">
-												Cette semaine
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois">
-												Ce dernier mois
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois3">
-												Ces 3 derniers mois
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois4+">
-												Ces 4 ou plus derniers mois
-											</label>
-											</li>
+											<ul>
+												Date
+												<li class="li-tri"><label><input
+														type="checkbox" name="Aujourdhui"> Aujourd'hui </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Semaine"> Cette semaine </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois"> Ce dernier mois </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois3"> Ces 3 derniers mois
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois4+"> Ces 4 ou plus
+														derniers mois </label></li>
 											</ul>
-											<ul>Lieux
-											<li class="li-tri">
-											<label><input type="checkbox" name="75001">
-												75001
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75001">
-												75002
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75003">
-												75003
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75004">
-												75004
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75005">
-												75005
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75006">
-												75006
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75007">
-												75007
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75008">
-												75008
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75009">
-												75009
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75010">
-												75010
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75011">
-												75011
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75012">
-												75012
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75013">
-												75013
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75014">
-												75014
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75015">
-												75015
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75016">
-												75016
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75017">
-												75017
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75018">
-												75018
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75019">
-												75019
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75020">
-												75020
-											</label>
-											</li>
+											<ul>
+												Lieux
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001"> 75001 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001"> 75002 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75003"> 75003 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75004"> 75004 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75005"> 75005 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75006"> 75006 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75007"> 75007 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75008"> 75008 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75009"> 75009 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75010"> 75010 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75011"> 75011 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75012"> 75012 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75013"> 75013 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75014"> 75014 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75015"> 75015 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75016"> 75016 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75017"> 75017 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75018"> 75018 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75019"> 75019 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75020"> 75020 </label></li>
 											</ul>
 										</div>
-										</div>
-										<button type="submit" class="btn btn-default btn-submit">Submit</button>
+									</div>
+									<button type="submit" class="btn btn-default btn-submit">Submit</button>
 								</form>
-							
+
 							</div>
 						</div>
 					</div>
@@ -661,342 +412,230 @@
 						<div id="collapseFour" class="panel-collapse collapse"
 							role="tabpanel" aria-labelledby="headingFour">
 							<div class="panel-body">
-							
-							<form name="TriInformations">
+
+								<form name="TriInformations">
 									<div class="form-group">
 										<div class="checkbox">
-										<ul>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Autres">
-												Autres
-											</label>
-											</li>
-											<li class="li-tri">
-											<label> <input type="checkbox" name="Evenements">
-												Evénements
-											</label>
-											</li>
+											<ul>
+												Catégories
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Autres"> Autres
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Evenements"> Evénements
+												</label></li>
 											</ul>
-											<ul>Date
-											<li class="li-tri">
-											<label><input type="checkbox" name="Aujourdhui">
-												Aujourd'hui
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Semaine">
-												Cette semaine
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois">
-												Ce dernier mois
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois3">
-												Ces 3 derniers mois
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="Mois4+">
-												Ces 4 ou plus derniers mois
-											</label>
-											</li>
+											<ul>
+												Date
+												<li class="li-tri"><label><input
+														type="checkbox" name="Aujourdhui"> Aujourd'hui </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Semaine"> Cette semaine </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois"> Ce dernier mois </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois3"> Ces 3 derniers mois
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="Mois4+"> Ces 4 ou plus
+														derniers mois </label></li>
 											</ul>
-											<ul>Lieux
-											<li class="li-tri">
-											<label><input type="checkbox" name="75001">
-												75001
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75001">
-												75002
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75003">
-												75003
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75004">
-												75004
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75005">
-												75005
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75006">
-												75006
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75007">
-												75007
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75008">
-												75008
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75009">
-												75009
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75010">
-												75010
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75011">
-												75011
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75012">
-												75012
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75013">
-												75013
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75014">
-												75014
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75015">
-												75015
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75016">
-												75016
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75017">
-												75017
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75018">
-												75018
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75019">
-												75019
-											</label>
-											</li>
-											<li class="li-tri">
-											<label><input type="checkbox" name="75020">
-												75020
-											</label>
-											</li>
+											<ul>
+												Lieux
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001"> 75001 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001"> 75002 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75003"> 75003 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75004"> 75004 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75005"> 75005 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75006"> 75006 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75007"> 75007 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75008"> 75008 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75009"> 75009 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75010"> 75010 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75011"> 75011 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75012"> 75012 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75013"> 75013 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75014"> 75014 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75015"> 75015 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75016"> 75016 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75017"> 75017 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75018"> 75018 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75019"> 75019 </label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75020"> 75020 </label></li>
 											</ul>
 										</div>
-										</div>
-										<button type="submit" class="btn btn-default btn-submit">Submit</button>
+									</div>
+									<button type="submit" class="btn btn-default btn-submit">Submit</button>
 								</form>
-							
+
 							</div>
 						</div>
 					</div>
 				</div>
-		</div>
-	<div class="col-md-9">
+			</div>
+			<div class="col-md-9">
 
-		<div class="row carousel-holder">
+				<div class="row">
 
-			<div class="col-md-12">
-				<div id="carousel-example-generic" class="carousel slide"
-					data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carousel-example-generic" data-slide-to="0"
-							class="active"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-					</ol>
-					<div class="carousel-inner">
-						<div class="item active">
-							<img class="slide-image" src="http://placehold.it/800x300" alt="">
+					<div class="col-md-12">
+						<ul class="nav nav-pills navigation">
+							<li role="presentation"><a href="#">Achats</a></li>
+							<li role="presentation"><a href="#">Ventes</a></li>
+							<li role="presentation"><a href="#">Recherches</a></li>
+							<li role="presentation"><a href="#">Informations</a></li>
+							<li role="presentation" class="disabled pull-right"><a
+								href="#">Publier une annonce</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="row">
+
+					<div class="col-sm-4 col-lg-4 col-md-4">
+						<div class="thumbnail">
+							<img src="http://placehold.it/320x150" alt="">
+							<div class="caption">
+								<h4 class="pull-right">$24.99</h4>
+								<h4>
+									<a href="#">First Product</a>
+								</h4>
+								<p>
+									See more snippets like this online store item at <a
+										target="_blank" href="http://www.bootsnipp.com">Bootsnipp
+										- http://bootsnipp.com</a>.
+								</p>
+							</div>
+							<div class="ratings">
+								<p class="pull-right">15 reviews</p>
+								<p>
+									<span class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span>
+								</p>
+							</div>
 						</div>
-						<div class="item">
-							<img class="slide-image" src="http://placehold.it/800x300" alt="">
+					</div>
+
+					<div class="col-sm-4 col-lg-4 col-md-4">
+						<div class="thumbnail">
+							<img src="http://placehold.it/320x150" alt="">
+							<div class="caption">
+								<h4 class="pull-right">$64.99</h4>
+								<h4>
+									<a href="#">Second Product</a>
+								</h4>
+								<p>This is a short description. Lorem ipsum dolor sit amet,
+									consectetur adipiscing elit.</p>
+							</div>
+							<div class="ratings">
+								<p class="pull-right">12 reviews</p>
+								<p>
+									<span class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star-empty"></span>
+								</p>
+							</div>
 						</div>
-						<div class="item">
-							<img class="slide-image" src="http://placehold.it/800x300" alt="">
+					</div>
+
+					<div class="col-sm-4 col-lg-4 col-md-4">
+						<div class="thumbnail">
+							<img src="http://placehold.it/320x150" alt="">
+							<div class="caption">
+								<h4 class="pull-right">$74.99</h4>
+								<h4>
+									<a href="#">Third Product</a>
+								</h4>
+								<p>This is a short description. Lorem ipsum dolor sit amet,
+									consectetur adipiscing elit.</p>
+							</div>
+							<div class="ratings">
+								<p class="pull-right">31 reviews</p>
+								<p>
+									<span class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star-empty"></span>
+								</p>
+							</div>
 						</div>
 					</div>
-					<a class="left carousel-control" href="#carousel-example-generic"
-						data-slide="prev"> <span
-						class="glyphicon glyphicon-chevron-left"></span>
-					</a> <a class="right carousel-control" href="#carousel-example-generic"
-						data-slide="next"> <span
-						class="glyphicon glyphicon-chevron-right"></span>
-					</a>
+
+					<div class="col-sm-4 col-lg-4 col-md-4">
+						<div class="thumbnail">
+							<img src="http://placehold.it/320x150" alt="">
+							<div class="caption">
+								<h4 class="pull-right">$84.99</h4>
+								<h4>
+									<a href="#">Fourth Product</a>
+								</h4>
+								<p>This is a short description. Lorem ipsum dolor sit amet,
+									consectetur adipiscing elit.</p>
+							</div>
+							<div class="ratings">
+								<p class="pull-right">6 reviews</p>
+								<p>
+									<span class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star-empty"></span> <span
+										class="glyphicon glyphicon-star-empty"></span>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-4 col-lg-4 col-md-4">
+						<div class="thumbnail">
+							<img src="http://placehold.it/320x150" alt="">
+							<div class="caption">
+								<h4 class="pull-right">$94.99</h4>
+								<h4>
+									<a href="#">Fifth Product</a>
+								</h4>
+								<p>This is a short description. Lorem ipsum dolor sit amet,
+									consectetur adipiscing elit.</p>
+							</div>
+							<div class="ratings">
+								<p class="pull-right">18 reviews</p>
+								<p>
+									<span class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star-empty"></span>
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-
 		</div>
-		<div class="row">
-
-			<div class="col-sm-4 col-lg-4 col-md-4">
-				<div class="thumbnail">
-					<img src="http://placehold.it/320x150" alt="">
-					<div class="caption">
-						<h4 class="pull-right">$24.99</h4>
-						<h4>
-							<a href="#">First Product</a>
-						</h4>
-						<p>
-							See more snippets like this online store item at <a
-								target="_blank" href="http://www.bootsnipp.com">Bootsnipp -
-								http://bootsnipp.com</a>.
-						</p>
-					</div>
-					<div class="ratings">
-						<p class="pull-right">15 reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4 col-lg-4 col-md-4">
-				<div class="thumbnail">
-					<img src="http://placehold.it/320x150" alt="">
-					<div class="caption">
-						<h4 class="pull-right">$64.99</h4>
-						<h4>
-							<a href="#">Second Product</a>
-						</h4>
-						<p>This is a short description. Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit.</p>
-					</div>
-					<div class="ratings">
-						<p class="pull-right">12 reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star-empty"></span>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4 col-lg-4 col-md-4">
-				<div class="thumbnail">
-					<img src="http://placehold.it/320x150" alt="">
-					<div class="caption">
-						<h4 class="pull-right">$74.99</h4>
-						<h4>
-							<a href="#">Third Product</a>
-						</h4>
-						<p>This is a short description. Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit.</p>
-					</div>
-					<div class="ratings">
-						<p class="pull-right">31 reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star-empty"></span>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4 col-lg-4 col-md-4">
-				<div class="thumbnail">
-					<img src="http://placehold.it/320x150" alt="">
-					<div class="caption">
-						<h4 class="pull-right">$84.99</h4>
-						<h4>
-							<a href="#">Fourth Product</a>
-						</h4>
-						<p>This is a short description. Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit.</p>
-					</div>
-					<div class="ratings">
-						<p class="pull-right">6 reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star-empty"></span> <span
-								class="glyphicon glyphicon-star-empty"></span>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4 col-lg-4 col-md-4">
-				<div class="thumbnail">
-					<img src="http://placehold.it/320x150" alt="">
-					<div class="caption">
-						<h4 class="pull-right">$94.99</h4>
-						<h4>
-							<a href="#">Fifth Product</a>
-						</h4>
-						<p>This is a short description. Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit.</p>
-					</div>
-					<div class="ratings">
-						<p class="pull-right">18 reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star"></span> <span
-								class="glyphicon glyphicon-star-empty"></span>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4 col-lg-4 col-md-4">
-				<h4>
-					<a href="#">Like this template?</a>
-				</h4>
-				<p>
-					If you like this template, then check out <a target="_blank"
-						href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this
-						tutorial</a> on how to build a working review system for your online
-					store!
-				</p>
-				<a class="btn btn-primary" target="_blank"
-					href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View
-					Tutorial</a>
-			</div>
-
-		</div>
-
-	</div>
-
-	</div>
-
 	</div>
 	<!-- /.container -->
 
@@ -1021,7 +660,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
-
+	
 </body>
 
 </html>
