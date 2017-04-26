@@ -20,99 +20,50 @@ import com.ecetech.bti4.itproject.classifiedinterface.utils.QualityDataQualifica
 @WebServlet("/ServletLogin")
 public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public static final String SESSION_USER = "sessionUtilisateur";
 	public static String VUE = "/WEB-INF/error.jsp";
+	private String error = null;
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session = request.getSession();
 		response.setContentType("text/html;charset=UTF-8");
 
-		// @param forward page vers laquelle la requette est dispatch�
 		// @param action
-		String idaction = request.getParameter("idaction");
-		// on verifie si une action est bien demand�e
-		// if ((action != null) || (action.length() != 0)) {
-		if ((idaction == null)) { // no action param
-			VUE = "/WEB-INF/error.jsp";
-		} else { // action param
+		String log = request.getParameter("log");
+		String mail = request.getParameter("inputEmail");
+		String pswd = request.getParameter("inputPassword");
+		User user = null;
 
-			// Acces � la page d'authentification
-			if (idaction.equals("connexion")) {
-				// if(session.getId().isEmpty()){
-				VUE = "/WEB-INF/connexion.jsp";
-				// }else{
-				// VUE = "/WEB-INF/denied.jsp";
-			}
-			switch (idaction) {
-			case "home":
-				// servlet home
-				break;
-			case "connection":
-				String iduser = request.getParameter("emailuser");
-				String psw = request.getParameter("psw");
-				// possibilité de vérification
-				if (QualityDataQualification.verifData(iduser) || QualityDataQualification.verifData(psw)) {
-					// retourner une erreur
-				} else {
-					User usertemp = UserDAO.getUserByeMail(iduser);
-					if (usertemp == null) {
-
-						// request.setAttribute(ATT_ERREURS, erreurs);
-						// request.setAttribute(ATT_RESULTAT, resultat);
-						VUE = "/WEB-INF/connexionFail.jsp";
-
-						// VUE = "/WEB-INF/index.jsp"; //??
+		if (QualityDataQualification.verifData(mail) || QualityDataQualification.verifData(pswd)) {
+			if (QualityDataQualification.verifyEmail(mail)) {
+				user = UserDAO.getUserByeMail(mail);
+				if (user != null) {
+					if (QualityDataQualification.validationMDP(user.getMdpUser(), pswd)) {
+						VUE = "/WEB-INF/view/index.jsp";
+						session.setAttribute(SESSION_USER, user);
 
 					} else {
-
-						String type = usertemp.getTypeUser();
-						if (type.equals("-1#3")) {
-							// ajouter erreur 505
-							VUE = "/WEB-INF/error.jsp";
-
-						}
-
-						boolean testPsw = QualityDataQualification.validateAndCriptPsw(psw, usertemp.getMdpUser());
-						if (testPsw == false) {
-
-							// request.setAttribute(ATT_ERREURS, erreurs);
-							// request.setAttribute(ATT_RESULTAT, resultat);
-							VUE = "/WEB-INF/connexionFail.jsp";
-
-							// VUE = "/WEB-INF/index.jsp"; //??
-						} else if (testPsw == true) {
-							// creer une session =$û*
-							
-							HttpSession session = request.getSession();
-							session.setAttribute("SESSION_USER", usertemp);
-
-							VUE = "/WEB-INF/view/index.jsp";// acceuil after								// authen 
-
-						}
+						VUE = "/WEB-INF/ConnexionInscription.jsp";
+						
 					}
-
+				} else {
+					VUE = "/WEB-INF/ConnexionInscription.jsp";
+					
 				}
 
-				break;
-			case "inscriptionPart":
-				// servlet inscription part
-				break;
-			case "inscriptionEnt":
-				// servlet inscription ent
-				break;
-			case "inscriptionAssos":
-				// servlet inscription assos
-				break;
-			case "logOff":
-				// servlet inscription assos
-				break;
-			case "error":
-
-				break;
-
-			default:
-				break;
+			} else {
+				VUE = "/WEB-INF/ConnexionInscription.jsp";
+				
 			}
+
+		} else {
+			VUE = "/WEB-INF/ConnexionInscription.jsp";
+			error = "Mail ou Mot de passe manquant";
+			session.setAttribute( SESSION_USER, null );
 		}
-		// dispatcher vers les jsp correspondantes aux forward
+
+		request.setAttribute("errorString", error);
+
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
