@@ -37,7 +37,7 @@
 
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid header">
 		<div class="row">
 			<div class="col-xs-12">
 				<h1 class="title">Classifieds</h1>
@@ -47,8 +47,6 @@
 				<div class="inscription" >
 				<a href="">Sign In/Sign Up</a>
 				</div>
-				<hr class="border">
-				<hr class="border">
 			</div>
 		</div>
 	</div>

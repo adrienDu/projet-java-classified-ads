@@ -1,5 +1,7 @@
 @CHARSET "ISO-8859-1";
-
+.header{
+	margin-bottom: 100px;
+}
 .title {
 	margin-top: 0px;
 	margin-bottom: 15px;
@@ -28,5 +30,5 @@
 }
 
 .btn-submit {
-	margin-left: 30px;
+	margin-left: 80px;
 }
