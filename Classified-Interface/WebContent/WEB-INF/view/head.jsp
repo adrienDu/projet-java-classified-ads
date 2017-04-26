@@ -53,7 +53,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<h1 class="title">Classifieds</h1>
+				<h1 class="title"><a href="">Classifieds</a></h1>
 				<div>
 					<p class=date id="date"><%=date%></p>
 				</div>
@@ -61,7 +61,7 @@
 					<div class="col-md-12">
 						<ul class="nav nav-pills navigation">
 							<li role="presentation" class="pull-left"><p class=time><%=time%></p></li>
-							<li role="presentation" class="pull-right"><a href="#">Sign In / Sign Up</a></li>
+							<li role="presentation" class="pull-right"><a href="/WEB-INF/view/signIn.jsp">Sign In / Sign Up</a></li>
 						</ul>
 					</div>
 				</div>
