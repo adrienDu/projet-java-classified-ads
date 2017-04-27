@@ -47,10 +47,10 @@
 		</div>
 	
 		<form class="form-signin" method="post" action="ServletLogin">
-			<label for="inputEmailConnexion" class="sr-only">Email address</label> <input
+			<label for="inputEmailConnexion" class="sr-only">Adresse mail</label> <input
 				type="email" id="inputEmailConnexion" name="inputEmailConnexion" class="form-control"
 				placeholder="Email address" required autofocus> <label
-				for="inputPasswordConnexion" class="sr-only">Password</label> <input
+				for="inputPasswordConnexion" class="sr-only">Mot de passe</label> <input
 				type="password" id="inputPasswordConnexion" name="inputPasswordConnexion"
 				class="form-control" placeholder="Password" required>
 				
