@@ -61,7 +61,7 @@
 							<!-- Name field -->
 							<label class="control-label requiredField" for="name">Titre
 								de l'annonce</label> <input class="form-control" id="titre" name="titre"
-								type="text" /><br/>
+								type="text" /><br />
 
 							<div class="form-group">
 								<script language="javascript" type="text/javascript">
@@ -172,8 +172,8 @@
 								</script>
 
 								<label class="control-label ">Choissisez un type
-									d'annonce :</label> <select name="type" class="required-entry form-control"
-									id="type"
+									d'annonce :</label> <select name="type"
+									class="required-entry form-control" id="type"
 									onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
 									<option value="0">Achat</option>
 									<option value="1">Vente</option>
@@ -181,8 +181,9 @@
 									<option value="3">Recherche de service</option>
 									<option value="4">Information</option>
 								</select>
-								<div class="sub_category_div" id="sub_category_div"><br/>
-									<label class="control-label ">Choissisez une catégorie:</label>
+								<div class="sub_category_div" id="sub_category_div">
+									<br /> <label class="control-label ">Choissisez une
+										catégorie:</label>
 									<script type="text/javascript" language="JavaScript">
 										document
 												.write('<select class="form-control" name="cat" id="cat"><option value="0">Vehicule</option></select>')
@@ -203,7 +204,9 @@
 		-->
 							<div class="form-group">
 								<!-- Message field -->
-								<label class="control-label ">Lieux de l'annonce (zone d'impact)</label> <SELECT class="form-control" name="zone" id="zone" size="1">
+								<label class="control-label ">Lieux de l'annonce (zone
+									d'impact)</label> <SELECT class="form-control" name="zone" id="zone"
+									size="1">
 									<OPTION value="75001">75001</OPTION>
 									<OPTION value="75002">75002</OPTION>
 									<OPTION value="75003">75003</OPTION>
@@ -231,7 +234,7 @@
 									de l'article ou du service</label> <input class="form-control"
 									id="prix" name="prix" type="prix" />
 							</div>
-							<br/>
+							<br />
 							<div class="form-group">
 								<label class="control-label requiredField">Date de fin
 									de l'annonce</label> <input class="form-control" id="dateF"
@@ -243,16 +246,25 @@
 									class="form-control" id="contact" name="contact" />
 							</div>
 							<input class="form-control" id="user" name="user" type="hidden"
-								value="E1" />
-							<br/>
+								value="E1" /> <br />
 							<div class="form-group">
-								<button class="btn btn-primary " name="submit" type="submit">Publier l'annonce</button>
-								<button class="btn btn-danger " name="annuler" type="button" href="WebContent/WEB-INF/view/index.jsp">Annuler</button>
+								<button class="btn btn-primary " name="submit" type="submit">Publier
+									l'annonce</button>
+								<button class="btn btn-danger " name="annuler" type="button"
+									href="WebContent/WEB-INF/view/index.jsp">Annuler</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- Footer -->
+		<footer>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Copyright &copy; Classifieds 2017</p>
+			</div>
+		</div>
+		</footer>
 </body>
 </html>
