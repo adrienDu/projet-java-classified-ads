@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html;  charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +12,7 @@
 <meta name="author"
 	content="Maeva Margueritat, Adrien Duhoux, Moaz Chaudry">
 
-<title>Inscription Association</title>
+<title>Cr√©er un compte | Association</title>
 
 <!--  Icone  -->
 
@@ -39,52 +39,132 @@
     <![endif]-->
 
 </head>
+
 <body>
-<%@include file="WEB-INF/view/head.jsp"%>
-<h1>Inscription Association</h1>
-<form class="form-signin" method="post">
-			<label> Nom d'association</label>
-			<input type="text" id="inputNom" name="inputNom" class="form-control" placeholder="Nom" required autofocus></br>
-			<label>NumÈro Siret</label>
-			<input type="text" id="inputNumSiret" name="inputNumSiret" class="form-control" placeholder="NumÈro Siret" required autofocus></br>
-    		<input type="file" name="icone" id="icone" /><br />
-			<label>Adresse</label>
-			<input type="text" id="inputNumRue" name="inputNumRue" class="form-control" placeholder="NumÈro de rue" required autofocus></br>
-			<label >Rue</label>
-			<input type="text" id="inputRue" name="inputRue" class="form-control" placeholder="Rue" required autofocus></br>
-			<label >Ville</label>
-			<input type="text" id="inputVille" name="inputVille" class="form-control" placeholder="Ville" required autofocus></br>
-			<label>Code Postal</label>
-			<input type="number" id="inputCdp" name="inputCdp" class="form-control" placeholder="Code postal" required autofocus></br>
-			<label>TÈlÈphone</label>
-			<input type="tel" id="inputPhone" name="inputPhone" class="form-control" placeholder="NumÈro de tÈlÈphone" required autofocus></br>
-			<label>Adresse mail</label>
-			<input type="email" id="inputEmailInscription" name="inputEmailInscription" class="form-control" placeholder="Email address" required autofocus/> </br>
-			<label>Mot de passe</label> 
-			<input type="password" id="inputPasswordInscription" name="inputPasswordInscription" class="form-control" placeholder="Password" required></br>
-			<label>Confirmer mot de passe</label> 
-			<input type="password" id="inputPasswordInscription" name="inputPasswordInscription" class="form-control" placeholder="Password" required>
-			</br> </br>
-				
-			<%if((request.getAttribute("errorString"))!=null){ %>
-			<div class="alert alert-danger">
-				<\br><strong>Erreur!</strong>${errorString}
+	<%@include file="WEB-INF/view/head.jsp"%>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-10">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<strong>Formulaire d'inscription</strong>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<form action="" method="post" id="fileForm" role="form">
+							<fieldset>
+								<legend class="text-center">
+									Des informations valides sont n√©c√©ssaires pour s'enregistrer.<br>
+									<span class="req"><small>*Informations requises</small></span>
+								</legend>
+
+								<div class="form-group">
+									<label for="nomassos"><span class="req">* </span> Nom
+										de l'association: </label> <input required type="text" name="nomassos"
+										id="nomassos" class="form-control nomassos" maxlength="200"
+										onkeyup="Validate(this)" required />
+								</div>
+
+								<div class="form-group">
+									<label for="sirenassos"><span class="req">* </span>
+										Num√©ro SIREN: </label> <input class="form-control" type="text"
+										name="sirenassos" id="txt" onkeyup="Validate(this)" required />
+								</div>
+								<label>Addresse</label>
+								<div class="row">
+									<div class="col-xs-2 form-group">
+										<label><span class="req">* </span>Num√©ro de rue:</label> <input
+											type="text" class="form-control" required>
+									</div>
+									<div class="col-xs-10 form-group">
+										<label><span class="req">* </span>Nom de rue:</label> <input
+											type="text" class="form-control" required>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6 form-group">
+										<label><span class="req">* </span>Ville:</label> <input
+											type="text" class="form-control" required>
+									</div>
+									<div class="col-sm-6 form-group">
+										<label><span class="req">* </span>Code postal:</label> <input
+											type="text" class="form-control" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="telassos"><span class="req">* </span>
+										T√©l√©phone:</label> <input class="form-control" type="text"
+										name="telassos" id="txt" onkeyup="Validate(this)" required />
+								</div>
+								<div class="form-group">
+									<label for="emailassos"><span class="req">* </span>
+										Adresse Mail:</label> <input class="form-control" type="text"
+										name="emailassos" id="txt" onkeyup="Validate(this)" required />
+								</div>
+								<div class="form-group">
+									<label for="password"><span class="req">* </span> Mot
+										de passe: </label> <input required name="password" type="password"
+										class="form-control inputpass" minlength="4" maxlength="16"
+										id="pass1" /> <label for="password"><span class="req">*
+									</span> Confirmation du mot de passe: </label> <input required name="password"
+										type="password" class="form-control inputpass" minlength="4"
+										maxlength="16" id="pass2" onkeyup="checkPass(); return false;" />
+									<span id="confirmMessage" class="confirmMessage"></span>
+								</div>
+
+								<div class="form-group">
+
+									<?php //$date_entered = date('m/d/Y H:i:s'); ?>
+									<input type="hidden" value="<?php //echo $date_entered; ?>"
+										name="dateregistered"> <input type="hidden" value="0"
+										name="activate" />
+									<hr>
+
+									<input type="checkbox" required name="terms"
+										onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');"
+										id="field_terms"> ¬† <label for="terms">J'accepte
+										les <a href="terms.php">conditions d'utilisations </a>
+									</label><span class="req">* </span>
+								</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<div class="form-group">
+											<input class="btn btn-success" type="submit"
+												name="submit_reg" value="Cr√©er un compte"> 
+											<input class="btn btn-warning" type="submit"
+												name="submitpremium_reg" value="Cr√©er un compte Premium">
+											<input class="btn btn-danger" type="submit"
+												name="submitpremium_reg" value="Annuler">
+										</div>
+									</div>
+								</div>
+								<h5>Vous allez recevoir un mail pour confirmer votre
+									inscription.</h5>
+								<h5>Merci de v√©rifier dans vos mails ind√©sirables</h5>
+							</fieldset>
+						</form>
+						<!-- ends register form -->
+					</div>
+				</div>
+				<script type="text/javascript">
+					document
+							.getElementById("field_terms")
+							.setCustomValidity(
+									"Merci d'accepter les conditions et termes d'utilisation");
+				</script>
 			</div>
-			<%}
-			       
-				%>
-				
-			
-			<button class="btn inverse btn-lg btn-primary btn-block" type="submit">CrÈer compte</button>
-		
-			
-		</form>
-		
-		<!-- jQuery -->
+			<!-- ends col-10 -->
+		</div>
+	</div>
+
+
+
+	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
-
 </body>
 </html>
