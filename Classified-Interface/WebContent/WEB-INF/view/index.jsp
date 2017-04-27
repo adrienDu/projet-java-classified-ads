@@ -519,7 +519,7 @@
 
 					<!-- Annonce -->
 					<%
-					System.out.println(AnnonceDAO.getAnnonce("1").toString());
+						System.out.println(AnnonceDAO.getAnnonce("1").toString());
 						ArrayList<Annonce> annonces = new ArrayList<Annonce>();
 						annonces = AnnonceDAO.getAllAnnonce();
 						for (Annonce annonce : annonces) {
@@ -536,10 +536,9 @@
 									%>
 								</h4>
 								<h4>
-									<a href="#">
-										<%
-											out.println(annonce.getTitreAnnonce());
-										%>
+									<a href="#"> <%
+ 	out.println(annonce.getTitreAnnonce());
+ %>
 									</a>
 								</h4>
 								<p>
@@ -550,12 +549,23 @@
 							</div>
 							<div class="ratings">
 								<p class="pull-right">
-									<%out.println(annonce.getZoneAnnonce());%>
+									<%
+										out.println(annonce.getZoneAnnonce());
+									%>
 								</p>
 								<p>
 									<%
-									System.out.println(TypeDAO.getType(annonce.getType_idType()).getNomType().toString());
-										out.println(TypeDAO.getType(annonce.getType_idType()).getNomType().toString());
+										if (annonce.getType_idType() == 0) {
+												out.println("Achat");
+											} else if (annonce.getType_idType() == 1) {
+												out.println("Vente");
+											} else if (annonce.getType_idType() == 2) {
+												out.println("Proposition service");
+											} else if (annonce.getType_idType() == 3) {
+												out.println("Recherche service");
+											} else if (annonce.getType_idType() == 4) {
+												out.println("Information");
+											}
 									%>
 								</p>
 							</div>
