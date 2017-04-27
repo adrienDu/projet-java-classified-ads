@@ -56,6 +56,32 @@ public class AnnonceDAO {
 		return result;
 	}
 
+	public static ArrayList<Annonce> getAnnonceReq(String r) {
+		String requete = r;
+		ArrayList<Annonce> result = new ArrayList<Annonce>();
+		ResultSet res;
+		Annonce annonce = new Annonce();
+		DBAction.DBConnexion();
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
+
+		try {
+			req = (PreparedStatement) con.prepareStatement(requete);
+			res = req.executeQuery();
+			while (res.next()) {
+				annonce = new Annonce(res.getString(1), res.getString(2), res.getString(3), res.getString(4),
+						res.getInt(5), res.getFloat(6), res.getString(7), res.getDate(8), res.getDate(9),
+						res.getInt(10), res.getDate(11), res.getString(12), res.getInt(13), res.getInt(14));
+				result.add(annonce);
+			}
+			req.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 	/**
 	 * public fonction getAnnonce() \breif Affiche une annonce
 	 * 

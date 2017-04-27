@@ -49,7 +49,10 @@
 
 <body>
 	<%@include file="head.jsp"%>
-
+	<%
+		ArrayList<Annonce> annonces = new ArrayList();
+		annonces = (ArrayList<Annonce>) request.getAttribute("annonce");
+	%>
 	<!-- Page Content -->
 	<div class="container">
 
@@ -73,46 +76,51 @@
 							role="tabpanel" aria-labelledby="headingOne">
 							<div class="panel-body">
 
-								<form name="TriAchats">
+								<form name="TriAchats" action="ServletIndex">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
 												Catégories
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Autres"> Autres
+														type="checkbox" name="Autres" value="10"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Electromenager">
+														type="checkbox" name="Electromenager" value="1">
 														Electroménager
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Evenements"> Evénements
+														type="checkbox" name="Evenements" value="8">
+														Evénements
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Immobilier"> Immobilier
+														type="checkbox" name="Immobilier" value="2">
+														Immobilier
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Livres"> Livres
+														type="checkbox" name="Livres" value="6"> Livres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Loisirs"> Loisirs
+														type="checkbox" name="Loisirs" value="5"> Loisirs
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="MaisonJardin"> Maison /
-														Jardin
+														type="checkbox" name="MaisonJardin" value="9">
+														Maison / Jardin
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="MaterielPro"> Matériel
-														Professionnel
+														type="checkbox" name="MaterielPro" value="7">
+														Matériel Professionnel
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Mobilier"> Mobilier
+														type="checkbox" name="Mobilier" value="3">
+														Mobilier
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Multimédias"> Multimédias
+														type="checkbox" name="Multimédias" value="4">
+														Multimédias
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Vehicules"> Véhicules
+														type="checkbox" name="Vehicules" value="0">
+														Véhicules
 												</label></li>
 											</ul>
 											<ul>
@@ -133,49 +141,70 @@
 											<ul>
 												Lieux
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001"> 75001 </label></li>
+														type="checkbox" name="75001" value="75001"> 75001
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001"> 75002 </label></li>
+														type="checkbox" name="75001" value="75002"> 75002
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75003"> 75003 </label></li>
+														type="checkbox" name="75003" value="75003"> 75003
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75004"> 75004 </label></li>
+														type="checkbox" name="75004" value="75004"> 75004
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75005"> 75005 </label></li>
+														type="checkbox" name="75005" value="75005"> 75005
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75006"> 75006 </label></li>
+														type="checkbox" name="75006" value="75006"> 75006
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75007"> 75007 </label></li>
+														type="checkbox" name="75007" value="75007"> 75007
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75008"> 75008 </label></li>
+														type="checkbox" name="75008" value="75008"> 75008
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75009"> 75009 </label></li>
+														type="checkbox" name="75009" value="75009"> 75009
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75010"> 75010 </label></li>
+														type="checkbox" name="75010" value="75010"> 75010
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75011"> 75011 </label></li>
+														type="checkbox" name="75011" value="75011"> 75011
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75012"> 75012 </label></li>
+														type="checkbox" name="75012" value="75012"> 75012
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75013"> 75013 </label></li>
+														type="checkbox" name="75013" value="75013"> 75013
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75014"> 75014 </label></li>
+														type="checkbox" name="75014" value="75014"> 75014
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75015"> 75015 </label></li>
+														type="checkbox" name="75015" value="75015"> 75015
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75016"> 75016 </label></li>
+														type="checkbox" name="75016" value="75016"> 75016
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75017"> 75017 </label></li>
+														type="checkbox" name="75017" value="75017"> 75017
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75018"> 75018 </label></li>
+														type="checkbox" name="75018" value="75018"> 75018
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75019"> 75019 </label></li>
+														type="checkbox" name="75019" value="75019"> 75019
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75020"> 75020 </label></li>
+														type="checkbox" name="75020" value="75020"> 75020
+												</label></li>
 											</ul>
 										</div>
 									</div>
-									<button type="submit" class="btn btn-default btn-submit">Submit</button>
+									<button type="submit" name="formachat" value="submit"
+										class="btn btn-default btn-submit">Trier</button>
 								</form>
 
 							</div>
@@ -193,46 +222,51 @@
 							role="tabpanel" aria-labelledby="headingTwo">
 							<div class="panel-body">
 
-								<form name="TriVentes">
+								<form name="TriVentes" action="ServletIndex">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
 												Catégories
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Autres"> Autres
+														type="checkbox" name="Autres" value="10"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Electromenager">
+														type="checkbox" name="Electromenager" value="1">
 														Electroménager
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Evenements"> Evénements
+														type="checkbox" name="Evenements" value="8">
+														Evénements
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Immobilier"> Immobilier
+														type="checkbox" name="Immobilier" value="2">
+														Immobilier
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Livres"> Livres
+														type="checkbox" name="Livres" value="6"> Livres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Loisirs"> Loisirs
+														type="checkbox" name="Loisirs" value="5"> Loisirs
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="MaisonJardin"> Maison /
-														Jardin
+														type="checkbox" name="MaisonJardin" value="9">
+														Maison / Jardin
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="MaterielPro"> Matériel
-														Professionnel
+														type="checkbox" name="MaterielPro" value="7">
+														Matériel Professionnel
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Mobilier"> Mobilier
+														type="checkbox" name="Mobilier" value="3">
+														Mobilier
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Multimédias"> Multimédias
+														type="checkbox" name="Multimédias" value="4">
+														Multimédias
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Vehicules"> Véhicules
+														type="checkbox" name="Vehicules" value="0">
+														Véhicules
 												</label></li>
 											</ul>
 											<ul>
@@ -253,49 +287,70 @@
 											<ul>
 												Lieux
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001"> 75001 </label></li>
+														type="checkbox" name="75001" value="75001"> 75001
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001"> 75002 </label></li>
+														type="checkbox" name="75001" value="75002"> 75002
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75003"> 75003 </label></li>
+														type="checkbox" name="75003" value="75003"> 75003
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75004"> 75004 </label></li>
+														type="checkbox" name="75004" value="75004"> 75004
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75005"> 75005 </label></li>
+														type="checkbox" name="75005" value="75005"> 75005
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75006"> 75006 </label></li>
+														type="checkbox" name="75006" value="75006"> 75006
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75007"> 75007 </label></li>
+														type="checkbox" name="75007" value="75007"> 75007
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75008"> 75008 </label></li>
+														type="checkbox" name="75008" value="75008"> 75008
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75009"> 75009 </label></li>
+														type="checkbox" name="75009" value="75009"> 75009
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75010"> 75010 </label></li>
+														type="checkbox" name="75010" value="75010"> 75010
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75011"> 75011 </label></li>
+														type="checkbox" name="75011" value="75011"> 75011
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75012"> 75012 </label></li>
+														type="checkbox" name="75012" value="75012"> 75012
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75013"> 75013 </label></li>
+														type="checkbox" name="75013" value="75013"> 75013
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75014"> 75014 </label></li>
+														type="checkbox" name="75014" value="75014"> 75014
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75015"> 75015 </label></li>
+														type="checkbox" name="75015" value="75015"> 75015
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75016"> 75016 </label></li>
+														type="checkbox" name="75016" value="75016"> 75016
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75017"> 75017 </label></li>
+														type="checkbox" name="75017" value="75017"> 75017
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75018"> 75018 </label></li>
+														type="checkbox" name="75018" value="75018"> 75018
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75019"> 75019 </label></li>
+														type="checkbox" name="75019" value="75019"> 75019
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75020"> 75020 </label></li>
+														type="checkbox" name="75020" value="75020"> 75020
+												</label></li>
 											</ul>
 										</div>
 									</div>
-									<button type="submit" class="btn btn-default btn-submit">Submit</button>
+									<button type="submit" name="trievente" value="submit"
+										class="btn btn-default btn-submit">Trier</button>
 								</form>
 
 							</div>
@@ -516,12 +571,11 @@
 				</div>
 
 				<div class="row">
-
+					<%
+						if (!annonces.isEmpty()) {
+					%>
 					<!-- Annonce -->
 					<%
-						System.out.println(AnnonceDAO.getAnnonce("1").toString());
-						ArrayList<Annonce> annonces = new ArrayList<Annonce>();
-						annonces = AnnonceDAO.getAllAnnonce();
 						for (Annonce annonce : annonces) {
 					%>
 					<div class="col-sm-4 col-lg-4 col-md-4">
@@ -531,8 +585,8 @@
 								<h4 class="pull-right">
 									<%
 										if (annonce.getPrix() != 0) {
-												out.println((int) annonce.getPrix() + "&euro;");
-											}
+													out.println((int) annonce.getPrix() + "&euro;");
+												}
 									%>
 								</h4>
 								<h4>
@@ -556,16 +610,16 @@
 								<p>
 									<%
 										if (annonce.getType_idType() == 0) {
-												out.println("Achat");
-											} else if (annonce.getType_idType() == 1) {
-												out.println("Vente");
-											} else if (annonce.getType_idType() == 2) {
-												out.println("Proposition service");
-											} else if (annonce.getType_idType() == 3) {
-												out.println("Recherche service");
-											} else if (annonce.getType_idType() == 4) {
-												out.println("Information");
-											}
+													out.println("Achat");
+												} else if (annonce.getType_idType() == 1) {
+													out.println("Vente");
+												} else if (annonce.getType_idType() == 2) {
+													out.println("Proposition service");
+												} else if (annonce.getType_idType() == 3) {
+													out.println("Recherche service");
+												} else if (annonce.getType_idType() == 4) {
+													out.println("Information");
+												}
 									%>
 								</p>
 							</div>
@@ -573,102 +627,15 @@
 					</div>
 					<%
 						}
+						} else {
 					%>
-					<div class="col-sm-4 col-lg-4 col-md-4">
-						<div class="thumbnail">
-							<img src="http://placehold.it/320x150" alt="">
-							<div class="caption">
-								<h4 class="pull-right">$64.99</h4>
-								<h4>
-									<a href="#">Second Product</a>
-								</h4>
-								<p>This is a short description. Lorem ipsum dolor sit amet,
-									consectetur adipiscing elit.</p>
-							</div>
-							<div class="ratings">
-								<p class="pull-right">12 reviews</p>
-								<p>
-									<span class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star-empty"></span>
-								</p>
-							</div>
-						</div>
+					<div class="alert alert-info">
+						<strong>Info!</strong> Aucune annonce ne correspond a votre
+						recherche
 					</div>
-
-					<div class="col-sm-4 col-lg-4 col-md-4">
-						<div class="thumbnail">
-							<img src="http://placehold.it/320x150" alt="">
-							<div class="caption">
-								<h4 class="pull-right">$74.99</h4>
-								<h4>
-									<a href="#">Third Product</a>
-								</h4>
-								<p>This is a short description. Lorem ipsum dolor sit amet,
-									consectetur adipiscing elit.</p>
-							</div>
-							<div class="ratings">
-								<p class="pull-right">31 reviews</p>
-								<p>
-									<span class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star-empty"></span>
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 col-lg-4 col-md-4">
-						<div class="thumbnail">
-							<img src="http://placehold.it/320x150" alt="">
-							<div class="caption">
-								<h4 class="pull-right">$84.99</h4>
-								<h4>
-									<a href="#">Fourth Product</a>
-								</h4>
-								<p>This is a short description. Lorem ipsum dolor sit amet,
-									consectetur adipiscing elit.</p>
-							</div>
-							<div class="ratings">
-								<p class="pull-right">6 reviews</p>
-								<p>
-									<span class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star-empty"></span> <span
-										class="glyphicon glyphicon-star-empty"></span>
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 col-lg-4 col-md-4">
-						<div class="thumbnail">
-							<img src="http://placehold.it/320x150" alt="">
-							<div class="caption">
-								<h4 class="pull-right">$94.99</h4>
-								<h4>
-									<a href="#">Fifth Product</a>
-								</h4>
-								<p>This is a short description. Lorem ipsum dolor sit amet,
-									consectetur adipiscing elit.</p>
-							</div>
-							<div class="ratings">
-								<p class="pull-right">18 reviews</p>
-								<p>
-									<span class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star-empty"></span>
-								</p>
-							</div>
-						</div>
-					</div>
+					<%
+						}
+					%>
 				</div>
 			</div>
 		</div>
