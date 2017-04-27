@@ -12,7 +12,7 @@
 <meta name="author"
 	content="Maeva Margueritat, Adrien Duhoux, Moaz Chaudry">
 
-<title>Créer un compte | Particulier</title>
+<title>Créer un compte | Entreprise</title>
 
 <!--  Icone  -->
 
@@ -61,16 +61,16 @@
 								</legend>
 
 								<div class="form-group">
-									<label for="nompart"><span class="req">* </span> Nom: </label>
-									<input required type="text" name="nomassos" id="nompart"
-										class="form-control nompart" maxlength="200"
+									<label for="nomassos"><span class="req">* </span> Nom
+										de l'association: </label> <input required type="text" name="nomassos"
+										id="nomassos" class="form-control nomassos" maxlength="200"
 										onkeyup="Validate(this)" required />
 								</div>
 
 								<div class="form-group">
-									<label for="prenompart"><span class="req">* </span>
-										Prénom: </label> <input class="form-control" type="text"
-										name="prenompart" id="txt" onkeyup="Validate(this)" required />
+									<label for="sirenassos"><span class="req">* </span>
+										Numéro SIREN: </label> <input class="form-control" type="text"
+										name="sirenassos" id="txt" onkeyup="Validate(this)" required />
 								</div>
 								<label>Addresse</label>
 								<div class="row">
@@ -131,11 +131,8 @@
 								<div class="row">
 									<div class="col-xs-6">
 										<div class="form-group">
-											<input class="btn btn-success" type="submit"
-												name="submit_reg" value="Créer un compte"> <input
-												class="btn btn-warning" type="submit"
+											<input class="btn btn-warning" type="submit"
 												name="submitpremium_reg" value="Créer un compte Premium">
-
 											<input class="btn btn-danger" type="submit"
 												name="submitpremium_reg" value="Annuler">
 										</div>
@@ -144,8 +141,6 @@
 								<h5>Vous allez recevoir un mail pour confirmer votre
 									inscription.</h5>
 								<h5>Merci de vérifier dans vos mails indésirables</h5>
-
-
 							</fieldset>
 						</form>
 						<!-- ends register form -->
