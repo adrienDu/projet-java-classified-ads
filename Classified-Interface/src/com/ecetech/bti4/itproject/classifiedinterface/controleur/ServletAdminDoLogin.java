@@ -20,7 +20,7 @@ import com.ecetech.bti4.itproject.classifiedinterface.utils.QualityDataQualifica
  * Servlet implementation class adminDoLogin
  */
 @WebServlet("/adminDoLogin")
-public class adminDoLogin extends HttpServlet {
+public class ServletAdminDoLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HttpSession session;
 
@@ -38,7 +38,7 @@ public class adminDoLogin extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public adminDoLogin() {
+	public ServletAdminDoLogin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

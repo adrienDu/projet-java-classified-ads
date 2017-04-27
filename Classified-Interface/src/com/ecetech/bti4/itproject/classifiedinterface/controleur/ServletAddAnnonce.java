@@ -1,6 +1,7 @@
 package com.ecetech.bti4.itproject.classifiedinterface.controleur;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.Calendar;
 
 import javax.servlet.ServletException;
@@ -23,7 +24,7 @@ import com.ecetech.bti4.itproject.classifiedinterface.utils.QualityDataQualifica
 public class ServletAddAnnonce extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String errorString;
-	private String VUE = "/WEB-INF/admin/NewAnnonce.jsp";
+	private String VUE = "/WEB-INF/admin/nouvelleAnnonce.jsp";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -69,28 +70,30 @@ public class ServletAddAnnonce extends HttpServlet {
 		String desc = request.getParameter("desc");
 		String picture = "";
 		// String picture = request.getParameter("picture");
-		int zone =Integer.parseInt(request.getParameter("zone"));
+		int zone = Integer.parseInt(request.getParameter("zone"));
 		String dateF = request.getParameter("dateF");
-		
 		int imp = 1;
 		String idUser = request.getParameter("user");
 		int idCat = Integer.parseInt(request.getParameter("cat"));
 		int idType = Integer.parseInt(request.getParameter("type"));
 		java.sql.Date dateAnnonce = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-
+		float prix = Float.parseFloat(request.getParameter("prix"));
+		String contact = request.getParameter("contact");
 
 		if (QualityDataQualification.verifData(titre) && QualityDataQualification.verifData(desc)
 				&& QualityDataQualification.verifData(zone) && QualityDataQualification.verifData(dateF)
 				&& QualityDataQualification.verifData(idCat) && QualityDataQualification.verifData(idType)) {
 			System.out.println("titre" + titre + " description " + desc + " picture " + picture + " zone " + zone
-					+ " dateF "+dateF + "importance " + imp + " idUser " + idUser + "  idCat " + idCat + " idType" + idType);
-			Annonce annonce = new Annonce(titre, desc, "", zone, dateAnnonce, QualityDataQualification.dateChecker(dateF), imp, idUser, idCat, idType);
+					+ "prix " + prix + "contact" + contact + " dateF " + dateF + "importance " + imp + " idUser "
+					+ idUser + "  idCat " + idCat + " idType" + idType);
+			Annonce annonce = new Annonce(titre, desc, "", zone, prix, contact, dateAnnonce,
+					QualityDataQualification.dateChecker(dateF), imp, dateAnnonce, idUser, idCat, idType);
 			AnnonceDAO.newAnnonce(annonce);
-			VUE = "/WEB-INF/admin/loginAdmin.jsp";
+			VUE = "/WEB-INF/admin/ServletIndex.jsp";
 		} else {
 			System.out.println("else");
-			VUE = "/NewAnnonce.jsp";
-			errorString = "Mail ou Mot de passe manquant";
+			VUE = "/nouvelleAnnonce.jsp";
+			errorString = "tous les champs n'ont pas étaient replis";
 			session.setAttribute("sessionUtilisateur", null);
 		}
 

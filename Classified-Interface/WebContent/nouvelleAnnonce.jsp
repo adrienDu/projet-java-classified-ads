@@ -21,13 +21,12 @@
 </head>
 <body>
 	<h1>Créer une annonce</h1>
-	<form method="post" action="newAnnonce">
-
-		<div class="form-group">
-			<!-- Name field -->
-			<label class="control-label requiredField" for="name">Titre
-				de l'annonce</label> <input class="form-control" id="titre" name="titre"
-				type="text" />
+	<!--<form method="post" action="newAnnonce"> -->
+	<form action="newAnnonce" method="post">
+		<!-- Name field -->
+		<label class="control-label requiredField" for="name">Titre de
+			l'annonce</label> <input class="form-control" id="titre" name="titre"
+			type="text" />
 		</div>
 		<div class="form-group">
 			<script language="javascript" type="text/javascript">
@@ -57,6 +56,7 @@
 								"Maison et Jardin", "9");
 						document.getElementById("cat").options[10] = new Option(
 								"Autres", "10");
+						document.getElementById('divPrix').style.display = '';
 						break;
 					case "1":
 						document.getElementById("cat").options[0] = new Option(
@@ -81,6 +81,8 @@
 								"Maison et Jardin", "9");
 						document.getElementById("cat").options[10] = new Option(
 								"Autres", "10");
+						document.getElementById('divPrix').style.display = '';
+
 						break;
 					case "2":
 						document.getElementById("cat").options[0] = new Option(
@@ -95,6 +97,8 @@
 								"Covoiturage", "13");
 						document.getElementById("cat").options[5] = new Option(
 								"Autres", "10");
+						document.getElementById('divPrix').style.display = 'none';
+						document.getElementById('divPrix').value = "0";
 						break;
 					case "3":
 						document.getElementById("cat").options[0] = new Option(
@@ -109,12 +113,17 @@
 								"Covoiturage", "13");
 						document.getElementById("cat").options[5] = new Option(
 								"Autres", "10");
+						document.getElementById('divPrix').style.display = 'none';
+						document.getElementById('divPrix').value = "0";
 						break;
 					case "4":
 						document.getElementById("cat").options[0] = new Option(
 								"Evenements", "8");
 						document.getElementById("cat").options[1] = new Option(
 								"Autres", "10");
+						document.getElementById('divPrix').style.display = 'none';
+						document.getElementById('divPrix').value = "0";
+
 						break;
 					}
 					return true;
@@ -177,13 +186,24 @@
 				<OPTION value="75020">75020</OPTION>
 			</SELECT>
 		</div>
+		<div style="display:;" id="divPrix">
+			<label class="control-label requiredField" for="prix">Prix de
+				l'article ou du service</label> <input class="form-control" id="prix"
+				name="prix" type="prix" />
+		</div>
+
+
 		<div class="form-group">
 			<!-- Name field -->
 			<label class="control-label requiredField">Date de fin de
 				l'annonce</label> <input class="form-control" id="dateF" name="dateF"
 				type="date" />
 		</div>
-
+		<div>
+			<label class="control-label requiredField" for="contact">Contact
+				pour l'annnonce (si renseigné, il sera visible))</label> <input
+				class="form-control" id="contact" name="contact" />
+		</div>
 		<input class="form-control" id="user" name="user" type="hidden"
 			value="E1" />
 		<div class="form-group">

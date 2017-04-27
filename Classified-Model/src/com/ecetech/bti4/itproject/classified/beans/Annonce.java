@@ -2,6 +2,7 @@ package com.ecetech.bti4.itproject.classified.beans;
 
 import java.sql.Date;
 
+
 /**
  * Represente une Annonce
  * 
@@ -44,7 +45,6 @@ public class Annonce {
 
 	// constructeur complet
 
-
 	public Annonce(String idAnnonce, String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
 			float prix, String contact, Date debAnnonce, Date finAnnonce, Date dateAnnonce, int importanceAnnonce,
 			String user_idUser, int cat_idCategorie, int type_idType) {
@@ -85,7 +85,7 @@ public class Annonce {
 		this.type_idType = type_idType;
 	}
 
-	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce,
+	public Annonce(String titreAnnonce, String descAnnonce, String photoAnnonce, int zoneAnnonce, float prix, String contact,
 			java.sql.Date dateAnnonce, java.sql.Date dateFin, int importanceAnnonce, Date dateCreaAnnonce,
 			String user_idUser, int cat_idCategorie, int type_idType) {
 		super();
@@ -94,6 +94,8 @@ public class Annonce {
 		this.descAnnonce = descAnnonce;
 		this.photoAnnonce = photoAnnonce;
 		this.zoneAnnonce = zoneAnnonce;
+		this.prix = prix;
+		this.contact = contact;
 		this.dateAnnonce = (Date) dateAnnonce;
 		this.finAnnonce = (Date) dateFin;
 		this.importanceAnnonce = importanceAnnonce;
