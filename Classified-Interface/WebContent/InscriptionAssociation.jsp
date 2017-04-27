@@ -128,10 +128,19 @@
 										les <a href="terms.php">conditions d'utilisations </a>
 									</label><span class="req">* </span>
 								</div>
-
+								<div class="row">
+								<div class="col-xs-4">
 								<div class="form-group">
 									<input class="btn btn-success" type="submit" name="submit_reg"
 										value="Créer le compte">
+								</div>
+								</div>
+								<div class="col-xs-4">
+								<div class="form-group">
+									<input class="btn btn-warning" type="submit" name="submitpremium_reg"
+										value="Créer un compte Premium">
+								</div>
+								</div>
 								</div>
 								<h5>Vous allez recevoir un mail pour confirmer votre
 									inscription.</h5>
