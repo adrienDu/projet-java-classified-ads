@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.ecetech.bti4.itproject.classified.beans.Annonce;
 import com.ecetech.bti4.itproject.classified.beans.Categorie;
 import com.ecetech.bti4.itproject.classified.beans.Type;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
@@ -12,22 +13,22 @@ import com.mysql.jdbc.PreparedStatement;
 
 /**
  * Represente un type
+ * 
  * @author Maeva, Adrien, Moaz
  *
  */
 
-
 public class TypeDAO {
-	
+
 	/** public fonction getAllType()
 	 * \breif Affiche les types 
 	 * 
 	 * Renvoie une Arraylist contenant tous les types de la base de donnee
 	**/
 	public static ArrayList<Type> getAllType() {
-		ArrayList<Type> result = null;
+		ArrayList<Type> result = new ArrayList<Type>();
 		ResultSet res;
-		Type type = null;
+		Type type = new Type();
 		DBAction.DBConnexion(); 
 		Connection con = (Connection) DBAction.getCon();
 		PreparedStatement req;
@@ -48,13 +49,39 @@ public class TypeDAO {
 		return result;
 
 	}
+	/**
+	 * fonction getType : permet de recuper le type d'un id
+	 * 
+	 * @param idType
+	 * @return
+	 * @throws SQLException
+	 */
+	public static Type getType(String idType) throws SQLException {
+		DBAction.DBConnexion();
+		Type type = new Type();
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
+		ResultSet res;
 
+		try {
+			req = (PreparedStatement) con
+					.prepareStatement("SELECT * FROM `type` WHERE `idType` ='" + idType + "';");
+			res = req.executeQuery();
+			type = new Type(res.getInt(1), res.getString(2));
+			req.close();
 
-	/** public fonction changeType()
-	 * \breif Modifie le type
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return type;
+	}
+
+	/**
+	 * public fonction changeType() \breif Modifie le type
 	 * 
 	 * Ne renvoie rien
-	**/
+	 **/
 	public static boolean changeType(Type type) {
 		boolean result;
 		int nb;

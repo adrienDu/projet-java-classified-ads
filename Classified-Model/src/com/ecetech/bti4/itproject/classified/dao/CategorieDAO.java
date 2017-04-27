@@ -7,6 +7,7 @@ import java.util.Calendar;
 
 import com.ecetech.bti4.itproject.classified.beans.Annonce;
 import com.ecetech.bti4.itproject.classified.beans.Categorie;
+import com.ecetech.bti4.itproject.classified.beans.Type;
 import com.ecetech.bti4.itproject.classified.common.DBAction;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 import com.mysql.jdbc.Connection;
@@ -27,7 +28,7 @@ public class CategorieDAO {
 	public static ArrayList<Categorie> getAllCat() {
 		ArrayList<Categorie> result = new ArrayList<Categorie>();
 		ResultSet res;
-		Categorie categorie = null;
+		Categorie categorie = new Categorie();
 		DBAction.DBConnexion();
 		Connection con = (Connection) DBAction.getCon();
 		PreparedStatement req;
@@ -48,6 +49,32 @@ public class CategorieDAO {
 		return result;
 
 	}
+	/**
+	 * getCat permet de recuperer une categorie dupuis un type
+	 * @param idCat
+	 * @return
+	 * @throws SQLException
+	 */
+	public static Categorie getType(String idCat) throws SQLException {
+		DBAction.DBConnexion();
+		Categorie cat = new Categorie();
+		Connection con = (Connection) DBAction.getCon();
+		PreparedStatement req;
+		ResultSet res;
+		try {
+			req = (PreparedStatement) con
+					.prepareStatement("SELECT * FROM `caterorie` WHERE `idCategorie` ='" + idCat + "';");
+			res = req.executeQuery();
+			cat = new Categorie(res.getInt(1), res.getString(2), res.getInt(3));
+			req.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return cat;
+	}
+
 
 	/** public fonction changeCat()
 	 * \breif Modifie une categorie

@@ -1,7 +1,15 @@
+<%@page import="com.ecetech.bti4.itproject.classified.dao.TypeDAO"%>
+<%@page import="com.ecetech.bti4.itproject.classified.beans.Type"%>
+<%@page import="com.ecetech.bti4.itproject.classified.dao.CategorieDAO"%>
+<%@page import="com.ecetech.bti4.itproject.classified.beans.Categorie"%>
+<%@page import="org.apache.jasper.tagplugins.jstl.ForEach"%>
+<%@page import="com.ecetech.bti4.itproject.classified.dao.AnnonceDAO"%>
+<%@page import="com.ecetech.bti4.itproject.classified.beans.Annonce"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -509,33 +517,42 @@
 				</div>
 
 				<div class="row">
+
+					<!-- Annonce -->
+					<%
+					ArrayList<Annonce> annonces = new ArrayList<Annonce>();
+						annonces = AnnonceDAO.getAllAnnonce();
+						for (Annonce annonce : annonces) {
+					%>
 					<div class="col-sm-4 col-lg-4 col-md-4">
 						<div class="thumbnail">
-							<img src="http://placehold.it/320x150" alt="">
+							<!--  <img src="http://placehold.it/320x150" alt="">-->
 							<div class="caption">
-								<h4 class="pull-right">$24.99</h4>
+								<h4 class="pull-right">
+									<%
+										if (annonce.getPrix() != 0) {
+												out.println(annonce.getPrix());
+											}
+									%>
+								</h4>
 								<h4>
-									<a href="#">First Product</a>
+									<a href="#"><%out.println(annonce.getTitreAnnonce()); %></a>
 								</h4>
 								<p>
-									See more snippets like this online store item at <a
-										target="_blank" href="http://www.bootsnipp.com">Bootsnipp
-										- http://bootsnipp.com</a>.
+									<%out.println(annonce.getDescAnnonce()); %>
 								</p>
 							</div>
 							<div class="ratings">
-								<p class="pull-right">15 reviews</p>
+								<p class="pull-right"><%out.println(annonce.getZoneAnnonce()); %></p>
 								<p>
-									<span class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span>
+								<%out.println(); %>
 								</p>
 							</div>
 						</div>
 					</div>
-
+					<%
+						}
+					%>
 					<div class="col-sm-4 col-lg-4 col-md-4">
 						<div class="thumbnail">
 							<img src="http://placehold.it/320x150" alt="">
