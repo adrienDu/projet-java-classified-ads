@@ -46,60 +46,64 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
-				<div class="thumbnail">
-					<h2>Se connecter</h2>
-					<br>
-					<form class="form-signin" method="post" action="adminDoLogin">
-						<div class="input-group">
-							<span class="input-group-addon" id="basic-addon1">@</span> <input
-								type="email" id="inputEmail" name="inputEmail"
-								class="form-control" placeholder="Email address" required
-								autofocus>
-						</div>
-						<br>
-						<div class="input-group">
-							<span class="input-group-addon glyphicon " id="basic-addon2">*</span>
-							<input type="password" id="inputPassword" name="inputPassword"
-								class="form-control" placeholder="Password" required>
-						</div>
-						<br>
-						<%
-							if ((request.getAttribute("errorString")) != null) {
-						%>
-						<div class="alert alert-danger">
-							<\br><strong>Erreur!</strong>${errorString}
-						</div>
-						<%
-							}
-						%>
-						<button class="btn inverse btn-lg btn-primary btn-block" type="submit">Connexion</button>
-					</form>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<strong>Se connecter </strong>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<form role="form">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email</label> <input
+									type="email" class="form-control" id="exampleInputEmail1"
+									placeholder="Enter email">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Mot de passe <a
+									href="/sessions/forgot_password">(mot de passe oublié ?)</a></label> <input
+									type="password" class="form-control" id="exampleInputPassword1"
+									placeholder="Password">
+							</div>
+							<button class="btn btn-md btn-primary" type="submit">Connexion</button>
+							<button class="btn btn-md btn-primary" type="button"
+								href="index.jsp">Retour</button>
+						</form>
+					</div>
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<div class="thumbnail">
-					<h2>S'inscrire</h2>
-					<br>
-					<form class="form-signin" method="post" action="adminDoLogin">
-						<div class="input-group">
-							<span class="input-group-addon" id="basic-addon1">@</span> <input
-								type="email" id="inputEmail" name="inputEmail"
-								class="form-control" placeholder="Email address" required
-								autofocus>
-						</div>
-						<br>
-						<div class="input-group">
-							<span class="input-group-addon glyphicon " id="basic-addon2">*</span>
-							<input type="password" id="inputPassword" name="inputPassword"
-								class="form-control" placeholder="Password" required>
-						</div>
-						<br>
-		
-					</form>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<strong>S'inscrire</strong>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<form role="form">
+							<div class="form-group">
+								<label class="form-check-label">Vous êtes: <br> <input
+									type="radio" class="form-check-input" name="optionsRadios"
+									id="optionsRadiosAssociation" value="association" checked>
+									Une association<br> <input type="radio" class="form-check-input"
+									name="optionsRadios" id="optionsRadiosEntreprise"
+									value="entreprise" checked> Une entreprise<br> <input
+									type="radio" class="form-check-input" name="optionsRadios"
+									id="optionsRadiosParticulier" value="particulier" checked>
+									Un particulier<br>
+								</label>
+							</div>
+							<button class="btn btn-md btn-primary" type="submit">Créer un compte
+							</button>
+							<button class="btn btn-md btn-primary" type="button"
+								href="index.jsp">Retour</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
