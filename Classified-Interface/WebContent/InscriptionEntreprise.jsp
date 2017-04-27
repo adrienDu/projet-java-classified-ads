@@ -12,7 +12,7 @@
 <meta name="author"
 	content="Maeva Margueritat, Adrien Duhoux, Moaz Chaudry">
 
-<title>Inscription Particulier</title>
+<title>Inscription Entreprise</title>
 
 <!--  Icone  -->
 
@@ -43,10 +43,13 @@
 <%@include file="WEB-INF/view/head.jsp"%>
 <h1>Inscription Particulier</h1>
 <form class="form-signin" method="post">
-			<label> Nom</label>
+			<label> Nom d'entreprise</label>
 			<input type="text" id="inputNom" name="inputNom" class="form-control" placeholder="Nom" required autofocus></br>
-			<label>Prénom</label>
-			<input type="text" id="inputPrenom" name="inputPrenom" class="form-control" placeholder="Prénom" required autofocus></br>
+			<label>Numéro Siret</label>
+			<input type="text" id="inputNumSiret" name="inputNumSiret" class="form-control" placeholder="Numéro Siret" required autofocus></br>
+			<label>Logo entreprise</label>
+			<label for="icone">Icône du fichier:</label><br />
+    		<input type="file" name="icone" id="icone" /><br />
 			<label>Adresse</label>
 			<input type="text" id="inputNumRue" name="inputNumRue" class="form-control" placeholder="Numéro de rue" required autofocus></br>
 			<label >Rue</label>
@@ -58,12 +61,12 @@
 			<label>Téléphone</label>
 			<input type="tel" id="inputPhone" name="inputPhone" class="form-control" placeholder="Numéro de téléphone" required autofocus></br>
 			<label>Adresse mail</label>
-			<input type="email" id="inputEmailInscription" name="inputEmailInscription" class="form-control" placeholder="Email address" required autofocus/></br> 
+			<input type="email" id="inputEmailInscription" name="inputEmailInscription" class="form-control" placeholder="Email address" required autofocus/> </br>
 			<label>Mot de passe</label> 
 			<input type="password" id="inputPasswordInscription" name="inputPasswordInscription" class="form-control" placeholder="Password" required></br>
 			<label>Confirmer mot de passe</label> 
-			<input type="password" id="inputPasswordInscription" name="inputPasswordInscription" class="form-control" placeholder="Password" required></br></br>
-			
+			<input type="password" id="inputPasswordInscription" name="inputPasswordInscription" class="form-control" placeholder="Password" required>
+			</br> </br>
 				
 			<%if((request.getAttribute("errorString"))!=null){ %>
 			<div class="alert alert-danger">
@@ -74,7 +77,6 @@
 				%>
 				
 			
-			<button class="btn inverse btn-lg btn-primary btn-block" type="submit">Créer compte</button></br>
 			<button class="btn inverse btn-lg btn-primary btn-block" type="submit">Créer compte premium</button>
 		
 			
