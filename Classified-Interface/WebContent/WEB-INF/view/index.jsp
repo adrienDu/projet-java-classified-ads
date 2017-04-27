@@ -519,6 +519,7 @@
 
 					<!-- Annonce -->
 					<%
+					System.out.println(AnnonceDAO.getAnnonce("1").toString());
 						ArrayList<Annonce> annonces = new ArrayList<Annonce>();
 						annonces = AnnonceDAO.getAllAnnonce();
 						for (Annonce annonce : annonces) {
@@ -553,7 +554,8 @@
 								</p>
 								<p>
 									<%
-										out.println("test");
+									System.out.println(TypeDAO.getType(annonce.getType_idType()).getNomType().toString());
+										out.println(TypeDAO.getType(annonce.getType_idType()).getNomType().toString());
 									%>
 								</p>
 							</div>

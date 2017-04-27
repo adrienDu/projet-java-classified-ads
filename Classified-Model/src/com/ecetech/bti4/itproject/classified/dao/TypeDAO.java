@@ -56,7 +56,7 @@ public class TypeDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public static Type getType(String idType) throws SQLException {
+	public static Type getType(int idType) throws SQLException {
 		DBAction.DBConnexion();
 		Type type = new Type();
 		Connection con = (Connection) DBAction.getCon();
