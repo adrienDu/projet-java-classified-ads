@@ -6,14 +6,13 @@
 <%@page import="com.ecetech.bti4.itproject.classified.dao.AnnonceDAO"%>
 <%@page import="com.ecetech.bti4.itproject.classified.beans.Annonce"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html;  charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
 
-<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Classifieds website">
@@ -78,16 +77,16 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
-												CatÈgories
+												Cat√©gories
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Autres"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Electromenager">
-														ElectromÈnager
+														Electrom√©nager
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Evenements"> EvÈnements
+														type="checkbox" name="Evenements"> Ev√©nements
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Immobilier"> Immobilier
@@ -103,17 +102,17 @@
 														Jardin
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="MaterielPro"> MatÈriel
+														type="checkbox" name="MaterielPro"> Mat√©riel
 														Professionnel
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Mobilier"> Mobilier
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="MultimÈdias"> MultimÈdias
+														type="checkbox" name="Multim√©dias"> Multim√©dias
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Vehicules"> VÈhicules
+														type="checkbox" name="Vehicules"> V√©hicules
 												</label></li>
 											</ul>
 											<ul>
@@ -198,16 +197,16 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
-												CatÈgories
+												Cat√©gories
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Autres"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Electromenager">
-														ElectromÈnager
+														Electrom√©nager
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Evenements"> EvÈnements
+														type="checkbox" name="Evenements"> Ev√©nements
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Immobilier"> Immobilier
@@ -223,17 +222,17 @@
 														Jardin
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="MaterielPro"> MatÈriel
+														type="checkbox" name="MaterielPro"> Mat√©riel
 														Professionnel
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Mobilier"> Mobilier
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="MultimÈdias"> MultimÈdias
+														type="checkbox" name="Multim√©dias"> Multim√©dias
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Vehicules"> VÈhicules
+														type="checkbox" name="Vehicules"> V√©hicules
 												</label></li>
 											</ul>
 											<ul>
@@ -319,7 +318,7 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
-												CatÈgories
+												Cat√©gories
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Autres"> Autres
 												</label></li>
@@ -328,7 +327,7 @@
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Fomrations"> Formations /
-														ActivitÈs
+														Activit√©s
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Jobs"> Jobs
@@ -425,12 +424,12 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
-												CatÈgories
+												Cat√©gories
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Autres"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Evenements"> EvÈnements
+														type="checkbox" name="Evenements"> Ev√©nements
 												</label></li>
 											</ul>
 											<ul>
@@ -520,7 +519,7 @@
 
 					<!-- Annonce -->
 					<%
-					ArrayList<Annonce> annonces = new ArrayList<Annonce>();
+						ArrayList<Annonce> annonces = new ArrayList<Annonce>();
 						annonces = AnnonceDAO.getAllAnnonce();
 						for (Annonce annonce : annonces) {
 					%>
@@ -531,21 +530,31 @@
 								<h4 class="pull-right">
 									<%
 										if (annonce.getPrix() != 0) {
-												out.println(annonce.getPrix());
+												out.println((int) annonce.getPrix() + "&euro;");
 											}
 									%>
 								</h4>
 								<h4>
-									<a href="#"><%out.println(annonce.getTitreAnnonce()); %></a>
+									<a href="#">
+										<%
+											out.println(annonce.getTitreAnnonce());
+										%>
+									</a>
 								</h4>
 								<p>
-									<%out.println(annonce.getDescAnnonce()); %>
+									<%
+										out.println(annonce.getDescAnnonce());
+									%>
 								</p>
 							</div>
 							<div class="ratings">
-								<p class="pull-right"><%out.println(annonce.getZoneAnnonce()); %></p>
+								<p class="pull-right">
+									<%out.println(annonce.getZoneAnnonce());%>
+								</p>
 								<p>
-								<%out.println(); %>
+									<%
+										out.println("test");
+									%>
 								</p>
 							</div>
 						</div>

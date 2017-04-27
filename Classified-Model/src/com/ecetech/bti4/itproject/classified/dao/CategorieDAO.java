@@ -55,7 +55,7 @@ public class CategorieDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public static Categorie getType(String idCat) throws SQLException {
+	public static Categorie getCat(String idCat) throws SQLException {
 		DBAction.DBConnexion();
 		Categorie cat = new Categorie();
 		Connection con = (Connection) DBAction.getCon();
