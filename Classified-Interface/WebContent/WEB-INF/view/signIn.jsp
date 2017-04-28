@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html;  charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -41,7 +41,7 @@
 </head>
 
 <body>
-	<%@include file="WEB-INF/view/head.jsp"%>
+	<%@include file="head.jsp"%>
 
 	<div class="container">
 		<div class="row">
@@ -53,19 +53,19 @@
 						</h3>
 					</div>
 					<div class="panel-body">
-						<form role="form">
+						<form role="form" method="post" action="signin">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email</label> <input
-									type="email" class="form-control" id="exampleInputEmail1"
+									type="email" class="form-control" id="exampleInputEmail1" name="inputEmail"
 									placeholder="Enter email">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Mot de passe <a
 									href="/sessions/forgot_password">(mot de passe oublié ?)</a></label> <input
-									type="password" class="form-control" id="exampleInputPassword1"
+									type="password" class="form-control" id="exampleInputPassword1" name="inputPassword"
 									placeholder="Password">
 							</div>
-							<button class="btn btn-md btn-primary" type="submit">Connexion</button>
+							<button class="btn btn-md btn-primary" type="submit" name="connexion" value="submit">Connexion</button>
 							<button class="btn btn-md btn-primary" type="button"
 								href="index.jsp">Retour</button>
 						</form>

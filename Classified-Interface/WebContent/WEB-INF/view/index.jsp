@@ -1,3 +1,4 @@
+<%@page import="com.ecetech.bti4.itproject.classified.beans.User"%>
 <%@page import="com.ecetech.bti4.itproject.classified.dao.TypeDAO"%>
 <%@page import="com.ecetech.bti4.itproject.classified.beans.Type"%>
 <%@page import="com.ecetech.bti4.itproject.classified.dao.CategorieDAO"%>
@@ -50,6 +51,7 @@
 <body>
 	<%@include file="head.jsp"%>
 	<%
+	
 		ArrayList<Annonce> annonces = new ArrayList();
 		annonces = (ArrayList<Annonce>) request.getAttribute("annonce");
 	%>
@@ -366,18 +368,19 @@
 														type="checkbox" name="Autres" value="10"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Covoiturage" value ="15"> Covoiturage
+														type="checkbox" name="Covoiturage" value="15">
+														Covoiturage
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Fomrations" value ="14"> Formations /
-														Activités
+														type="checkbox" name="Fomrations" value="14">
+														Formations / Activités
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Jobs" value ="10"> Jobs
+														type="checkbox" name="Jobs" value="10"> Jobs
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="PetitsBoulots" value ="13"> Petits
-														Boulots
+														type="checkbox" name="PetitsBoulots" value="13">
+														Petits Boulots
 												</label></li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Stages" value="12"> Stages /
@@ -482,9 +485,9 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
-												Catégories
-														type="checkbox" name="Autres" value="10"> Autres
-												</label></li>
+												Catégories type="checkbox" name="Autres" value="10"> Autres
+												</label>
+												</li>
 												<li class="li-tri"><label> <input
 														type="checkbox" name="Covoiturage" value="15">
 														Covoiturage
@@ -608,7 +611,8 @@
 														type="checkbox" name="Autres" value="10"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Evenements" value ="8"> Evénements
+														type="checkbox" name="Evenements" value="8">
+														Evénements
 												</label></li>
 											</ul>
 											<ul>
@@ -703,8 +707,8 @@
 							<li role="presentation"><a href="#">Ventes</a></li>
 							<li role="presentation"><a href="#">Recherches</a></li>
 							<li role="presentation"><a href="#">Informations</a></li>
-							<li role="presentation" class="disabled pull-right"><a
-								href="#">Publier une annonce</a></li>
+							<%if(!user.getIdUser().isEmpty()){ %><li role="presentation"><a
+								href="newAnnonce?add=ok">Publier une annonce</a></li><%} %>
 						</ul>
 					</div>
 				</div>

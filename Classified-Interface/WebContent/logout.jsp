@@ -9,7 +9,7 @@
 <body>
 <%
 session.invalidate();
-response.sendRedirect("http://localhost:8080/Classified-Interface/admin");
+response.sendRedirect("ServletIndex");
 %>
 </body>
 </html>

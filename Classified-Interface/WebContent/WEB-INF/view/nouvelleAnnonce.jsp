@@ -5,8 +5,8 @@
 <%@page import="com.ecetech.bti4.itproject.classified.beans.Categorie"%>
 <%@page import="java.util.ArrayList"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html;  charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,9 +15,10 @@
 <meta name="description" content="Classifieds website">
 <meta name="author"
 	content="Maeva Margueritat, Adrien Duhoux, Moaz Chaudry">
+	<%@include file="head.jsp"%>
 <%
 	// User user =(User) session.getAttribute("sessionUtilisateur");
-	User user = UserDAO.getUser("A1");
+	
 	System.out.println(user);
 %>
 
@@ -53,7 +54,7 @@
 			<div class="col-xs-offset-1 col-xs-10">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h1>Créer une annonce</h1>
+						<h1>CrÃ©er une annonce</h1>
 					</div>
 					<div class="panel-body">
 						<!--<form method="post" action="newAnnonce"> -->
@@ -78,7 +79,7 @@
 											document.getElementById("cat").options[3] = new Option(
 													"Mobilier", "3");
 											document.getElementById("cat").options[4] = new Option(
-													"Multimédia", "4");
+													"MultimÃ©dia", "4");
 											document.getElementById("cat").options[5] = new Option(
 													"Loisir", "5");
 											document.getElementById("cat").options[6] = new Option(
@@ -104,7 +105,7 @@
 											document.getElementById("cat").options[3] = new Option(
 													"Mobilier", "3");
 											document.getElementById("cat").options[4] = new Option(
-													"Multimédia", "4");
+													"MultimÃ©dia", "4");
 											document.getElementById("cat").options[5] = new Option(
 													"Loisir", "5");
 											document.getElementById("cat").options[6] = new Option(
@@ -130,7 +131,7 @@
 											document.getElementById("cat").options[2] = new Option(
 													"Petit Boulots", "13");
 											document.getElementById("cat").options[3] = new Option(
-													"Activitées et Formations",
+													"ActivitÃ©es et Formations",
 													"14");
 											document.getElementById("cat").options[4] = new Option(
 													"Covoiturage", "13");
@@ -148,7 +149,7 @@
 											document.getElementById("cat").options[2] = new Option(
 													"Petit Boulots", "13");
 											document.getElementById("cat").options[3] = new Option(
-													"Activitées et Formations",
+													"ActivitÃ©es et Formations",
 													"14");
 											document.getElementById("cat").options[4] = new Option(
 													"Covoiturage", "13");
@@ -183,7 +184,7 @@
 								</select>
 								<div class="sub_category_div" id="sub_category_div">
 									<br /> <label class="control-label ">Choissisez une
-										catégorie:</label>
+										catÃ©gorie:</label>
 									<script type="text/javascript" language="JavaScript">
 										document
 												.write('<select class="form-control" name="cat" id="cat"><option value="0">Vehicule</option></select>')
@@ -242,11 +243,11 @@
 							</div>
 							<div>
 								<label class="control-label requiredField" for="contact">Contact
-									pour l'annnonce (si renseigné, il sera visible))</label> <input
+									pour l'annnonce (si renseignÃ©, il sera visible))</label> <input
 									class="form-control" id="contact" name="contact" />
 							</div>
-							<input class="form-control" id="user" name="user" type="hidden"
-								value="E1" /> <br />
+							<!--<input class="form-control" id="user" name="user" type="hidden"
+								value="E1" /> --><br />
 							<div class="form-group">
 								<button class="btn btn-primary " name="submit" type="submit">Publier
 									l'annonce</button>

@@ -1,6 +1,8 @@
 <%@page import="java.time.LocalTime"%>
 <%@page import="java.time.LocalDate"
 	import="java.time.format.DateTimeFormatter" import="java.util.Locale"%>
+	<%@page import="com.ecetech.bti4.itproject.classified.beans.User"%>
+	
 <%@ page language="java" contentType="text/html;  charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -38,6 +40,10 @@
 <script src="https://use.fontawesome.com/dffe9d8685.js"></script>
 
 <%
+User user = new User();
+if (session.getAttribute("sessionUtilisateur") != null) {
+	user = (User) session.getAttribute("sessionUtilisateur");
+}
 	//time 
 	DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("EEEE d MMMM yyyy", Locale.FRENCH);
 	DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HH:mm");
@@ -61,7 +67,10 @@
 					<div class="col-md-12">
 						<ul class="nav nav-pills navigation">
 							<li role="presentation" class="pull-left"><p class=time><%=time%></p></li>
-							<li role="presentation" class="pull-right"><a href="/WEB-INF/view/signIn.jsp">Sign In / Sign Up</a></li>
+							<% if(user.getIdUser().isEmpty()){ %>
+							<li role="presentation" class="pull-right"><a href="signin">Sign In / Sign Up</a></li><%} 
+							else {
+							%><li role="presentation" class="pull-right"><span><%out.println(user.getMailUser().toString()); %></span><a href="http://localhost:8080/Classified-Interface/logout.jsp">Logout</a></li><%} %>
 						</ul>
 					</div>
 				</div>

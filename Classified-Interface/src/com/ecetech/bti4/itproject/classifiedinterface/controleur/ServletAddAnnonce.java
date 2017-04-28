@@ -63,42 +63,47 @@ public class ServletAddAnnonce extends HttpServlet {
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("sessionUtilisateur");
 		response.setContentType("text/html;charset=UTF-8");
-
-		// @param action
-		String titre = request.getParameter("titre");
-		String desc = request.getParameter("desc");
-		String picture = "";
-		// String picture = request.getParameter("picture");
-		int zone = Integer.parseInt(request.getParameter("zone"));
-		String dateF = request.getParameter("dateF");
-		int imp = 1;
-		String idUser = request.getParameter("user");
-		int idCat = Integer.parseInt(request.getParameter("cat"));
-		int idType = Integer.parseInt(request.getParameter("type"));
-		java.sql.Date dateAnnonce = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-		float prix = Float.parseFloat(request.getParameter("prix"));
-		String contact = request.getParameter("contact");
-
-		if (QualityDataQualification.verifData(titre) && QualityDataQualification.verifData(desc)
-				&& QualityDataQualification.verifData(zone) && QualityDataQualification.verifData(dateF)
-				&& QualityDataQualification.verifData(idCat) && QualityDataQualification.verifData(idType)) {
-			System.out.println("titre" + titre + " description " + desc + " picture " + picture + " zone " + zone
-					+ "prix " + prix + "contact" + contact + " dateF " + dateF + "importance " + imp + " idUser "
-					+ idUser + "  idCat " + idCat + " idType" + idType);
-			Annonce annonce = new Annonce(titre, desc, "", zone, prix, contact, dateAnnonce,
-					QualityDataQualification.dateChecker(dateF), imp, dateAnnonce, idUser, idCat, idType);
-			AnnonceDAO.newAnnonce(annonce);
-			VUE = "/WEB-INF/admin/ServletIndex.jsp";
+		if (request.getParameter("add") != null && request.getParameter("add").compareTo("ok") == 0) {
+			VUE = "/WEB-INF/view/nouvelleAnnonce.jsp";
 		} else {
-			System.out.println("else");
-			VUE = "/nouvelleAnnonce.jsp";
-			errorString = "tous les champs n'ont pas étaient replis";
-			session.setAttribute("sessionUtilisateur", null);
+			// @param action
+			String titre = request.getParameter("titre");
+			String desc = request.getParameter("desc");
+			String picture = "";
+			// String picture = request.getParameter("picture");
+			int zone = Integer.parseInt(request.getParameter("zone"));
+			String dateF = request.getParameter("dateF");
+			int imp = 1;
+			String idUser = user.getIdUser();
+			int idCat = Integer.parseInt(request.getParameter("cat"));
+			int idType = Integer.parseInt(request.getParameter("type"));
+			java.sql.Date dateAnnonce = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+			float prix = 0;
+			if (request.getParameter("prix") != null) {
+				prix = Float.parseFloat(request.getParameter("prix"));
+			}
+			String contact = request.getParameter("contact");
+
+			if (QualityDataQualification.verifData(titre) && QualityDataQualification.verifData(desc)
+					&& QualityDataQualification.verifData(zone) && QualityDataQualification.verifData(dateF)
+					&& QualityDataQualification.verifData(idCat) && QualityDataQualification.verifData(idType)) {
+				System.out.println("titre" + titre + " description " + desc + " picture " + picture + " zone " + zone
+						+ "prix " + prix + "contact" + contact + " dateF " + dateF + "importance " + imp + " idUser "
+						+ idUser + "  idCat " + idCat + " idType" + idType);
+				Annonce annonce = new Annonce(titre, desc, "", zone, prix, contact, dateAnnonce,
+						QualityDataQualification.dateChecker(dateF), imp, dateAnnonce, idUser, idCat, idType);
+				AnnonceDAO.newAnnonce(annonce);
+				VUE = "/ServletIndex";
+			} else {
+				System.out.println("else");
+				VUE = "newAnnonce";
+				errorString = "tous les champs n'ont pas été replis";
+				session.setAttribute("sessionUtilisateur", null);
+			}
 		}
-
 		request.setAttribute("errorString", errorString);
-
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 }
