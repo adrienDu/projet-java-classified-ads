@@ -86,6 +86,7 @@ public class ParticulierDAO {
 				+ CpAdPart + "','" + VilleAdPart + "','" + TelPart + "')");
 		try {
 			DBAction.getStm().executeUpdate(req1);
+			
 
 		} catch (SQLException ex) {
 			System.out.println(req1);

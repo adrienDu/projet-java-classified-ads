@@ -56,16 +56,17 @@
 						<form role="form" method="post" action="signin">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email</label> <input
-									type="email" class="form-control" id="exampleInputEmail1" name="inputEmail"
-									placeholder="Enter email">
+									type="email" class="form-control" id="exampleInputEmail1"
+									name="inputEmail" placeholder="Enter email">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Mot de passe <a
 									href="/sessions/forgot_password">(mot de passe oublié ?)</a></label> <input
-									type="password" class="form-control" id="exampleInputPassword1" name="inputPassword"
-									placeholder="Password">
+									type="password" class="form-control" id="exampleInputPassword1"
+									name="inputPassword" placeholder="Password">
 							</div>
-							<button class="btn btn-md btn-primary" type="submit" name="connexion" value="submit">Connexion</button>
+							<button class="btn btn-md btn-primary" type="submit"
+								name="connexion" value="submit">Connexion</button>
 							<button class="btn btn-md btn-primary" type="button"
 								href="index.jsp">Retour</button>
 						</form>
@@ -80,21 +81,22 @@
 						</h3>
 					</div>
 					<div class="panel-body">
-						<form role="form">
-							<div class="form-group">
+						<form role="form" methods="post" action="adduser">
+							<div class="form-group" >
 								<label class="form-check-label">Vous êtes: <br> <input
-									type="radio" class="form-check-input" name="optionsRadios"
+									type="radio" class="form-check-input" name="addUserType"
 									id="optionsRadiosAssociation" value="association" checked>
-									Une association<br> <input type="radio" class="form-check-input"
-									name="optionsRadios" id="optionsRadiosEntreprise"
-									value="entreprise" checked> Une entreprise<br> <input
-									type="radio" class="form-check-input" name="optionsRadios"
+									Une association<br> <input type="radio"
+									class="form-check-input" name="addUserType"
+									id="optionsRadiosEntreprise" value="entreprise" checked>
+									Une entreprise<br> <input type="radio"
+									class="form-check-input" name="addUserType"
 									id="optionsRadiosParticulier" value="particulier" checked>
 									Un particulier<br>
 								</label>
 							</div>
-							<button class="btn btn-md btn-primary" type="submit">Créer un compte
-							</button>
+							<button class="btn btn-md btn-primary" type="submit">Créer
+								un compte</button>
 							<button class="btn btn-md btn-primary" type="button"
 								href="index.jsp">Retour</button>
 						</form>
