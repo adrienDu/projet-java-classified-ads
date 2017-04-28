@@ -124,19 +124,13 @@
 												</label></li>
 											</ul>
 											<ul>
-												Date
-												<li class="li-tri"><label><input
-														type="checkbox" name="Aujourdhui"> Aujourd'hui </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Semaine"> Cette semaine </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois"> Ce dernier mois </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois3"> Ces 3 derniers mois
-												</label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois4+"> Ces 4 ou plus
-														derniers mois </label></li>
+												Affichage de la Date
+												<br>
+												<input type="radio" name="date" value="new"> Du plus
+												réçent au plus ancien
+												<br>
+												<input type="radio" name="date" value="old"> Du plus
+												ancien au plus recent
 											</ul>
 											<ul>
 												Lieux
@@ -144,7 +138,7 @@
 														type="checkbox" name="75001" value="75001"> 75001
 												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001" value="75002"> 75002
+														type="checkbox" name="75002" value="75002"> 75002
 												</label></li>
 												<li class="li-tri"><label><input
 														type="checkbox" name="75003" value="75003"> 75003
@@ -270,19 +264,13 @@
 												</label></li>
 											</ul>
 											<ul>
-												Date
-												<li class="li-tri"><label><input
-														type="checkbox" name="Aujourdhui"> Aujourd'hui </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Semaine"> Cette semaine </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois"> Ce dernier mois </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois3"> Ces 3 derniers mois
-												</label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois4+"> Ces 4 ou plus
-														derniers mois </label></li>
+												Affichage de la Date
+												<br>
+												<input type="radio" name="date" value="new"> Du plus
+												réçent au plus ancien
+												<br>
+												<input type="radio" name="date" value="old"> Du plus
+												ancien au plus recent
 											</ul>
 											<ul>
 												Lieux
@@ -290,7 +278,7 @@
 														type="checkbox" name="75001" value="75001"> 75001
 												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001" value="75002"> 75002
+														type="checkbox" name="75002" value="75002"> 75002
 												</label></li>
 												<li class="li-tri"><label><input
 														type="checkbox" name="75003" value="75003"> 75003
@@ -362,101 +350,237 @@
 								<a class="collapsed" role="button" data-toggle="collapse"
 									data-parent="#accordion" href="#collapseThree"
 									aria-expanded="false" aria-controls="collapseThree">
-									Recherches </a>
+									Recherches service</a>
 							</h4>
 						</div>
 						<div id="collapseThree" class="panel-collapse collapse"
 							role="tabpanel" aria-labelledby="headingThree">
 							<div class="panel-body">
 
-								<form name="TriRecherches">
+								<form name="TriREcherche" action="ServletIndex">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
 												Catégories
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Autres"> Autres
+														type="checkbox" name="Autres" value="10"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Covoiturage"> Covoiturage
+														type="checkbox" name="Covoiturage" value ="15"> Covoiturage
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Fomrations"> Formations /
+														type="checkbox" name="Fomrations" value ="14"> Formations /
 														Activités
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Jobs"> Jobs
+														type="checkbox" name="Jobs" value ="10"> Jobs
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="PetitsBoulots"> Petits
+														type="checkbox" name="PetitsBoulots" value ="13"> Petits
 														Boulots
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Stages"> Stages /
+														type="checkbox" name="Stages" value="12"> Stages /
 														Alternances
 												</label></li>
 											</ul>
 											<ul>
-												Date
-												<li class="li-tri"><label><input
-														type="checkbox" name="Aujourdhui"> Aujourd'hui </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Semaine"> Cette semaine </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois"> Ce dernier mois </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois3"> Ces 3 derniers mois
-												</label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois4+"> Ces 4 ou plus
-														derniers mois </label></li>
+												Affichage de la Date
+												<br>
+												<input type="radio" name="date" value="new"> Du plus
+												réçent au plus ancien
+												<br>
+												<input type="radio" name="date" value="old"> Du plus
+												ancien au plus recent
 											</ul>
 											<ul>
 												Lieux
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001"> 75001 </label></li>
+														type="checkbox" name="75001" value="75001"> 75001
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001"> 75002 </label></li>
+														type="checkbox" name="75002" value="75002"> 75002
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75003"> 75003 </label></li>
+														type="checkbox" name="75003" value="75003"> 75003
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75004"> 75004 </label></li>
+														type="checkbox" name="75004" value="75004"> 75004
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75005"> 75005 </label></li>
+														type="checkbox" name="75005" value="75005"> 75005
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75006"> 75006 </label></li>
+														type="checkbox" name="75006" value="75006"> 75006
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75007"> 75007 </label></li>
+														type="checkbox" name="75007" value="75007"> 75007
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75008"> 75008 </label></li>
+														type="checkbox" name="75008" value="75008"> 75008
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75009"> 75009 </label></li>
+														type="checkbox" name="75009" value="75009"> 75009
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75010"> 75010 </label></li>
+														type="checkbox" name="75010" value="75010"> 75010
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75011"> 75011 </label></li>
+														type="checkbox" name="75011" value="75011"> 75011
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75012"> 75012 </label></li>
+														type="checkbox" name="75012" value="75012"> 75012
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75013"> 75013 </label></li>
+														type="checkbox" name="75013" value="75013"> 75013
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75014"> 75014 </label></li>
+														type="checkbox" name="75014" value="75014"> 75014
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75015"> 75015 </label></li>
+														type="checkbox" name="75015" value="75015"> 75015
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75016"> 75016 </label></li>
+														type="checkbox" name="75016" value="75016"> 75016
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75017"> 75017 </label></li>
+														type="checkbox" name="75017" value="75017"> 75017
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75018"> 75018 </label></li>
+														type="checkbox" name="75018" value="75018"> 75018
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75019"> 75019 </label></li>
+														type="checkbox" name="75019" value="75019"> 75019
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75020"> 75020 </label></li>
+														type="checkbox" name="75020" value="75020"> 75020
+												</label></li>
 											</ul>
 										</div>
 									</div>
-									<button type="submit" class="btn btn-default btn-submit">Submit</button>
+									<button type="submit" name="trierecherche" value="submit"
+										class="btn btn-default btn-submit">Submit</button>
+								</form>
+
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse"
+									data-parent="#accordion" href="#collapseThree"
+									aria-expanded="false" aria-controls="collapseThree">
+									Propose service </a>
+							</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse"
+							role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body">
+
+								<form name="PropServ" action="ServletIndex">
+									<div class="form-group">
+										<div class="checkbox">
+											<ul>
+												Catégories
+														type="checkbox" name="Autres" value="10"> Autres
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Covoiturage" value="15">
+														Covoiturage
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Fomrations" value="14">
+														Formations / Activités
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Jobs" value="11"> Jobs
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="PetitsBoulots" value="13">
+														Petits Boulots
+												</label></li>
+												<li class="li-tri"><label> <input
+														type="checkbox" name="Stages" value="12"> Stages /
+														Alternances
+												</label></li>
+											</ul>
+											<ul>
+												Affichage de la Date
+												<br>
+												<input type="radio" name="date" value="new"> Du plus
+												réçent au plus ancien
+												<br>
+												<input type="radio" name="date" value="old"> Du plus
+												ancien au plus recent
+											</ul>
+											<ul>
+												Lieux
+												<li class="li-tri"><label><input
+														type="checkbox" name="75001" value="75001"> 75001
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75002" value="75002"> 75002
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75003" value="75003"> 75003
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75004" value="75004"> 75004
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75005" value="75005"> 75005
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75006" value="75006"> 75006
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75007" value="75007"> 75007
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75008" value="75008"> 75008
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75009" value="75009"> 75009
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75010" value="75010"> 75010
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75011" value="75011"> 75011
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75012" value="75012"> 75012
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75013" value="75013"> 75013
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75014" value="75014"> 75014
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75015" value="75015"> 75015
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75016" value="75016"> 75016
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75017" value="75017"> 75017
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75018" value="75018"> 75018
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75019" value="75019"> 75019
+												</label></li>
+												<li class="li-tri"><label><input
+														type="checkbox" name="75020" value="75020"> 75020
+												</label></li>
+											</ul>
+										</div>
+									</div>
+									<button type="submit" name="propserv" value="submit"
+										class="btn btn-default btn-submit">Submit</button>
 								</form>
 
 							</div>
@@ -475,79 +599,94 @@
 							role="tabpanel" aria-labelledby="headingFour">
 							<div class="panel-body">
 
-								<form name="TriInformations">
+								<form name="TriInfo" action="ServletIndex">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
 												Catégories
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Autres"> Autres
+														type="checkbox" name="Autres" value="10"> Autres
 												</label></li>
 												<li class="li-tri"><label> <input
-														type="checkbox" name="Evenements"> Evénements
+														type="checkbox" name="Evenements" value ="8"> Evénements
 												</label></li>
 											</ul>
 											<ul>
-												Date
-												<li class="li-tri"><label><input
-														type="checkbox" name="Aujourdhui"> Aujourd'hui </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Semaine"> Cette semaine </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois"> Ce dernier mois </label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois3"> Ces 3 derniers mois
-												</label></li>
-												<li class="li-tri"><label><input
-														type="checkbox" name="Mois4+"> Ces 4 ou plus
-														derniers mois </label></li>
+												Affichage de la Date
+												<br>
+												<input type="radio" name="date" value="new"> Du plus
+												réçent au plus ancien
+												<br>
+												<input type="radio" name="date" value="old"> Du plus
+												ancien au plus recent
 											</ul>
 											<ul>
 												Lieux
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001"> 75001 </label></li>
+														type="checkbox" name="75001" value="75001"> 75001
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75001"> 75002 </label></li>
+														type="checkbox" name="75002" value="75002"> 75002
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75003"> 75003 </label></li>
+														type="checkbox" name="75003" value="75003"> 75003
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75004"> 75004 </label></li>
+														type="checkbox" name="75004" value="75004"> 75004
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75005"> 75005 </label></li>
+														type="checkbox" name="75005" value="75005"> 75005
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75006"> 75006 </label></li>
+														type="checkbox" name="75006" value="75006"> 75006
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75007"> 75007 </label></li>
+														type="checkbox" name="75007" value="75007"> 75007
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75008"> 75008 </label></li>
+														type="checkbox" name="75008" value="75008"> 75008
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75009"> 75009 </label></li>
+														type="checkbox" name="75009" value="75009"> 75009
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75010"> 75010 </label></li>
+														type="checkbox" name="75010" value="75010"> 75010
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75011"> 75011 </label></li>
+														type="checkbox" name="75011" value="75011"> 75011
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75012"> 75012 </label></li>
+														type="checkbox" name="75012" value="75012"> 75012
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75013"> 75013 </label></li>
+														type="checkbox" name="75013" value="75013"> 75013
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75014"> 75014 </label></li>
+														type="checkbox" name="75014" value="75014"> 75014
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75015"> 75015 </label></li>
+														type="checkbox" name="75015" value="75015"> 75015
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75016"> 75016 </label></li>
+														type="checkbox" name="75016" value="75016"> 75016
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75017"> 75017 </label></li>
+														type="checkbox" name="75017" value="75017"> 75017
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75018"> 75018 </label></li>
+														type="checkbox" name="75018" value="75018"> 75018
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75019"> 75019 </label></li>
+														type="checkbox" name="75019" value="75019"> 75019
+												</label></li>
 												<li class="li-tri"><label><input
-														type="checkbox" name="75020"> 75020 </label></li>
+														type="checkbox" name="75020" value="75020"> 75020
+												</label></li>
 											</ul>
 										</div>
 									</div>
-									<button type="submit" class="btn btn-default btn-submit">Submit</button>
+									<button type="submit" name="trieinfo" value="submit"
+										class="btn btn-default btn-submit">Submit</button>
 								</form>
 
 							</div>
