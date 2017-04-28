@@ -11,7 +11,7 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 
-<title>Signin Template for Bootstrap</title>
+<title>Admin | Classifieds</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,33 +29,51 @@
 <body>
 
 	<div class="container">
-		<form class="form-signin" method="post" action="adminDoLogin">
-			<h2 class="form-signin-heading">Please sign in</h2>
-			<label for="inputEmail" class="sr-only">Email address</label> <input
-				type="email" id="inputEmail" name="inputEmail" class="form-control"
-				placeholder="Email address" required autofocus> <label
-				for="inputPassword" class="sr-only">Password</label> <input
-				type="password" id="inputPassword" name="inputPassword"
-				class="form-control" placeholder="Password" required>
-				
-			<%if((request.getAttribute("errorString"))!=null){ %>
-			<div class="alert alert-danger">
-				<\br><strong>Erreur!</strong>${errorString}
-			</div>
-			<%}
-			       
-				%>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="form-signin-heading">Page de connexion admin</h2>
+				</div>
+				<div class="panel-body">
+					<form class="form-signin" method="post" action="adminDoLogin">
+						<label for="inputEmail" class="sr-only">Email address</label> <input
+							type="email" id="inputEmail" name="inputEmail"
+							class="form-control" placeholder="Email address" required
+							autofocus> <br /> <label for="inputPassword"
+							class="sr-only">Password</label> <input type="password"
+							id="inputPassword" name="inputPassword" class="form-control"
+							placeholder="Password" required>
 
-			<div class="checkbox">
-				<label> <input type="checkbox" value="remember-me">
-					Remember me
-				</label>
-			</div>
-			<button class="btn inverse btn-lg btn-primary btn-block" type="submit">Sign
-				in</button>
-		</form>
+						<%
+							if ((request.getAttribute("errorString")) != null) {
+						%>
+						<div class="alert alert-danger">
+							<\br><strong>Erreur!</strong>${errorString}
+						</div>
+						<%
+							}
+						%>
 
+						<div class="checkbox">
+							<label> <input type="checkbox" value="remember-me">
+								Remember me
+							</label>
+						</div>
+						<button class="btn inverse btn-lg btn-primary btn-block"
+							type="submit">Sign in</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- /container -->
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Copyright &copy; Classifieds 2017</p>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
