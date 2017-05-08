@@ -94,7 +94,7 @@ public class ServletIndex extends HttpServlet {
 			// trie achat
 			if (trieachat != null && trieachat.compareTo("submit") == 0) {
 				requete = requete + "0)";
-				// test des parametres de catégorie
+				// test des parametres de catï¿½gorie
 				testParamAchatVente(request);
 				// test des parametres de zone
 				testZone(request);
@@ -240,7 +240,7 @@ public class ServletIndex extends HttpServlet {
 				|| request.getParameter("Immobilier") != null || request.getParameter("Livres") != null
 				|| request.getParameter("Loisirs") != null || request.getParameter("MaisonJardin") != null
 				|| request.getParameter("MaterielPro") != null || request.getParameter("Mobilier") != null
-				|| request.getParameter("Multimédias") != null || request.getParameter("Vehicules") != null) {
+				|| request.getParameter("Multimï¿½dias") != null || request.getParameter("Vehicules") != null) {
 			System.out.println("if categorie");
 			requete = requete + " and Cat_idCategorie in (";
 			if (request.getParameter("Autres") != null && request.getParameter("Autres").compareTo("10") == 0) {
@@ -273,8 +273,8 @@ public class ServletIndex extends HttpServlet {
 			if (request.getParameter("Mobilier") != null && request.getParameter("Mobilier").compareTo("3") == 0) {
 				addParam("3");
 			}
-			if (request.getParameter("Multimédias") != null
-					&& request.getParameter("Multimédias").compareTo("4") == 0) {
+			if (request.getParameter("Multimï¿½dias") != null
+					&& request.getParameter("Multimï¿½dias").compareTo("4") == 0) {
 				addParam("4");
 			}
 			if (request.getParameter("Vehicules") != null && request.getParameter("Vehicules").compareTo("0") == 0) {

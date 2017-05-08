@@ -15,7 +15,6 @@ import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 import com.mysql.fabric.xmlrpc.base.Array;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
 /**
  * Represente une Annonce

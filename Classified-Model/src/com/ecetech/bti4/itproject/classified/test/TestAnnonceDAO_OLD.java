@@ -17,7 +17,6 @@ import org.junit.runners.MethodSorters;
 import com.ecetech.bti4.itproject.classified.beans.Annonce;
 import com.ecetech.bti4.itproject.classified.common.MakeUUID;
 import com.ecetech.bti4.itproject.classified.dao.AnnonceDAO;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

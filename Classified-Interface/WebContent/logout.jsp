@@ -9,7 +9,7 @@
 <body>
 <%
 session.invalidate();
-response.sendRedirect("ServletIndex");
+response.sendRedirect("index");
 %>
 </body>
 </html>

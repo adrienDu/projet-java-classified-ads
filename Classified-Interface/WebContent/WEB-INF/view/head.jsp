@@ -68,7 +68,7 @@ if (session.getAttribute("sessionUtilisateur") != null) {
 						<ul class="nav nav-pills navigation">
 							<li role="presentation" class="pull-left"><p class=time><%=time%></p></li>
 							<% if(user.getIdUser().isEmpty()){ %>
-							<li role="presentation" class="pull-right"><a href="signin">Sign In / Sign Up</a></li><%} 
+							<li role="presentation" class="pull-right"><a href="index?action=sigin">Sign In / Sign Up</a></li><%} 
 							else {
 							%><li role="presentation" class="pull-right"><span><%out.println(user.getMailUser().toString()); %></span><a href="http://localhost:8080/Classified-Interface/logout.jsp">Logout</a></li><%} %>
 						</ul>

@@ -78,7 +78,7 @@
 							role="tabpanel" aria-labelledby="headingOne">
 							<div class="panel-body">
 
-								<form name="TriAchats" action="ServletIndex">
+								<form name="TriAchats" action="index">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
@@ -218,7 +218,7 @@
 							role="tabpanel" aria-labelledby="headingTwo">
 							<div class="panel-body">
 
-								<form name="TriVentes" action="ServletIndex">
+								<form name="TriVentes" action="index">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
@@ -359,7 +359,7 @@
 							role="tabpanel" aria-labelledby="headingThree">
 							<div class="panel-body">
 
-								<form name="TriREcherche" action="ServletIndex">
+								<form name="TriREcherche" action="index">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
@@ -481,7 +481,7 @@
 							role="tabpanel" aria-labelledby="headingThree">
 							<div class="panel-body">
 
-								<form name="PropServ" action="ServletIndex">
+								<form name="PropServ" action="index">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>
@@ -602,7 +602,7 @@
 							role="tabpanel" aria-labelledby="headingFour">
 							<div class="panel-body">
 
-								<form name="TriInfo" action="ServletIndex">
+								<form name="TriInfo" action="index">
 									<div class="form-group">
 										<div class="checkbox">
 											<ul>

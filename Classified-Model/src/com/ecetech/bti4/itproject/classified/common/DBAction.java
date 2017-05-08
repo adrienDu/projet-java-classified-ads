@@ -21,9 +21,9 @@ public class DBAction {
 	///Chemin d'acces a la BDD
     private static final String dbPath   = "jdbc:mysql://localhost:3306/mydb";
     ///User utilise pour se connecter
-    private static final String user     = "root";
+    private static final String user     = "classified";
     ///Mot de passe de connection
-    private static final String password = "";
+    private static final String password = "12345";
 
     private static Connection   con      = null;
     private static Statement    stm      = null;

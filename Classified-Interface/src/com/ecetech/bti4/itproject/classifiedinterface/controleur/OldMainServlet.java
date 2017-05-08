@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import com.mysql.jdbc.Driver;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +24,7 @@ import com.sun.glass.ui.Window.Level;
  * Servlet implementation class MainServlet
  */
 @WebServlet("/MainServlet")
-public class MainServlet extends HttpServlet {
+public class OldMainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static String VUE = "/WEB-INF/error.jsp";
 
@@ -125,7 +126,7 @@ public class MainServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public MainServlet() {
+	public OldMainServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

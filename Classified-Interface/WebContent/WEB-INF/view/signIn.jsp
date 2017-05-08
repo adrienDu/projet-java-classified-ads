@@ -53,7 +53,7 @@
 						</h3>
 					</div>
 					<div class="panel-body">
-						<form role="form" method="post" action="signin">
+						<form role="form" method="post" action="index?action=sigin">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email</label> <input
 									type="email" class="form-control" id="exampleInputEmail1"
@@ -98,7 +98,7 @@
 							<button class="btn btn-md btn-primary" type="submit">Créer
 								un compte</button>
 							<button class="btn btn-md btn-primary" type="button"
-								href="index.jsp">Retour</button>
+								href="index">Retour</button>
 						</form>
 					</div>
 				</div>

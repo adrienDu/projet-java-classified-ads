@@ -75,9 +75,9 @@ public class ServletSignIn extends HttpServlet {
 					user = UserDAO.getUserByeMail(mail);
 					if (user != null) {
 						if (QualityDataQualification.validationMDP(user.getMdpUser(), pswd)) {
-							VUE = "/ServletIndex";
+							VUE = "/WEB-INF/view/signIn.jsp";
 							session.setAttribute(SESSION_USER, user);
-							System.out.println("logué");
+							System.out.println("loguï¿½");
 
 						} else {
 							VUE = "/WEB-INF/view/signIn.jsp";
